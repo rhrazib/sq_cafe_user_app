@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'Home Page.dart';
+
 class FormCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,21 +27,21 @@ class FormCard extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
+              // Padding(
+              //   padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+              //   child: Text("SQ Cafe",
+              //       style: TextStyle(
+              //           fontSize: 40.w,
+              //           fontFamily: "Poppins-Bold"
+              //         // , letterSpacing: .6
+              //       )),
+              // ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
-                child: Text("SQ Cafe",
-                    style: TextStyle(
-                        fontSize: 40.w,
-                        fontFamily: "Poppins-Bold"
-                      // , letterSpacing: .6
-                    )),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                 child: Text("LOGIN TO YOUR ACCOUNT",
                     style: TextStyle(
-                        fontFamily: "Poppins-Medium",
-                        fontSize: 26.w)),
+                        fontFamily: "Poppins-Bold",
+                        fontSize: 30.w)),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
@@ -85,47 +87,25 @@ class FormCard extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pop(context);
+                     // Navigator.push(context,);
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (BuildContext context) {
+                            return Scaffold(
+                              appBar: AppBar(
+                                automaticallyImplyLeading: false,
+                                // Used for removing back buttoon.
+                                backgroundColor: Colors.grey.shade50,
+                               title: Text("Home"),
+                               // title: CustomAppBar(title: pModel.elementAt(index).pName,),
+                              ),
+                              body: Container(
+                                alignment: Alignment.topLeft,
+                                child: HomePage(title: 'Home',),
+                              ),
+                            );
+                          }));
                     },
                   )
-                // Container(
-                //   width: double.maxFinite,
-                //   height: 100.h,
-                //   decoration: BoxDecoration(
-                //       gradient: LinearGradient(
-                //           colors: [Color., Color(0xFF6078ea)]),
-                //       borderRadius: BorderRadius.only(
-                //         bottomLeft: Radius.circular(6.0),
-                //         bottomRight: Radius.circular(6.0),
-                //       ),
-                //       boxShadow: [
-                //         BoxShadow(
-                //             color: Color(0xFF6078ea).withOpacity(.3),
-                //             offset: Offset(0.0, 8.0),
-                //             blurRadius: 8.0)
-                //       ]),
-                //   child: Material(
-                //     color: Colors.transparent,
-                //     child: InkWell(
-                //       onTap: () {
-                //         // Navigator.push(
-                //         //     context,
-                //         //     PageTransition(type: PageTransitionType.fade, child: DashBoardPage()));
-                //       },
-                //       //onTap: ()  => debugPrint("LOGIN"),
-                //
-                //       child: Center(
-                //         child: Text("LOGIN",
-                //             style: TextStyle(
-                //                 color: Colors.white,
-                //                 fontFamily: "Poppins-Medium",
-                //                 fontSize: 18,
-                //                 letterSpacing: 1.0)),
-                //       ),
-                //     ),
-                //   ),
-                // )
-
               ),
             ],
           ),
