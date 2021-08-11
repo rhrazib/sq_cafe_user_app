@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Home Page.dart';
+import 'OrderGridView.dart';
 
 class FormCard extends StatelessWidget {
   @override
@@ -27,21 +28,11 @@ class FormCard extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
-              // Padding(
-              //   padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
-              //   child: Text("SQ Cafe",
-              //       style: TextStyle(
-              //           fontSize: 40.w,
-              //           fontFamily: "Poppins-Bold"
-              //         // , letterSpacing: .6
-              //       )),
-              // ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
                 child: Text("LOGIN TO YOUR ACCOUNT",
-                    style: TextStyle(
-                        fontFamily: "Poppins-Bold",
-                        fontSize: 30.w)),
+                    style:
+                        TextStyle(fontFamily: "Poppins-Bold", fontSize: 30.w)),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
@@ -64,15 +55,13 @@ class FormCard extends StatelessWidget {
               //SizedBox(height: 16,)
               Padding(
                   padding: EdgeInsets.only(top: 16.0),
-                  child:
-                  InkWell(
+                  child: InkWell(
                     child: Container(
                       width: double.infinity,
                       height: 48,
                       decoration: BoxDecoration(
                           color: Colors.red.shade800,
                           borderRadius: BorderRadius.only(
-
                               topRight: Radius.circular(0.0),
                               bottomRight: Radius.circular(5.0),
                               topLeft: Radius.circular(0.0),
@@ -81,32 +70,36 @@ class FormCard extends StatelessWidget {
                       child: Text(
                         "Login",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16,
+                        style: TextStyle(
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),
                     onTap: () {
-                     // Navigator.push(context,);
+                      // Navigator.push(context,);
                       Navigator.of(context).push(MaterialPageRoute<void>(
                           builder: (BuildContext context) {
-                            return Scaffold(
-                              appBar: AppBar(
-                                automaticallyImplyLeading: false,
-                                // Used for removing back buttoon.
-                                backgroundColor: Colors.grey.shade50,
-                               title: Text("Home"),
-                               // title: CustomAppBar(title: pModel.elementAt(index).pName,),
-                              ),
-                              body: Container(
-                                alignment: Alignment.topLeft,
-                                child: HomePage(title: 'Home',),
-                              ),
-                            );
-                          }));
+                        return Scaffold(
+                          appBar: AppBar(
+                            automaticallyImplyLeading: false,
+                            // Used for removing back buttoon.
+                            backgroundColor: Colors.red.shade700,
+                            title: Text("Home"),
+
+                            // title: CustomAppBar(title: pModel.elementAt(index).pName,),
+                          ),
+                          body: Container(
+                            alignment: Alignment.topLeft,
+                            child: HomePage(
+                              title: 'Home',
+                            ),
+                          ),
+
+                        );
+                      }));
                     },
-                  )
-              ),
+                  )),
             ],
           ),
         ],

@@ -17,7 +17,6 @@ class _MyHomePageState extends State<LoginPage> {
       return new Scaffold(
         resizeToAvoidBottomInset : false,
         backgroundColor: Colors.white,
-        //resizeToAvoidBottomPadding: true,
         body: Stack(
           fit: StackFit.expand,
           children: <Widget>[
@@ -94,7 +93,6 @@ class _MyHomePageState extends State<LoginPage> {
                 ),
               ),
             ),
-            //  Body()
           ],
         ),
       );
