@@ -29,7 +29,7 @@ class FormCard extends StatelessWidget {
           Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+                padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0,bottom: 32),
                 child: Text("LOGIN TO YOUR ACCOUNT",
                     style:
                         TextStyle(fontFamily: "Poppins-Bold", fontSize: 30.w)),
