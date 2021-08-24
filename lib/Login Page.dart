@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'LoginFormCard.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key, required this.title}) : super(key: key);
+  LoginPage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override

@@ -3,12 +3,12 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductModel {
   int id;
-  String? pName;
-  String? pDetails;
-  String? pRice;
-  double? rating;
-  String? ratingCount;
-  String? pImage;
+  String pName;
+  String pDetails;
+  String pRice;
+  double rating;
+  String ratingCount;
+  String pImage;
 
   ProductModel(this.id, this.pName, this.pDetails, this.pRice, this.rating,
       this.ratingCount, this.pImage);
@@ -79,13 +79,13 @@ class _State extends State<CustomGridView> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    pModel.elementAt(index).pDetails!,
+                                    pModel.elementAt(index).pDetails,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 11),
                                   ),
-                                  Text(r"$" ""+pModel.elementAt(index).pRice!,
+                                  Text(r"$" ""+pModel.elementAt(index).pRice,
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class _State extends State<CustomGridView> {
                                     children: [
                                       RatingBar.builder(
                                         itemSize: 9,
-                                        initialRating: pModel.elementAt(index).rating!,
+                                        initialRating: pModel.elementAt(index).rating,
                                         minRating: 1,
                                         direction: Axis.horizontal,
                                         allowHalfRating: true,
@@ -109,7 +109,7 @@ class _State extends State<CustomGridView> {
                                        //   print(rating);
                                         },
                                       ),
-                                      Text("("+pModel.elementAt(index).ratingCount!+")",
+                                      Text("("+pModel.elementAt(index).ratingCount+")",
                                           style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,

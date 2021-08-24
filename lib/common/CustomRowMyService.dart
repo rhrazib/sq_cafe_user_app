@@ -5,7 +5,7 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'custom_expanded_column.dart';
 
 class CustomRowMyService extends StatelessWidget {
-  const CustomRowMyService({Key? key}) : super(key: key);
+  const CustomRowMyService({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

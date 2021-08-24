@@ -7,12 +7,12 @@ import 'custom_order_status_ui.dart';
 
 class ProductModel {
   int id;
-  String? pName;
-  String? pDetails;
-  String? pRice;
-  double? rating;
-  String? ratingCount;
-  String? pImage;
+  String pName;
+  String pDetails;
+  String pRice;
+  double rating;
+  String ratingCount;
+  String pImage;
 
   ProductModel(this.id, this.pName, this.pDetails, this.pRice, this.rating,
       this.ratingCount, this.pImage);

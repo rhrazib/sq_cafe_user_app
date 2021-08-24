@@ -1,32 +1,41 @@
 import 'package:flutter/material.dart';
 
 class AdvancedSearch extends StatelessWidget {
+
+  AdvancedSearch(this.searchTxt);
+  final String searchTxt;
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'List of Item',
-      home: new ListPersonPage(title: 'List of Items'),
+      home: new ListPersonPage(title: 'List of Items',searchTxt:searchTxt),
     );
   }
 }
 
 class ListPersonPage extends StatefulWidget {
-  ListPersonPage({ Key? key, required this.title}) : super(key: key);
+  ListPersonPage({ Key key,  this.title, this.searchTxt}) : super(key: key);
 
   final String title;
-
+  final String   searchTxt;
   @override
-  _ListPersonPageState createState() => _ListPersonPageState();
+  _ListPersonPageState createState() => _ListPersonPageState(searchTxt);
 }
 
 class _ListPersonPageState extends State<ListPersonPage> {
   List<Person> _personList = [];
   List<Person> _filteredList = [];
   TextEditingController controller = new TextEditingController();
+
   String filter = "";
 
   Widget appBarTitle = new Text("List of People");
   Icon actionIcon = new Icon(Icons.search);
+
+  _ListPersonPageState(this.searchTxt);
+
+  final String searchTxt;
 
   @override
   void dispose() {
@@ -42,6 +51,8 @@ class _ListPersonPageState extends State<ListPersonPage> {
       tmpList.add(pdb.getPeople()[i]);
     }
     setState(() {
+     filter = controller.text=searchTxt;
+
       _personList = tmpList;
       _filteredList = _personList;
     });
@@ -142,7 +153,7 @@ class _ListPersonPageState extends State<ListPersonPage> {
   String personLastName;
 
   Person(
-      {required this.personFirstName, required this.personLastName}
+      { this.personFirstName,  this.personLastName}
       );
 }class PersonDataBuilder {
   List getPeople() {

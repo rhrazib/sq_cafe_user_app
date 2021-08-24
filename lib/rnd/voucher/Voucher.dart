@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/common/custom_voucher_column.dart';
+import 'package:sq_cafe_user_app/controllers/product_controller.dart';
+import 'package:sq_cafe_user_app/views/homepage.dart';
+import 'package:sq_cafe_user_app/views/product_tile.dart';
 
 
 class Voucher extends StatefulWidget {
+
   @override
   _VoucherState createState() => _VoucherState();
 }
 
 class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
-  late TabController _tabController;
-  var amount = 500;
+   TabController _tabController;
+   final ProductController productController = Get.put(ProductController());
+
+   var amount = 500;
 
   @override
   void initState() {
@@ -19,6 +27,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false, // Used for removing back buttoon.
@@ -78,7 +87,27 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
           child: TabBarView(
             controller: _tabController,
             children: [
-              CustomVoucherColumn(amount: "$amount"),
+            //  CustomVoucherColumn(amount: "$amount"),
+              //HomePage(),
+              Container(
+                child: Expanded(
+                  child: Obx(() {
+                    if (productController.isLoading.value)
+                      return Center(child: CircularProgressIndicator());
+                    else
+                      return StaggeredGridView.countBuilder(
+                        crossAxisCount: 2,
+                        itemCount: productController.productList.length,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                        itemBuilder: (context, index) {
+                          return ProductTile(productController.productList[index]);
+                        },
+                        staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+                      );
+                  }),
+                ),
+              ),
               CustomVoucherColumn(amount: "$amount"),
               CustomVoucherColumn(amount: "$amount"),
             ],

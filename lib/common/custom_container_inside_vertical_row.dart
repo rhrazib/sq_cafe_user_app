@@ -5,7 +5,7 @@ class CusConInsideVerRow extends StatelessWidget {
   final width;
   final iconData;
  // final photo;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
  // PhotoHero({ Key? key, this.photo, this.onTap, this.width }) : super(key: key);
   CusConInsideVerRow({this.text, this.width, this.iconData,this.onTap});
 

@@ -44,22 +44,29 @@ class HomeCard extends StatelessWidget {
                       ),
                       onTap: () {
                         // Navigator.push(context,);
-                        Navigator.of(context).push(MaterialPageRoute<void>(
-                            builder: (BuildContext context) {
-                              return Scaffold(
-                                appBar: AppBar(
-                                  automaticallyImplyLeading: false,
-                                  // Used for removing back buttoon.
-                                  backgroundColor: Colors.red.shade700,
-                                  title: Text("Home"),
-                                  // title: CustomAppBar(title: pModel.elementAt(index).pName,),
-                                ),
-                                body: Container(
-                                  alignment: Alignment.topLeft,
-                                  child: HomePage(title: 'Home',),
-                                ),
-                              );
-                            }));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Voucher()));
+
+
+
+                        // Navigator.of(context).push(MaterialPageRoute<void>(
+                        //     builder: (BuildContext context) {
+                        //       return Scaffold(
+                        //         appBar: AppBar(
+                        //           automaticallyImplyLeading: false,
+                        //           // Used for removing back buttoon.
+                        //           backgroundColor: Colors.red.shade700,
+                        //           title: Text("Home"),
+                        //           // title: CustomAppBar(title: pModel.elementAt(index).pName,),
+                        //         ),
+                        //         body: Container(
+                        //           alignment: Alignment.topLeft,
+                        //           child: HomePage(title: 'Home',),
+                        //         ),
+                        //       );
+                        //     })
+
+                       // );
                       },
                     )
                 ),

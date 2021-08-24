@@ -5,7 +5,7 @@ import 'custom_gridview.dart';
 class CustomVoucherDetails extends StatelessWidget {
   String amount;
 
-  CustomVoucherDetails({required this.amount});
+  CustomVoucherDetails({ this.amount});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sq_cafe_user_app/rnd/MyApp.dart';
 
 import 'Login Page.dart';
 import 'rnd/voucher/Voucher.dart';

@@ -4,7 +4,7 @@ import 'package:sq_cafe_user_app/rnd/voucher/VoucherDetails.dart';
 class CustomVoucherColumn extends StatelessWidget {
   String amount;
 
-  CustomVoucherColumn({required this.amount});
+  CustomVoucherColumn({ this.amount});
 
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
     primary: Colors.black87,

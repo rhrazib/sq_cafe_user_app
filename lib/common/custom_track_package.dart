@@ -23,7 +23,7 @@ class CustomTrackPackage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8),
                 //borderRadius: BorderRadius.horizontal(right: 10),
-                child: Image.network(image!,  width: 60.0,
+                child: Image.network(image,  width: 60.0,
     height: 60.0,
     fit: BoxFit.fill,)
 
