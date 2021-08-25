@@ -1,65 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 
-class ProductTile extends StatelessWidget {
+class CartTile extends StatelessWidget {
   final Product product;
 
-  const ProductTile(this.product);
+  const CartTile(this.product);
 
   @override
   Widget build(BuildContext context) {
     final cartController = Get.put(CartController());
 
     return Card(
+
       margin: const EdgeInsets.all(12),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment:
+              MainAxisAlignment.spaceBetween,
               children: [
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment:
+                  CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      product.name,
+                    Text(product.count.toString(),
                       style: TextStyle(fontSize: 24),
                     ),
-                    Text("product.description"),
+                    Text(
+                        "product.description"),
                   ],
                 ),
-                Text(product.price, style: TextStyle(fontSize: 24)),
+                Text(product.price,
+                    style: TextStyle(fontSize: 24)),
               ],
             ),
             RaisedButton(
               onPressed: () {
-                var isExist = false;
-                cartController.cartItems.forEach((element) {
-                  if (element.name == product.name) {
-                    isExist = true;
-                    showToast("Already added.", context: context);
-                  }
-                });
-                if (!isExist) cartController.addToCart(product);
-                // var isExist=false;
                 // cartController.cartItems.forEach((element) {
                 //   if (element.name == product.name) {
-                //     isExist=true;
-                //     var pro = double.parse(element.price)+double.parse(product.price);
-                //     element.price=pro.toString();
+                //     var pro = double.parse(element.price)+double.parse(element.price);
+                //     product.price=pro.toString();
                 //     product.count=product.count+1;
-                //     //cartController.removeFromCart(product);
-                //    // if(product.count.)
-                //     cartController.addToCart(element);
+                //   } else {
+                //     cartController
+                //         .addToCart(product);
                 //   }
                 // });
-                // if(!isExist)
-                //  cartController.addToCart(product);
               },
               color: Colors.blue,
               textColor: Colors.white,
@@ -67,23 +59,28 @@ class ProductTile extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () {
-                cartController.removeFromCart(product);
+                cartController
+                    .removeFromCart(product);
               },
               color: Colors.red,
               textColor: Colors.white,
               child: Text('Delete'),
             ),
-            Obx(() => IconButton(
+            Obx(() =>
+                IconButton(
                   icon: product.isFavorite.value
                       ? Icon(Icons.check_box_rounded)
-                      : Icon(Icons.check_box_outline_blank_outlined),
+                      : Icon(Icons
+                      .check_box_outline_blank_outlined),
                   onPressed: () {
-                    product.isFavorite.toggle();
+                    product.isFavorite
+                        .toggle();
                   },
                 ))
           ],
         ),
       ),
+
     );
     // return Card(
     //   elevation: 2,

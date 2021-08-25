@@ -32,6 +32,7 @@ class Product {
     this.productApiUrl,
     this.apiFeaturedImage,
     this.productColors,
+    this.count
   });
 
   int id;
@@ -53,7 +54,7 @@ class Product {
   String productApiUrl;
   String apiFeaturedImage;
   List<ProductColor> productColors;
-
+int count;
   var isFavorite = false.obs;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
