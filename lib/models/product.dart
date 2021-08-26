@@ -54,7 +54,7 @@ class Product {
   String productApiUrl;
   String apiFeaturedImage;
   List<ProductColor> productColors;
-int count;
+int count=0;
   var isFavorite = false.obs;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(

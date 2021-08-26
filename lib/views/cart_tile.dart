@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
@@ -42,6 +43,8 @@ class CartTile extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () {
+                showToast(product.count.toString()+"aa", context: context);
+
                 // cartController.cartItems.forEach((element) {
                 //   if (element.name == product.name) {
                 //     var pro = double.parse(element.price)+double.parse(element.price);
