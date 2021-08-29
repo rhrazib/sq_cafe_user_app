@@ -145,7 +145,7 @@ class ProductTile extends StatefulWidget {
 
 class _ProductTilePageState extends State<ProductTile> {
   final Product product;
-  var countItem = 0.obs;
+  var countItem = 1.obs;
 
   increment() => countItem++;
 
@@ -181,7 +181,8 @@ class _ProductTilePageState extends State<ProductTile> {
                       Row(
                         children: [
                           Image.network(
-                            "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+                            product.imageLink,
+                           // "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
                             height: 70,
                             width: 70,
                           ),

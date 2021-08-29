@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/product_tile.dart';
 
+import 'cart/AddToCartPage.dart';
 import 'cart_tile.dart';
 
 class Body extends StatefulWidget {
@@ -24,7 +25,10 @@ class _BodyState extends State<Body> {
         //  crossAxisSpacing: 16,
         // mainAxisSpacing: 16,
         itemBuilder: (context, index) {
-          return CartTile(
+
+          // return CartTile(
+          //     cartController.cartItems[index]);
+          return AddtoCartPage(
               cartController.cartItems[index]);
         },
         //  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
