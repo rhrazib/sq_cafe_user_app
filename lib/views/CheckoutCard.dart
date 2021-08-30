@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 
+import 'checkout/CheckoutScreen.dart';
+
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
     Key key,
@@ -58,7 +60,9 @@ class CheckoutCard extends StatelessWidget {
             SizedBox(height: 20),
             DefaultButton(
               text: "Review payment & location",
-              press: () {},
+              press: () {
+                Get.to(CheckoutScreen());
+              },
             ),
 
           ],
