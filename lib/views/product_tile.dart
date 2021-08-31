@@ -252,7 +252,7 @@ class _ProductTilePageState extends State<ProductTile> {
                     total = i*l;
 
                   });
-                  showToast("Cart Updated"+total.toString(), context: context);
+                  showToast("Cart Added"+total.toString(), context: context);
                 }
               },
               color: Colors.blue,
