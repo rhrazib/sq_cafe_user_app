@@ -29,6 +29,25 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute<void>(
+              builder: (BuildContext context) {
+                return CartScreen();
+              },));
+          },
+          backgroundColor: Colors.amber,
+          icon: Icon(
+            Icons.add_shopping_cart_rounded,
+            color: Colors.black,
+          ),
+          label: GetX<CartController>(builder: (controller) {
+            return Text(
+              controller.count.toString(),
+              style: TextStyle(color: Colors.black, fontSize: 24),
+            );
+          }),
+        ),
         appBar: AppBar(
           automaticallyImplyLeading: false, // Used for removing back buttoon.
           backgroundColor: Colors.grey.shade50,
@@ -111,40 +130,50 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                     }),
                   ),
                   // Expanded(
-                  Container(
-                    height: 140,
-                    child: GetX<CartController>(builder: (controller) {
-                      return Scaffold(
-                        body: Text(
-                          'Total amount: \$ ${controller.totalPrice}',
-                          style: TextStyle(fontSize: 32, color: Colors.black),
-                        ),
-                        floatingActionButton: FloatingActionButton.extended(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute<void>(
-                              builder: (BuildContext context) {
-                                return CartScreen();
-                              },));
-                          },
-                          backgroundColor: Colors.amber,
-                          icon: Icon(
-                            Icons.add_shopping_cart_rounded,
-                            color: Colors.black,
-                          ),
-                          label: GetX<CartController>(builder: (controller) {
-                            return Text(
-                              controller.count.toString(),
-                              style: TextStyle(color: Colors.black, fontSize: 24),
-                            );
-                          }),
-                        ),
-                      );
 
 
 
 
-                    }),
-                  )
+
+                  // Container(
+                  //   height: 140,
+                  //   child: GetX<CartController>(builder: (controller) {
+                  //     return Scaffold(
+                  //       body: Text(
+                  //         'Total amount: \$ ${controller.totalPrice}',
+                  //         style: TextStyle(fontSize: 32, color: Colors.black),
+                  //       ),
+                  //       floatingActionButton: FloatingActionButton.extended(
+                  //         onPressed: () {
+                  //           Navigator.of(context).push(MaterialPageRoute<void>(
+                  //             builder: (BuildContext context) {
+                  //               return CartScreen();
+                  //             },));
+                  //         },
+                  //         backgroundColor: Colors.amber,
+                  //         icon: Icon(
+                  //           Icons.add_shopping_cart_rounded,
+                  //           color: Colors.black,
+                  //         ),
+                  //         label: GetX<CartController>(builder: (controller) {
+                  //           return Text(
+                  //             controller.count.toString(),
+                  //             style: TextStyle(color: Colors.black, fontSize: 24),
+                  //           );
+                  //         }),
+                  //       ),
+                  //     );
+                  //
+                  //
+                  //
+                  //
+                  //   }),
+                  // )
+
+
+
+
+
                   // ),
                   // SizedBox(height: 100),
                 ],

@@ -1,10 +1,16 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:group_radio_button/group_radio_button.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/views/checkout/CheckoutScreen.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
+import 'package:sq_cafe_user_app/views/counter/CheckBoxInListView.dart';
+import 'package:sq_cafe_user_app/views/counter/constants.dart';
+
+import '../CartScreen.dart';
 
 class FoodDetailsPage extends StatefulWidget {
   final Product product;
@@ -22,11 +28,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    String _singleValue = "1/2";
+    String _singleValue = "Personal";
 
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Color(0xFFFAFAFA),
@@ -40,100 +44,210 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
           ),
           brightness: Brightness.light,
           actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.business_center,
-                  color: Color(0xFF3a3737),
-                ),
-                onPressed: () {
-                  //  Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
-                })
+            Badge(
+              badgeContent: Text('3'),
+              child: IconButton(
+                  icon: Icon(
+                    Icons.add_shopping_cart,
+                    color: Color(0xFF3a3737),
+                  ),
+                  onPressed: () {
+                    Get.to(CartScreen());
+                    //  Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
+                  }),
+            )
+
+// Container(
+//   child:
+//   Badge(
+//     badgeContent: Text('3'),
+//     child: Icon(Icons.add_shopping_cart),
+//   ),
+// )
+
+
+
           ],
         ),
-        body: Container(
-          padding: EdgeInsets.only(
-            left: 15,
-            right: 15,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Image.asset(
-                  'assets/' + 'ic_best_food_8' + ".jpeg",
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.only(
+              left: 15,
+              right: 15,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Image.asset(
+                    'assets/' + 'ic_best_food_8' + ".jpeg",
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3.0),
+                  ),
+                  elevation: 1,
+                  margin: EdgeInsets.all(5),
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3.0),
-                ),
-                elevation: 1,
-                margin: EdgeInsets.all(5),
-              ),
-              /*  Container(
-                height: 150,
-                child:FoodDetailsSlider(
-                    slideImage1: "assets/images/bestfood/ic_best_food_8.jpeg",
-                    slideImage2: "assets/images/bestfood/ic_best_food_9.jpeg",
-                    slideImage3: "assets/images/bestfood/ic_best_food_10.jpeg"),
-              ),*/
+                /*  Container(
+                  height: 150,
+                  child:FoodDetailsSlider(
+                      slideImage1: "assets/images/bestfood/ic_best_food_8.jpeg",
+                      slideImage2: "assets/images/bestfood/ic_best_food_9.jpeg",
+                      slideImage3: "assets/images/bestfood/ic_best_food_10.jpeg"),
+                ),*/
 
-              FoodTitleWidget(
-                  productName: "Grilled Salmon",
-                  productPrice: product.price, ////"\$96.00",
-                  productHost: "Q cafe"),
-              // SizedBox(
-              //   height: 15,
-              // ),
-              DetailContentMenu(),
-            //todo need to change
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(' Choice of Flavour',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      Spacer(),
-                      Text(' 1 Required'),
+                FoodTitleWidget(
+                    productName: "Grilled Salmon",
+                    productPrice: product.price, ////"\$96.00",
+                    productHost: "Q cafe"),
+                // SizedBox(
+                //   height: 15,
+                // ),
+                DetailContentMenu(),
+                //todo need to change
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            ' Choice of Flavour',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          Spacer(),
+                          Text(' 1 Required'),
+                        ],
+                      ),
+                      // RadioButton(
+                      //   description: "1/2",
+                      //   value: "1/2",
+                      //   groupValue: _singleValue,
+                      //   onChanged: (value) => setState(
+                      //     () => _singleValue = value,
+                      //   ),
+                      //   activeColor: Colors.red,
+                      // ),
+                      // RadioButton(
+                      //   description: "1",
+                      //   value: "1",
+                      //   groupValue: _singleValue,
+                      //   onChanged: (value) => setState(
+                      //     () => _singleValue = value,
+                      //   ),
+                      //   //textPosition: RadioButtonTextPosition.left,
+                      //   activeColor: Colors.red,
+                      // ),
+                      // Container(
+                      //     height: MediaQuery.of(context).size.height,
+                      //     child: CheckBoxInListView()),
+
+
 
                     ],
                   ),
-                  RadioButton(
-                    description: "1/2",
-                    value: "1/2",
-                    groupValue: _singleValue,
-                    onChanged: (value) => setState(
-                          () => _singleValue = value,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                // Card(
+                //   child: Column(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: <Widget>[
+                //       Row(
+                //         crossAxisAlignment: CrossAxisAlignment.center,
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           Icon(Icons.payments_outlined),
+                //           Text(' Payment methods'),
+                //         ],
+                //       ),
+                //       RadioButton(
+                //         description: "Personal",
+                //         value: "Personal",
+                //         groupValue: _singleValue,
+                //         onChanged: (value) => setState(
+                //               () => _singleValue = value,
+                //         ),
+                //         activeColor: Colors.red,
+                //       ),
+                //       RadioButton(
+                //         description: "Official",
+                //         value: "Official",
+                //         groupValue: _singleValue,
+                //         onChanged: (value) => setState(
+                //               () => _singleValue = value,
+                //         ),
+                //         //textPosition: RadioButtonTextPosition.left,
+                //         activeColor: Colors.red,
+                //       ),
+                //     ],
+                //   ),
+                // ),
+
+            Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      "Special instructions",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xFF3a3a3b),
+                          fontWeight: FontWeight.w500),
                     ),
-                    activeColor: Colors.red,
-                  ),
-                  RadioButton(
-                    description: "1",
-                    value: "1",
-                    groupValue: _singleValue,
-                    onChanged: (value) => setState(
-                          () => _singleValue = value,
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      "Please let us know if you are allergic to anything or if we need to avoid anything.",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFFa9a9a9),
+                          fontWeight: FontWeight.w400),
                     ),
-                    //textPosition: RadioButtonTextPosition.left,
-                    activeColor: Colors.red,
+            Container(
+              margin: EdgeInsets.only(top:16,bottom: 16),
+              child: TextFormField(
+                minLines: 3,
+                maxLines: 5,
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(
+                  hintText: 'delivery instructions',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   ),
-                ],
+                ),
               ),
             ),
-              SizedBox(
-                height: 15,
-              ),
-              AddToCartMenu(this.product),
+                  ],
+                )
+              ],
+            )
 
-              // BottomMenu(),
-            ],
+                //  AddToCartMenu(this.product),
+
+                // BottomMenu(),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+        bottomNavigationBar: Container(
+          height: 55,
+          margin: EdgeInsets.only(bottom: 16),
+          child: AddToCartMenu(this.product),
+        ));
   }
 }
 
@@ -220,42 +334,44 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
   @override
   Widget build(BuildContext context) {
     final cartController = Get.put(CartController());
-    return Center(
+    return Container(
+      margin: EdgeInsets.only(left: 24,right: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          IconButton(
-            onPressed: () {
-              setState(() {
-                decrement();
-              });
+          buildOutlineButton(
+            icon: Icons.remove,
+            press: () {
+              if (countItem > 1) {
+                setState(() {
+                  decrement();
+                });
+              }
             },
-            icon: Icon(Icons.remove),
-            color: Colors.black,
-            iconSize: 30,
           ),
-          Text(
-            '$countItem',
-            style: new TextStyle(
-                fontSize: 18.0,
-                color: Colors.black,
-                fontWeight: FontWeight.w400),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
+            child: Text(
+              // if our item is less  then 10 then  it shows 01 02 like that
+              countItem.toString().padLeft(2, "0"),
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
-          IconButton(
-            onPressed: () {
+          buildOutlineButton(
+            icon: Icons.add,
+            press: () {
               setState(() {
                 increment();
               });
             },
-            icon: Icon(Icons.add),
-            color: Color(0xFFfd2c2c),
-            iconSize: 30,
           ),
+          Spacer(),
           InkWell(
             onTap: () {
               // Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
             },
             child: Container(
+              margin: EdgeInsets.only(left: 8, right: 8),
               width: 200.0,
               height: 45.0,
               decoration: new BoxDecoration(

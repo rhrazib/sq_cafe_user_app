@@ -45,95 +45,162 @@ class _ProductTilePageState extends State<ProductTile> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
+                    flex: 8,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
-                            Image.network(
-                              product.imageLink,
-                             // "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
-                              height: 70,
-                              width: 70,
-                            ),
-                            Text(
-                              product.name.substring(0, 10),
-                              style: TextStyle(fontSize: 14),
+
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  product.name.substring(0, 20),
+                                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
+                                ),
+                                // Text(
+                                //   product.description.substring(0, 30),
+                                // ),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.65
+          ,
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                product.description,
+                maxLines: 2,
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w400,
+                    height: 1.50),
+                textAlign: TextAlign.justify,
+              ),   Text(
+                "from Tk "+product.price,
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
+                    height: 1.50),
+                textAlign: TextAlign.justify,
+              ),
+            ],
+          )
+
+
+        )
+                              ],
                             ),
                           ],
                         ),
-                        Text(
-                          product.description.substring(0, 35),
-                        ),
+
                       ],
                     ),
                   ),
-                  Text(product.price, style: TextStyle(fontSize: 24)),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.remove),
-                    onPressed: () {
-                      setState(() {
-                        decrement();
-                      });
-                    },
-                    iconSize: 15,
-                  ),
-                  //Text(cartController.countItem.string),
-                  Text('${countItem}'),
+                 // Spacer(),
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width * 0.35,
+                  //
+                  //   child:
+                    Expanded(
+                      flex: 2,
+                      // child:
+                      // Card(
+                      //     clipBehavior: Clip.antiAlias,
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(10.0),
+                      //     ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              product.imageLink,
+                              fit: BoxFit.cover,
+                            ),
+                          )
+                    //  ),
+                    ),
 
-                  IconButton(
-                    icon: Icon(Icons.add),
-                    onPressed: () {
-                      setState(() {
-                        increment();
-                      });
-                    },
-                    iconSize: 15,
-                  ),
+                      // Image.network(
+                      //   product.imageLink,
+                      //   // "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+                      // ),
+                    //),
+                 // ),
+                 // Text(product.price, style: TextStyle(fontSize: 24)),
                 ],
               ),
-              RaisedButton(
-                onPressed: () {
-                  double total;
-                  var isExist = false;
-                  cartController.cartItems.forEach((element) {
-                    if (element.id == product.id) {
-                      isExist = true;
-                      product.count = countItem.toInt();
-                    }
-                  });
-                  if (isExist) {
-                    var itemcount =product.count = countItem.toInt();
-                    product.count = countItem.toInt();
-                    isExist = false;
-                    total = double.parse(product.price)*itemcount;
-                    showToast("Cart Updated"+total.toString(), context: context);
-                  } else {
-                    var itemcount =product.count = countItem.toInt();
-                    cartController.addToCart(product);
-                    showToast("Added to Cart"+product.name, context: context);
-                    setState(() {
-                      double  l =itemcount.toDouble();
-                     var i = double.parse(product.price);
-                      total = i*l;
-                    });
-                    showToast("Cart Added"+total.toString(), context: context);
-                  }
-                },
-                color: Colors.blue,
-                textColor: Colors.white,
-                child: Text('Add to Cart'),
-              ),
+
+
+              // Column(
+              //   children: [
+              //     IconButton(
+              //       icon: Icon(Icons.remove),
+              //       onPressed: () {
+              //         setState(() {
+              //           decrement();
+              //         });
+              //       },
+              //       iconSize: 15,
+              //     ),
+              //     //Text(cartController.countItem.string),
+              //     Text('${countItem}'),
+              //
+              //     IconButton(
+              //       icon: Icon(Icons.add),
+              //       onPressed: () {
+              //         setState(() {
+              //           increment();
+              //         });
+              //       },
+              //       iconSize: 15,
+              //     ),
+              //   ],
+              // ),
+
+
+              // RaisedButton(
+              //   onPressed: () {
+              //     double total;
+              //     var isExist = false;
+              //     cartController.cartItems.forEach((element) {
+              //       if (element.id == product.id) {
+              //         isExist = true;
+              //         product.count = countItem.toInt();
+              //       }
+              //     });
+              //     if (isExist) {
+              //       var itemcount =product.count = countItem.toInt();
+              //       product.count = countItem.toInt();
+              //       isExist = false;
+              //       total = double.parse(product.price)*itemcount;
+              //       showToast("Cart Updated"+total.toString(), context: context);
+              //     } else {
+              //       var itemcount =product.count = countItem.toInt();
+              //       cartController.addToCart(product);
+              //       showToast("Added to Cart"+product.name, context: context);
+              //       setState(() {
+              //         double  l =itemcount.toDouble();
+              //        var i = double.parse(product.price);
+              //         total = i*l;
+              //       });
+              //       showToast("Cart Added"+total.toString(), context: context);
+              //     }
+              //   },
+              //   color: Colors.blue,
+              //   textColor: Colors.white,
+              //   child: Text('Add to Cart'),
+              // ),
+
+
+
               // RaisedButton(
               //   onPressed: () {
               //     cartController.removeFromCart(product);
