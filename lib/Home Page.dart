@@ -7,6 +7,8 @@ import 'HomeSnacksCard.dart';
 import 'OrderGridView.dart';
 import 'rnd/Search.dart';
 import 'rnd/SearchTest.dart';
+import 'rnd/new rnd/FoodGroceriesAvailabilityView.dart';
+import 'rnd/new rnd/PopularCategoriesView.dart';
 import 'rnd/voucher/Voucher.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,100 +28,73 @@ class _MyHomePageState extends State<HomePage> {
       //resizeToAvoidBottomPadding: true,
       body: Scaffold(
 
+
       body:  SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 16.0),
+          padding: EdgeInsets.only( top: 16.0),
           child: Column(
             children: <Widget>[
-              //HomeScreenSearch(),
-              // SizedBox(
-              //   height: 290,
+            // new Container(//todo its serach bar for home page
+            //   margin: EdgeInsets.only(top: 10),
+            //   padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+            //   decoration: BoxDecoration(
+            //     color: Colors.black38.withAlpha(10),
+            //     borderRadius: BorderRadius.all(
+            //       Radius.circular(20),
+            //     ),
+            //   ),
+            //   child: Expanded(
+            //     child: Row(
+            //       children: <Widget>[
+            //         Expanded(
+            //           child:TextFormField(
+            //       controller:inputController,
+            //             decoration: InputDecoration(
+            //               hintText: "Search Your feed",
+            //               hintStyle: TextStyle(
+            //                 color: Colors.black.withAlpha(120),
+            //               ),
+            //               border: InputBorder.none,
+            //             ),
+            //               onTap: () {
+            //                 Navigator.of(context).push(MaterialPageRoute<void>(
+            //                   builder: (BuildContext context) {
+            //                     return AdvancedSearch(inputController.text);
+            //                   },));                        }
+            //           )
+            //         ),
+            //         InkWell(
+            //           child: Icon(
+            //             Icons.search,
+            //             color: Colors.black.withAlpha(120),
+            //           ),
+            //             onTap: () {
+            //               Navigator.of(context).push(MaterialPageRoute<void>(
+            //                 builder: (BuildContext context) {
+            //                   return AdvancedSearch(inputController.text);
+            //                 },));                        }
+            //         )
+            //       ],
+            //     ),
+            //   ),
+            // ),
+              FoodGroceriesAvailabilityView(),
+              // InkWell(
+              //   child:FoodGroceriesAvailabilityView(), //HomeCard(),
+              //   onTap:(){
+              //     Navigator.of(context).push(MaterialPageRoute<void>(
+              //         builder: (BuildContext context) {
+              //           return Voucher();
+              //         },));
+              //     // Navigator.push(
+              //     //     context,
+              //     //     MaterialPageRoute(
+              //     //         builder: (context) =>
+              //     //             Voucher()));
+              //   },
               // ),
-         // new InkWell(
-         // onTap: (){
-        // print("Container clicked");
-        // Navigator.of(context).push(MaterialPageRoute<void>(
-        //   builder: (BuildContext context) {
-        //     return AdvancedSearch();
-        //   },));
-    //    },
-            //child:
-            new Container(
-              margin: EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.black38.withAlpha(10),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20),
-                ),
-              ),
-              child: Expanded(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child:TextFormField(
-                  controller:inputController,
-                        decoration: InputDecoration(
-                          hintText: "Search Your feed",
-                          hintStyle: TextStyle(
-                            color: Colors.black.withAlpha(120),
-                          ),
-                          border: InputBorder.none,
-                        ),
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute<void>(
-                              builder: (BuildContext context) {
-                                return AdvancedSearch(inputController.text);
-                              },));                        }
-                      )
-                      //Text(
-
-                       // "Search Your feed"
-                        // decoration: InputDecoration(
-                        //   hintText: "Search Your feed",
-                        //   hintStyle: TextStyle(
-                        //     color: Colors.black.withAlpha(120),
-                        //   ),
-                        //   border: InputBorder.none,
-                        // ),
-                        // onChanged: (v) {
-                        // },
-                     // ),
-                    ),
-                    InkWell(
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.black.withAlpha(120),
-                      ),
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute<void>(
-                            builder: (BuildContext context) {
-                              return AdvancedSearch(inputController.text);
-                            },));                        }
-                    )
-                  ],
-                ),
-              ),
-            ),
-       // ),
-
-
-              InkWell(
-                child: HomeCard(),
-                onTap:(){
-                  Navigator.of(context).push(MaterialPageRoute<void>(
-                      builder: (BuildContext context) {
-                        return Voucher();
-                      },));
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) =>
-                  //             Voucher()));
-                },
-              ),
              // HomeCard(),
-              HomeSnacksCard(),
+             // HomeSnacksCard(),//todo new
               // Expanded(child:
               // OrderGridView()
               //
@@ -128,24 +103,21 @@ class _MyHomePageState extends State<HomePage> {
           ),
         ),
       ),
-bottomNavigationBar:new  Container(
-height: 108,
-  //width: double.infinity,
-
-  child:Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-Text("Your Favourite Deals",style: TextStyle(fontWeight: FontWeight.bold),),
-      Expanded(child: OrderGridView()),
-    ],
-  )
-
-),
+// bottomNavigationBar:new  Container(
+// height: 108,
+//   child:Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+// Text("Your Favourite Deals",style: TextStyle(fontWeight: FontWeight.bold),),
+//       Expanded(child: OrderGridView()),
+//     ],
+//   )
+// ),
+//       bottomNavigationBar:new Container(
+//         height: 183,
+//         child: PopularCategoriesView(),
+//       )
     )
-
-          //  Body()
-
-
     );
   }
 }

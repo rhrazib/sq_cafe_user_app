@@ -85,7 +85,7 @@ class FormCard extends StatelessWidget {
                             automaticallyImplyLeading: false,
                             // Used for removing back buttoon.
                             backgroundColor: Colors.red.shade700,
-                            title: Text("Home"),
+                          //  title: Text("Home"),
 
                             // title: CustomAppBar(title: pModel.elementAt(index).pName,),
                           ),
@@ -93,7 +93,9 @@ class FormCard extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: HomePage(
                               title: 'Home',
+
                             ),
+
                           ),
 
                         );
