@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sq_cafe_user_app/views/drawer/NavigationDrawer.dart';
 
 import 'HomeCard.dart';
 import 'HomeSnacksCard.dart';
@@ -9,7 +10,9 @@ import 'rnd/Search.dart';
 import 'rnd/SearchTest.dart';
 import 'rnd/new rnd/FoodGroceriesAvailabilityView.dart';
 import 'rnd/new rnd/PopularCategoriesView.dart';
+import 'rnd/new rnd/app_colors.dart';
 import 'rnd/voucher/Voucher.dart';
+import 'views/drawer/DrawerMenu.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key,  this.title}) : super(key: key);
@@ -23,13 +26,37 @@ class _MyHomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     TextEditingController inputController = new TextEditingController();
     return new Scaffold(
+
       resizeToAvoidBottomInset : false,
       backgroundColor: Colors.white,
       //resizeToAvoidBottomPadding: true,
       body: Scaffold(
 
-
-      body:  SingleChildScrollView(
+        appBar: AppBar(
+          title: Text("Home"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.comment),
+              tooltip: 'Comment Icon',
+              onPressed: () {},
+            ), //IconButton
+            IconButton(
+              icon: Icon(Icons.settings),
+              tooltip: 'Setting Icon',
+              onPressed: () {},
+            ), //IconButton
+          ], //<Widget>[]
+          backgroundColor: swiggyOrange,//Colors.red.shade700,
+          elevation: 50.0,
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Menu Icon',
+              onPressed: () => Scaffold.of(context).openEndDrawer()
+          ), //IconButton
+          brightness: Brightness.dark,
+        ),
+drawer: NavigationDrawer(),//DrawerMenu(),
+    body:  SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only( top: 16.0),
           child: Column(

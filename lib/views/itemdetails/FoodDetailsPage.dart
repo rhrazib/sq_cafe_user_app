@@ -2,12 +2,10 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
-import 'package:group_radio_button/group_radio_button.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
-import 'package:sq_cafe_user_app/views/checkout/CheckoutScreen.dart';
+import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
-import 'package:sq_cafe_user_app/views/counter/CheckBoxInListView.dart';
 import 'package:sq_cafe_user_app/views/counter/constants.dart';
 
 import '../CartScreen.dart';
@@ -29,45 +27,44 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   @override
   Widget build(BuildContext context) {
     String _singleValue = "Personal";
-
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Color(0xFFFAFAFA),
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Color(0xFF3a3737),
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          brightness: Brightness.light,
+          title: Text("Item Details"),
           actions: <Widget>[
-            Badge(
-              badgeContent: Text('3'),
-              child: IconButton(
-                  icon: Icon(
-                    Icons.add_shopping_cart,
-                    color: Color(0xFF3a3737),
-                  ),
-                  onPressed: () {
-                    Get.to(CartScreen());
-                    //  Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
-                  }),
+            Padding(
+              padding: EdgeInsets.only(right: 16, top: 8),
+              child: Badge(
+                badgeColor: Colors.white,
+                badgeContent: GetX<CartController>(
+                  builder: (controller) {
+                    return Text(
+                      controller.count.toString(),
+                      style: TextStyle(color: Colors.black, fontSize: 18),
+                    );
+                  },
+                ),
+                child: IconButton(
+                    icon: Icon(
+                      Icons.add_shopping_cart,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Get.to(CartScreen());
+                    }),
+              ),
             )
-
-// Container(
-//   child:
-//   Badge(
-//     badgeContent: Text('3'),
-//     child: Icon(Icons.add_shopping_cart),
-//   ),
-// )
-
-
-
           ],
+          //<Widget>[]
+          backgroundColor: swiggyOrange,
+          //Colors.red.shade700,
+          elevation: 50.0,
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              tooltip: 'Menu Icon',
+              onPressed: () => Navigator.pop(context)),
+          //IconButton
+          brightness: Brightness.dark,
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -146,9 +143,6 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       // Container(
                       //     height: MediaQuery.of(context).size.height,
                       //     child: CheckBoxInListView()),
-
-
-
                     ],
                   ),
                 ),
@@ -190,51 +184,52 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 //   ),
                 // ),
 
-            Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      "Special instructions",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xFF3a3a3b),
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 5,
-                ),
                 Column(
                   children: <Widget>[
-                    Text(
-                      "Please let us know if you are allergic to anything or if we need to avoid anything.",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFFa9a9a9),
-                          fontWeight: FontWeight.w400),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "Special instructions",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xFF3a3a3b),
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
                     ),
-            Container(
-              margin: EdgeInsets.only(top:16,bottom: 16),
-              child: TextFormField(
-                minLines: 3,
-                maxLines: 5,
-                keyboardType: TextInputType.multiline,
-                decoration: InputDecoration(
-                  hintText: 'delivery instructions',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  ),
-                ),
-              ),
-            ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Text(
+                          "Please let us know if you are allergic to anything or if we need to avoid anything.",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Color(0xFFa9a9a9),
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 16, bottom: 16),
+                          child: TextFormField(
+                            minLines: 3,
+                            maxLines: 5,
+                            keyboardType: TextInputType.multiline,
+                            decoration: InputDecoration(
+                              hintText: 'delivery instructions',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 )
-              ],
-            )
 
                 //  AddToCartMenu(this.product),
 
@@ -335,7 +330,7 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
   Widget build(BuildContext context) {
     final cartController = Get.put(CartController());
     return Container(
-      margin: EdgeInsets.only(left: 24,right: 16),
+      margin: EdgeInsets.only(left: 24, right: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

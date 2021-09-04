@@ -44,7 +44,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                       ),
                       UIHelper.verticalSpaceSmall(),
                       Text(
-                        'Cafe service (Sat -thu)-9:00 am to 6:00 pm',
+                        'Cafe service (Sat -thurs)-9:00 am to 6:00 pm',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyText1.copyWith(
                               fontSize: 16.0,

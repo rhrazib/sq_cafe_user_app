@@ -41,7 +41,7 @@ class CheckoutBottomBar extends StatelessWidget {
               children: [
                 Text("Total",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                 Spacer(),
-                Text("Tk "+cartController.totalPrice.toString().substring(0,6),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text("Tk "+cartController.totalPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
               ],
             ),

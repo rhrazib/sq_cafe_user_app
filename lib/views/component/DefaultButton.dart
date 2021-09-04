@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -17,7 +18,7 @@ class DefaultButton extends StatelessWidget {
       height: 45,
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color: Colors.red,
+        color: swiggyOrange,
         onPressed: press,
         child: Text(
           text,
