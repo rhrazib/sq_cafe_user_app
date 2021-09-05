@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sq_cafe_user_app/rnd/voucher/Voucher.dart';
 
+import '../SearchHome.dart';
 import '../SearchTest.dart';
 import 'GenieGroceryCardView.dart';
 import 'PopularCategoriesView.dart';
@@ -60,7 +61,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute<void>(
                 builder: (BuildContext context) {
-                  return AdvancedSearch(inputController.text);
+                  return SearchHomePage();//AdvancedSearch(inputController.text);
                 },));
               // Navigator.of(context).push(SearchModal());
             },
@@ -82,39 +83,12 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                       child: Icon(Icons.search, color:  Colors.grey),
                     ),
                     Expanded(
-
                         child:Text(
                             "Search in Q Cafe",style: TextStyle(
                           color: Colors.grey
                         ),
                         )
-                        // TextFormField(
-                        //     controller:inputController,
-                        //     decoration: InputDecoration(
-                        //       hintText: "Search in Q Cafe",
-                        //       hintStyle: TextStyle(
-                        //         color: Colors.black.withAlpha(120),
-                        //       ),
-                        //       border: InputBorder.none,
-                        //     ),
-                        //     onTap: () {
-                        //       Navigator.of(context).push(MaterialPageRoute<void>(
-                        //         builder: (BuildContext context) {
-                        //           return AdvancedSearch(inputController.text);
-                        //         },));                        }
-                        // )
                     ),
-                    // InkWell(
-                    //     child: Icon(
-                    //       Icons.search,
-                    //       color: Colors.black.withAlpha(120),
-                    //     ),
-                    //     onTap: () {
-                    //       Navigator.of(context).push(MaterialPageRoute<void>(
-                    //         builder: (BuildContext context) {
-                    //           return AdvancedSearch(inputController.text);
-                    //         },));                        }
-                    // )
                   ],
                 ),
               ),

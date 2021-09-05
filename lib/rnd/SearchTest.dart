@@ -30,7 +30,7 @@ class _ListPersonPageState extends State<ListPersonPage> {
 
   String filter = "";
 
-  Widget appBarTitle = new Text("List of People");
+  Widget appBarTitle = new Text("List of Items");
   Icon actionIcon = new Icon(Icons.search);
 
   _ListPersonPageState(this.searchTxt);

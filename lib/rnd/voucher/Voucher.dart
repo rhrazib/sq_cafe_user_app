@@ -207,53 +207,57 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                             return ProductTile(
                                 productController.productList[index]);
                           },
-                          //  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
                         );
                     }),
                   ),
-                  // Expanded(
-
-                  // Container(
-                  //   height: 140,
-                  //   child: GetX<CartController>(builder: (controller) {
-                  //     return Scaffold(
-                  //       body: Text(
-                  //         'Total amount: \$ ${controller.totalPrice}',
-                  //         style: TextStyle(fontSize: 32, color: Colors.black),
-                  //       ),
-                  //       floatingActionButton: FloatingActionButton.extended(
-                  //         onPressed: () {
-                  //           Navigator.of(context).push(MaterialPageRoute<void>(
-                  //             builder: (BuildContext context) {
-                  //               return CartScreen();
-                  //             },));
-                  //         },
-                  //         backgroundColor: Colors.amber,
-                  //         icon: Icon(
-                  //           Icons.add_shopping_cart_rounded,
-                  //           color: Colors.black,
-                  //         ),
-                  //         label: GetX<CartController>(builder: (controller) {
-                  //           return Text(
-                  //             controller.count.toString(),
-                  //             style: TextStyle(color: Colors.black, fontSize: 24),
-                  //           );
-                  //         }),
-                  //       ),
-                  //     );
-                  //
-                  //
-                  //
-                  //
-                  //   }),
-                  // )
-
-                  // ),
-                  // SizedBox(height: 100),
                 ],
               )),
-              CustomVoucherColumn(amount: "$amount"),
-              CustomVoucherColumn(amount: "$amount"),
+              Container(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Obx(() {
+                          if (productController.isLoading.value)
+                            return Center(child: CircularProgressIndicator());
+                          else
+                            return ListView.builder(
+                              //  crossAxisCount: 1,
+                              itemCount: productController.productList.length,
+                              //  crossAxisSpacing: 16,
+                              // mainAxisSpacing: 16,
+                              itemBuilder: (context, index) {
+                                return ProductTile(
+                                    productController.productList[index]);
+                              },
+                            );
+                        }),
+                      ),
+                    ],
+                  )),
+              Container(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Obx(() {
+                          if (productController.isLoading.value)
+                            return Center(child: CircularProgressIndicator());
+                          else
+                            return ListView.builder(
+                              //  crossAxisCount: 1,
+                              itemCount: productController.productList.length,
+                              //  crossAxisSpacing: 16,
+                              // mainAxisSpacing: 16,
+                              itemBuilder: (context, index) {
+                                return ProductTile(
+                                    productController.productList[index]);
+                              },
+                            );
+                        }),
+                      ),
+                    ],
+                  )),
+              //CustomVoucherColumn(amount: "$amount"),
+              //CustomVoucherColumn(amount: "$amount"),
             ],
           ),
         ));
