@@ -127,7 +127,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                                   ),
                                   UIHelper.verticalSpaceExtraSmall(),
                                   Text(
-                                    'No-contact delivery available',
+                                    'Order now on your favourites!',
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyText1
@@ -182,7 +182,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                 right: -10.0,
                 child: ClipOval(
                   child: Image.asset(
-                    'assets/ic_best_food_8.jpeg',
+                    'assets/images/teacoffee.jpeg',
                     width: 110.0,
                     height: 110.0,
                     fit: BoxFit.cover,
@@ -198,7 +198,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
               GenieGroceryCardView(
                 title: 'Snacks',
                 subtitle: 'Anything you need,\ndelivered',
-                image: 'assets/images/food8.jpg',
+                image: 'assets/images/images.jpeg',
                 onTap: isTabletDesktop
                     ? () {}
                     : () {
@@ -213,7 +213,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
               GenieGroceryCardView(
                 title: 'Bevarage',
                 subtitle: 'Esentials delivered\nin 20 Min',
-                image: 'assets/ic_best_food_8.jpeg',
+                image: 'assets/images/coca-cola-products.jpeg',
                 onTap: isTabletDesktop
                     ? () {}
                     : () {
@@ -242,7 +242,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
               // ),
             ],
           ),
-          PopularCategoriesView()
+         // PopularCategoriesView() todo bottom bar
 
 
 

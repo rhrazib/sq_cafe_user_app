@@ -79,8 +79,11 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   semanticContainer: true,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: Image.asset(
-                    'assets/' + 'ic_best_food_8' + ".jpeg",
-                  ),
+                    product.imageLink,
+                    fit: BoxFit.cover, ),
+                  // Image.asset(
+                  //   'assets/' + 'ic_best_food_8' + ".jpeg",
+                  // ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(3.0),
                   ),
@@ -96,13 +99,13 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 ),*/
 
                 FoodTitleWidget(
-                    productName: "Grilled Salmon",
+                    productName: product.name,
                     productPrice: product.price, ////"\$96.00",
                     productHost: "Q cafe"),
                 // SizedBox(
                 //   height: 15,
                 // ),
-                DetailContentMenu(),
+                DetailContentMenu(product),
                 //todo need to change
                 Container(
                   child: Column(
@@ -425,11 +428,13 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
 }
 
 class DetailContentMenu extends StatelessWidget {
+  const DetailContentMenu(this.product);
+  final Product product;
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.',
+        product.description,
         style: TextStyle(
             fontSize: 14.0,
             color: Colors.black87,

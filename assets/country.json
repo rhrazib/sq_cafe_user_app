@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "brand": "maybelline",
+    "name": "Latte Coffee",
+    "price": "90",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "assets/images/latte.jpeg",
+    "product_link": "https://well.ca/products/maybelline-volum-express-the-rocket_84350.html",
+    "website_link": "https://well.ca",
+    "description": "Caffè latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam. Depending on the skill of the barista, the foam can be poured in such a way to create a picture.",
+    "rating": null,
+    "category": null,
+    "product_type": "mascara",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:58.856Z",
+    "updated_at": "2017-12-23T20:31:47.966Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/11.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/011/original/open-uri20171223-4-iiztlg?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "Very Black "
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "brand": "maybelline",
+    "name": "Cappuccino Coffee",
+    "price": "90",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "assets/images/cappuccino.jpeg",
+    "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
+    "website_link": "https://well.ca",
+    "description": "The famous cappuccino tastes creamy, a little bitter and mildly sweet from the milk. Note that dairy milk is what's usually used in a cappuccino from a cafe or restaurant unless you specify that you'd like vegan milk. If the espresso used is particularly bitter, it will be reflected in the flavor of the cappuccino.",
+    "rating": 4.2,
+    "category": null,
+    "product_type": "mascara",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:56.475Z",
+    "updated_at": "2017-12-23T20:31:47.757Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#2d1e17",
+        "colour_name": "Brownish Black "
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "brand": "maybelline",
+    "name": "Black Coffee",
+    "price": "90",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/dfaf77464a8cb52a1a8f2a15e8abf920_ra,w158,h184_pa,w158,h184.png",
+    "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
+    "website_link": "https://well.ca",
+    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
+    "rating": 4.2,
+    "category": null,
+    "product_type": "mascara",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:56.475Z",
+    "updated_at": "2017-12-23T20:31:47.757Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#2d1e17",
+        "colour_name": "Brownish Black "
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "brand": "maybelline",
+    "name": "Expresso Coffee(Short)",
+    "price": "90",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/dfaf77464a8cb52a1a8f2a15e8abf920_ra,w158,h184_pa,w158,h184.png",
+    "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
+    "website_link": "https://well.ca",
+    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
+    "rating": 4.2,
+    "category": null,
+    "product_type": "mascara",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:56.475Z",
+    "updated_at": "2017-12-23T20:31:47.757Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#2d1e17",
+        "colour_name": "Brownish Black "
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "brand": "maybelline",
+    "name": "Expresso Coffee(Logn)",
+    "price": "90",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/dfaf77464a8cb52a1a8f2a15e8abf920_ra,w158,h184_pa,w158,h184.png",
+    "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
+    "website_link": "https://well.ca",
+    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
+    "rating": 4.2,
+    "category": null,
+    "product_type": "mascara",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:56.475Z",
+    "updated_at": "2017-12-23T20:31:47.757Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#2d1e17",
+        "colour_name": "Brownish Black "
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "brand": "maybelline",
+    "name": "Coke",
+    "price": "110",
+    "price_sign": null,
+    "currency": null,
+    "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/dfaf77464a8cb52a1a8f2a15e8abf920_ra,w158,h184_pa,w158,h184.png",
+    "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
+    "website_link": "https://well.ca",
+    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
+    "rating": 4.2,
+    "category": null,
+    "product_type": "bevarage",
+    "tag_list": [],
+    "created_at": "2016-10-01T18:10:56.475Z",
+    "updated_at": "2017-12-23T20:31:47.757Z",
+    "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
+    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
+    "product_colors": [
+      {
+        "hex_value": "#000000",
+        "colour_name": "Blackest Black "
+      },
+      {
+        "hex_value": "#2d1e17",
+        "colour_name": "Brownish Black "
+      }
+    ]
+  }
+]

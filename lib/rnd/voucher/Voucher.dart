@@ -4,10 +4,12 @@ import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/common/custom_voucher_column.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/product_controller.dart';
+import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/views/CartScreen.dart';
+import 'package:sq_cafe_user_app/views/bevarage_product_tile.dart';
 import 'package:sq_cafe_user_app/views/homepage.dart';
 import 'package:sq_cafe_user_app/views/product_tile.dart';
 
@@ -22,11 +24,22 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
   final cartController = Get.put(CartController());
 
   var amount = 500;
+  var bevarageList = List<Product>().obs;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+
+
+
+
+    for(int i=0; i < productController.productList.length; i++) {
+      if(productController.productList.value.elementAt(i).productType.toString().contains("bevarage")){
+
+        bevarageList.add(productController.productList.elementAt(i));
+      }
+    }
   }
 
   TabBar get _tabBar => TabBar(
@@ -244,12 +257,12 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                           else
                             return ListView.builder(
                               //  crossAxisCount: 1,
-                              itemCount: productController.productList.length,
+                              itemCount: bevarageList.value.length,
                               //  crossAxisSpacing: 16,
                               // mainAxisSpacing: 16,
                               itemBuilder: (context, index) {
-                                return ProductTile(
-                                    productController.productList[index]);
+                                return BevarageProductTile(
+                                    bevarageList[index]);
                               },
                             );
                         }),

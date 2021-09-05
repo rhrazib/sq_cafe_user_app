@@ -6,16 +6,16 @@ import 'package:sq_cafe_user_app/models/product.dart';
 
 import 'itemdetails/FoodDetailsPage.dart';
 
-class ProductTile extends StatefulWidget {
+class BevarageProductTile extends StatefulWidget {
   final Product product;
 
-  const ProductTile(this.product);
+  const BevarageProductTile(this.product);
 
   @override
   _ProductTilePageState createState() => _ProductTilePageState(this.product);
 }
 
-class _ProductTilePageState extends State<ProductTile> {
+class _ProductTilePageState extends State<BevarageProductTile> {
   final Product product;
   var countItem = 1.obs;
 
