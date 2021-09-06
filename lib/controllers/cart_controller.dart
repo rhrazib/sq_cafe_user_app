@@ -8,6 +8,11 @@ class CartController extends GetxController {
   int get count => cartItems.length;
   double get totalPrice => cartItems.fold(0, (sum, item) => sum + double.parse(item.price));
 
+
+
+   //todo total price
+  double get totalAllPrice => cartItems.fold(0, (sum, item) => sum + item.totalproductPrice);
+
   addToCart(Product product) {
     cartItems.add(product);
   }

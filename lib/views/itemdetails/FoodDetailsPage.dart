@@ -228,7 +228,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                             maxLines: 5,
                             keyboardType: TextInputType.multiline,
                             decoration: InputDecoration(
-                              hintText: 'delivery instructions',
+                              hintText: ' instructions',
                               hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(
                                 borderRadius:
@@ -401,6 +401,7 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                       product.count = countItem.toInt();
                       isExist = false;
                       total = double.parse(product.price) * itemcount;
+                      product.totalproductPrice=total;
                       showToast("Cart Updated" + total.toString(),
                           context: context);
                     } else {
@@ -412,6 +413,8 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                         double l = itemcount.toDouble();
                         var i = double.parse(product.price);
                         total = i * l;
+                        product.totalproductPrice=total;
+
                       });
                       showToast("Cart Added" + total.toString(),
                           context: context);

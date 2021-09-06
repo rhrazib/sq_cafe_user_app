@@ -106,7 +106,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(' Total:',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                        Text(' Tk 400',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        Text(' Tk '+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ],

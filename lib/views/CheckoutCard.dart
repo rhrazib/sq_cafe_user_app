@@ -53,7 +53,7 @@ class CheckoutCard extends StatelessWidget {
                 //   child: Text("Total (incl VAT)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                 // ),
                 Spacer(),
-                Text("Tk "+cartController.totalPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text("Tk "+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
               ],
             ),

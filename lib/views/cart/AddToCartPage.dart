@@ -104,7 +104,15 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                       icon: Icon(Icons.remove),
                       onPressed: () {
                         setState(() {
-                          decrement();
+                              decrement();
+                          //total = double.parse(product.price) * product.count;
+                          product.totalproductPrice= double.parse(product.price) * product.count;
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CartScreen(),
+                                ),
+                              );
                         });
                       },
                       iconSize: 15,
@@ -115,6 +123,13 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                       onPressed: () {
                         setState(() {
                           increment();
+                          product.totalproductPrice= double.parse(product.price) * product.count;
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CartScreen(),
+                            ),
+                          );
                         });
                       },
                       iconSize: 15,
