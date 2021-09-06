@@ -3,16 +3,18 @@ import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/order_controller.dart';
 import 'package:sq_cafe_user_app/views/checkout/OrderList.dart';
-class OrderBody extends StatefulWidget {
-  const OrderBody({Key key}) : super(key: key);
+
+import 'OrderDetailsList.dart';
+class OrderDetailsBody extends StatefulWidget {
+  const OrderDetailsBody({Key key}) : super(key: key);
 
   @override
   _CheckOutBodyState createState() => _CheckOutBodyState();
 }
 
-class _CheckOutBodyState extends State<OrderBody> {
-  final cartController = Get.put(CartController());
-  //final orderController = Get.put(OrderController());
+class _CheckOutBodyState extends State<OrderDetailsBody> {
+ // final cartController = Get.put(CartController());
+  final orderController = Get.put(OrderController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class _CheckOutBodyState extends State<OrderBody> {
             children: [
               Padding(
                   padding:EdgeInsets.only(top: 16),
-                  child: Text("10-20 mins",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)),
+                  child: Text("All of your order",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)),
               Text("Estimated delivery time"),
               IconButton(
                 icon: Icon(Icons.call),
@@ -83,9 +85,12 @@ class _CheckOutBodyState extends State<OrderBody> {
                         //height:200,  //MediaQuery.of(context).size.height,
                         margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                         child: ListView.builder(
-                          itemCount: cartController.cartItems.length,
+                          itemCount: orderController.orderItems.length,
                           itemBuilder: (context, index) {
-                            return OrderList(cartController.cartItems[index]);
+                            // orderController.orderItems[index].cartItems.forEach((element) {
+                            //   element.name;
+                            // });
+                            return OrderDetailsList(orderController.orderItems[index]);
                           },
                         ),
                       ),
@@ -109,7 +114,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(' Total:',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                        Text(' Tk '+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        Text(' Tk '+orderController.orderItems.value.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                        // Text(' Tk '+orderController.orderItems.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),

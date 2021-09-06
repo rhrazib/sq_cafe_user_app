@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
-import 'package:sq_cafe_user_app/views/CartScreen.dart';
 
 
 class OrderList extends StatefulWidget {

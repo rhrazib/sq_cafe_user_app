@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/views/drawer/NavigationDrawer.dart';
 
 import 'HomeCard.dart';
@@ -12,6 +13,8 @@ import 'rnd/new rnd/PopularCategoriesView.dart';
 import 'rnd/new rnd/app_colors.dart';
 import 'rnd/voucher/Voucher.dart';
 import 'views/drawer/DrawerMenu.dart';
+import 'views/orderdetails/OrderDetailsBody.dart';
+import 'views/orderdetails/OrderDetailsScreen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -33,15 +36,22 @@ class _MyHomePageState extends State<HomePage> {
           appBar: AppBar(
             title: Text("Home"),
             actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.comment),
-                tooltip: 'Comment Icon',
-                onPressed: () {},
-              ), //IconButton
+              // IconButton(
+              //   icon: Icon(Icons.comment),
+              //   tooltip: 'Comment Icon',
+              //   onPressed: () {},
+              // ), //IconButton
               IconButton(
                 icon: Icon(Icons.settings),
                 tooltip: 'Setting Icon',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderDetailsScreen(),
+                    ),
+                  );
+                },
               ), //IconButton
             ],
             //<Widget>[]

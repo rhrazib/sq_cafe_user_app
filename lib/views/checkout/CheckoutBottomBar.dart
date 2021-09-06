@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
+import 'package:sq_cafe_user_app/controllers/order_controller.dart';
+import 'package:sq_cafe_user_app/models/order_product.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 import 'package:sq_cafe_user_app/views/order/OrderScreen.dart';
+import 'package:intl/intl.dart';
+
 
 class CheckoutBottomBar extends StatelessWidget {
   const CheckoutBottomBar({
@@ -12,6 +16,7 @@ class CheckoutBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cartController = Get.put(CartController());
+    final orderController = Get.put(OrderController());
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: 15,
@@ -49,6 +54,10 @@ class CheckoutBottomBar extends StatelessWidget {
             DefaultButton(
               text: "Place Order",
               press: () {
+                final DateTime now = DateTime.now();
+                final DateFormat format = DateFormat('yyyy-MM-dd');
+                final String formatted = format.format(now);
+                orderController.orderItems.add(new OrderProduct(dateTime:formatted,cartItems: cartController.cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
                 Get.to(OrderScreen());
               },
             ),
