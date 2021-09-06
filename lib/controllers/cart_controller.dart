@@ -19,6 +19,9 @@ class CartController extends GetxController {
 
   increment() => countItem++;
   decrement() => countItem--;
+
+
+
 // cartController.cartItems.forEach((element) {
 //   if (element.name == product.name) {
 //     isExist=true;

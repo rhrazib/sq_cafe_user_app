@@ -57,7 +57,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 children: [
                   Text(
                     'Tea/Coffee',
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    style: TextStyle(fontSize: 12, color: Colors.white),
                   ),
                 ],
               ),
@@ -71,7 +71,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 children: [
                   Text(
                     'Snacks',
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    style: TextStyle(fontSize: 12, color: Colors.white),
                   ),
                 ],
               ),
@@ -85,7 +85,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 children: [
                   Text(
                     'Bevarage',
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    style: TextStyle(fontSize: 12, color: Colors.white),
                   ),
                 ],
               ),

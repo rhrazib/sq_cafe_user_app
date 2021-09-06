@@ -54,6 +54,7 @@ class Product {
   String productApiUrl;
   String apiFeaturedImage;
   List<ProductColor> productColors;
+  String suger="";
 int count=0;
 double totalproductPrice=0.0;
   var isFavorite = false.obs;

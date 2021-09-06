@@ -4,9 +4,11 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/rnd/new%20rnd/PopularCategoriesView.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 import 'package:sq_cafe_user_app/views/counter/constants.dart';
+import 'package:sq_cafe_user_app/views/itemdetails/ChoiceOfFlavourView.dart';
 
 import '../CartScreen.dart';
 
@@ -111,19 +113,22 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            ' Choice of Flavour',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          Spacer(),
-                          Text(' 1 Required'),
-                        ],
-                      ),
+                      // Row(
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     Text(
+                      //       ' Choice of Flavour',
+                      //       style: TextStyle(
+                      //           fontSize: 18, fontWeight: FontWeight.bold),
+                      //     ),
+                      //     Spacer(),
+                      //     Text(' 1 Required'),
+                      //   ],
+                      // ),
+
+
+
                       // RadioButton(
                       //   description: "1/2",
                       //   value: "1/2",
@@ -146,6 +151,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       // Container(
                       //     height: MediaQuery.of(context).size.height,
                       //     child: CheckBoxInListView()),
+
+
+                      ChoiceOfFlavourView(product)
                     ],
                   ),
                 ),
