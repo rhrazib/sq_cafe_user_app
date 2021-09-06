@@ -49,16 +49,20 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                     children: [
                       Row(
                         children: [
-                          Image.network(
+                          Image.asset(
                             product.imageLink,
                             height: 80,
-                            width: 80,
-                          ),
+                            width: 80,),
+                          // Image.network(
+                          //   product.imageLink,
+                          //   height: 80,
+                          //   width: 80,
+                          // ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
 
-                              Text(product.name.substring(0, 12),
+                              Text(product.name,
                                 style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
                               ),
 

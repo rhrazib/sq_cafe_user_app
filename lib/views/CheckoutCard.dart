@@ -40,7 +40,7 @@ class CheckoutCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("Total (incl VAT)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text("Total",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
                 // Container(
                 //   padding: EdgeInsets.all(10),

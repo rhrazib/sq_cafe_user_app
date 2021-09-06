@@ -24,22 +24,22 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
   final cartController = Get.put(CartController());
 
   var amount = 500;
-  var bevarageList = List<Product>().obs;
+  //var bevarageList = List<Product>().obs;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 3,initialIndex: productController.tabInitialIndex, vsync: this);
 
 
 
 
-    for(int i=0; i < productController.productList.length; i++) {
-      if(productController.productList.value.elementAt(i).productType.toString().contains("bevarage")){
-
-        bevarageList.add(productController.productList.elementAt(i));
-      }
-    }
+    // for(int i=0; i < productController.productList.length; i++) {
+    //   if(productController.productList.elementAt(i).productType.toString().compareTo("bevarage") != null){
+    //
+    //     bevarageList.add(productController.productList.elementAt(i));
+    //   }
+    // }
   }
 
   TabBar get _tabBar => TabBar(
@@ -47,6 +47,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
         labelColor: Colors.blue,
         indicatorColor: Colors.white,
         controller: _tabController,
+
         tabs: [
           Expanded(
             child: Padding(
@@ -213,12 +214,12 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                       else
                         return ListView.builder(
                           //  crossAxisCount: 1,
-                          itemCount: productController.productList.length,
+                          itemCount: productController.teacoffeeList.length,
                           //  crossAxisSpacing: 16,
                           // mainAxisSpacing: 16,
                           itemBuilder: (context, index) {
                             return ProductTile(
-                                productController.productList[index]);
+                                productController.teacoffeeList[index]);
                           },
                         );
                     }),
@@ -235,12 +236,12 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                           else
                             return ListView.builder(
                               //  crossAxisCount: 1,
-                              itemCount: productController.productList.length,
+                              itemCount: productController.snacksList.length,
                               //  crossAxisSpacing: 16,
                               // mainAxisSpacing: 16,
                               itemBuilder: (context, index) {
-                                return ProductTile(
-                                    productController.productList[index]);
+                                return BevarageProductTile(
+                                    productController.snacksList[index]);
                               },
                             );
                         }),
@@ -257,12 +258,12 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                           else
                             return ListView.builder(
                               //  crossAxisCount: 1,
-                              itemCount: bevarageList.value.length,
+                              itemCount: productController.bevarageList.length,
                               //  crossAxisSpacing: 16,
                               // mainAxisSpacing: 16,
                               itemBuilder: (context, index) {
-                                return BevarageProductTile(
-                                    bevarageList[index]);
+                                return ProductTile(
+                                    productController.bevarageList[index]);
                               },
                             );
                         }),

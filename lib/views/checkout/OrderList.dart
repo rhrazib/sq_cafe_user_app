@@ -43,9 +43,9 @@ class _OrderListPageState extends State<OrderList> {
                     children: [
                       Row(
                         children: [
-                          Text(product.count.toString()+" X "+product.name.substring(0,15), style: TextStyle(fontSize: 14)),
+                          Text(product.count.toString()+" X "+product.name, style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text("Tk "+ (product.totalproductPrice).toString().substring(0,5), style: TextStyle(fontSize: 14)),
+                          Text("Tk "+ (product.totalproductPrice).toString(), style: TextStyle(fontSize: 14)),
                         ],
                       ),
                     ],

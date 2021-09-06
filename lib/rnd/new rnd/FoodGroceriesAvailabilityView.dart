@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sq_cafe_user_app/controllers/product_controller.dart';
 import 'package:sq_cafe_user_app/rnd/voucher/Voucher.dart';
 
 import '../SearchHome.dart';
@@ -14,6 +16,7 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController inputController = new TextEditingController();
+    final ProductController productController = Get.put(ProductController());
 
     final isTabletDesktop = Responsive.isTabletDesktop(context);
 
@@ -168,6 +171,8 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                   onTap: isTabletDesktop
                       ? () {}
                       : () {
+                    productController.tabInitialIndex=0;
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -202,7 +207,16 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                 onTap: isTabletDesktop
                     ? () {}
                     : () {
-                        // Navigator.push(
+                  productController.tabInitialIndex=1;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Voucher(),
+                    ),
+                  );
+
+
+                  // Navigator.push(
                         //   context,
                         //   MaterialPageRoute(
                         //     builder: (context) => GenieScreen(),
@@ -217,12 +231,13 @@ class FoodGroceriesAvailabilityView extends StatelessWidget {
                 onTap: isTabletDesktop
                     ? () {}
                     : () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => GenieScreen(),
-                        //   ),
-                        // );
+                  productController.tabInitialIndex=2;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Voucher(),
+                    ),
+                  );
                       },
               ),
               // GenieGroceryCardView(

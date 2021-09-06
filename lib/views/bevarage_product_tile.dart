@@ -38,7 +38,8 @@ class _ProductTilePageState extends State<BevarageProductTile> {
 
     return InkWell(
       onTap: () {
-        Get.to(FoodDetailsPage(product));
+        showToast("Not available now",context: context);
+       // Get.to(FoodDetailsPage(product));
       },
       child: Card(
         margin: const EdgeInsets.all(12),
