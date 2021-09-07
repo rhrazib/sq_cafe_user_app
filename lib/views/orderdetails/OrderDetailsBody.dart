@@ -14,7 +14,7 @@ class OrderDetailsBody extends StatefulWidget {
 
 class _CheckOutBodyState extends State<OrderDetailsBody> {
  // final cartController = Get.put(CartController());
-  final orderController = Get.put(OrderController());
+ // final orderController = Get.put(OrderController());
 
   @override
   Widget build(BuildContext context) {
@@ -85,12 +85,12 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
                         //height:200,  //MediaQuery.of(context).size.height,
                         margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                         child: ListView.builder(
-                          itemCount: orderController.orderItems.length,
+                          itemCount: OrderController.orderItems.length,
                           itemBuilder: (context, index) {
                             // orderController.orderItems[index].cartItems.forEach((element) {
                             //   element.name;
                             // });
-                            return OrderDetailsList(orderController.orderItems[index]);
+                            return OrderDetailsList(OrderController.orderItems[index]);
                           },
                         ),
                       ),
@@ -114,7 +114,7 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(' Total:',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                        Text(' Tk '+orderController.orderItems.value.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        Text(' Tk '+OrderController.orderItems.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                        // Text(' Tk '+orderController.orderItems.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
