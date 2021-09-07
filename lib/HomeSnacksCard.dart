@@ -7,6 +7,7 @@ class HomeSnacksCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
+
       width: double.infinity,
       padding: EdgeInsets.only(bottom: 1),
       child: Row(
