@@ -55,11 +55,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -70,11 +74,10 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/blackcoffee.jpeg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
-    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
-    "rating": 4.2,
+    "description": "Black coffee is simply coffee that is normally brewed without the addition of additives such as sugar, milk, cream, or added flavors. While it has a slightly bitter taste compared to when it is flavored with additives, many people love a strong cup of black coffee. In fact, for some, it is part of their everyday diet.",  "rating": 4.2,
     "category": null,
     "product_type": "teacoffee",
     "tag_list": [],
@@ -85,11 +88,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -100,11 +107,10 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/expresso.jpg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
-    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
-    "rating": 4.2,
+    "description": "The short black is the foundation of any espresso drink. The term 'short' refers to the fact that this is simply an espresso shot, no extra water is added apart from what is used to brew the coffee." ,   "rating": 4.2,
     "category": null,
     "product_type": "teacoffee",
     "tag_list": [],
@@ -115,11 +121,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -130,11 +140,10 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/expresso.jpg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
-    "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
-    "rating": 4.2,
+    "description": "A long espresso is an espresso coffee that's not quite as intense as a typical Italian-style espresso. This is because the barista pulls about twice as much water through the coffee grounds, taking twice as much time. The resulting beverage is undoubtedly still espresso, but slightly milder and with more volume.",   "rating": 4.2,
     "category": null,
     "product_type": "teacoffee",
     "tag_list": [],
@@ -145,11 +154,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -646,7 +659,7 @@
   "price": "30",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/biscuit.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -675,7 +688,7 @@
   "price": "30",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/chips.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
