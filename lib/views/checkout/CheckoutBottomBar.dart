@@ -57,7 +57,8 @@ class CheckoutBottomBar extends StatelessWidget {
                 final DateTime now = DateTime.now();
                 final DateFormat format = DateFormat('yyyy-MM-dd');
                 final String formatted = format.format(now);
-                orderController.orderItems.add(new OrderProduct(dateTime:formatted,cartItems: cartController.cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
+              //  orderController.orderItems.add(new OrderProduct(dateTime:formatted,cartItems: cartController.cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
+             OrderController.orderItems.add(new OrderProduct(dateTime:formatted,cartItems: cartController.cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
                 Get.to(OrderScreen());
               },
             ),
