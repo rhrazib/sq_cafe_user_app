@@ -55,11 +55,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -70,7 +74,7 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/black_coffee.jpeg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
     "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -85,11 +89,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -100,7 +108,7 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/expresso.jpg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
     "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -115,11 +123,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -130,7 +142,7 @@
     "price": "90",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/expresso.jpg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
     "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -145,11 +157,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },
@@ -160,7 +176,7 @@
     "price": "20",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/latte.jpeg",
+    "image_link": "assets/images/greentea.jpeg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
     "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -175,11 +191,15 @@
     "product_colors": [
       {
         "hex_value": "#000000",
-        "colour_name": "Blackest Black "
+        "colour_name": "1/2 tsp "
       },
       {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
+        "hex_value": "#202020",
+        "colour_name": "1 tsp"
+      },
+      {
+        "hex_value": "#202020",
+        "colour_name": "2 tsp"
       }
     ]
   },{
@@ -204,11 +224,15 @@
   "product_colors": [
     {
       "hex_value": "#000000",
-      "colour_name": "Blackest Black "
+      "colour_name": "1/2 tsp "
     },
     {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
+      "hex_value": "#202020",
+      "colour_name": "1 tsp"
+    },
+    {
+      "hex_value": "#202020",
+      "colour_name": "2 tsp"
     }
   ]
 },{
@@ -233,11 +257,15 @@
   "product_colors": [
     {
       "hex_value": "#000000",
-      "colour_name": "Blackest Black "
+      "colour_name": "1/2 tsp "
     },
     {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
+      "hex_value": "#202020",
+      "colour_name": "1 tsp"
+    },
+    {
+      "hex_value": "#202020",
+      "colour_name": "2 tsp"
     }
   ]
 },{
@@ -262,11 +290,15 @@
   "product_colors": [
     {
       "hex_value": "#000000",
-      "colour_name": "Blackest Black "
+      "colour_name": "1/2 tsp "
     },
     {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
+      "hex_value": "#202020",
+      "colour_name": "1 tsp"
+    },
+    {
+      "hex_value": "#202020",
+      "colour_name": "2 tsp"
     }
   ]
 },{
@@ -291,11 +323,15 @@
   "product_colors": [
     {
       "hex_value": "#000000",
-      "colour_name": "Blackest Black "
+      "colour_name": "1/2 tsp "
     },
     {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
+      "hex_value": "#202020",
+      "colour_name": "1 tsp"
+    },
+    {
+      "hex_value": "#202020",
+      "colour_name": "2 tsp"
     }
   ]
 },
@@ -327,7 +363,7 @@
     "price": "110",
     "price_sign": null,
     "currency": null,
-    "image_link": "assets/images/coke.jpeg",
+    "image_link": "assets/images/sprite.jpeg",
     "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
     "website_link": "https://well.ca",
     "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -340,14 +376,6 @@
     "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
     "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
     "product_colors": [
-      {
-        "hex_value": "#000000",
-        "colour_name": "Blackest Black "
-      },
-      {
-        "hex_value": "#2d1e17",
-        "colour_name": "Brownish Black "
-      }
     ]
   }, {
   "id": 13,
@@ -356,7 +384,7 @@
   "price": "110",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/fanta.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -369,14 +397,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 14,
@@ -385,7 +405,7 @@
   "price": "110",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/diet_coke.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -398,14 +418,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 15,
@@ -414,7 +426,7 @@
   "price": "110",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/tonic_water.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -427,14 +439,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 16,
@@ -443,7 +447,7 @@
   "price": "110",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/ginger_alley.jpg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -456,14 +460,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 17,
@@ -485,14 +481,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 18,
@@ -501,7 +489,7 @@
   "price": "45",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/diet_coke.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -514,14 +502,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 19,
@@ -530,7 +510,7 @@
   "price": "45",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/sprite.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -543,14 +523,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 20,
@@ -559,7 +531,7 @@
   "price": "45",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/fanta.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -572,14 +544,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 21,
@@ -588,7 +552,7 @@
   "price": "45",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/diet_coke.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -601,14 +565,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 22,
@@ -617,7 +573,7 @@
   "price": "10",
   "price_sign": null,
   "currency": null,
-  "image_link": "assets/images/latte.jpeg",
+  "image_link": "assets/images/minaral_water.jpeg",
   "product_link": "https://well.ca/products/maybelline-great-lash-lots-of-lashes_50739.html",
   "website_link": "https://well.ca",
   "description": "Introducing a Great Lash innovation - Great Lash Lots of Lashes!The favourite Maybelline mascara now gives the look of more lashes than ever, thanks to the exclusive Great Little Grabber Brush. In just one swipe, the Grabber Brush easily reaches all lashes - even \nin the corners - for a multiplied lash look without the clumps. The result? Great lashes with lots of impact and not a lot of work.For best results: sweep brush from root to \ntip of lashes. Continue building volume until the desired lash look is \nachieved. Do not let dry between coats. Removes easily with soap and \nwater or eye makeup remover. \n                    ",
@@ -630,14 +586,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 23,
@@ -659,14 +607,6 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
   ]
 }, {
   "id": 24,
@@ -688,14 +628,7 @@
   "product_api_url": "https://makeup-api.herokuapp.com/api/v1/products/9.json",
   "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/000/009/original/open-uri20171223-4-axycg0?1514061107",
   "product_colors": [
-    {
-      "hex_value": "#000000",
-      "colour_name": "Blackest Black "
-    },
-    {
-      "hex_value": "#2d1e17",
-      "colour_name": "Brownish Black "
-    }
+
   ]
 }
 ]
