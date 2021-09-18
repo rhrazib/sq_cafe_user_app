@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 
@@ -25,7 +26,14 @@ class CartController extends GetxController {
   increment() => countItem++;
   decrement() => countItem--;
 
-
+@override
+  void onClose() {
+    // TODO: implement onClose
+  cartItems.clear();
+    super.onClose();
+  }
+  final deliveryInstruction = TextEditingController();
+  String singleValue = "Personal";
 
 // cartController.cartItems.forEach((element) {
 //   if (element.name == product.name) {

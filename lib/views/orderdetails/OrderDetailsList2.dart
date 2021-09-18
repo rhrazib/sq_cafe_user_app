@@ -23,7 +23,10 @@ var name ;
   @override
   void initState() {
     super.initState();
-   // product.totalproductPrice=double.parse(product.price)*product.count;
+    //totalPrice=product.totalproductPrice+product.totalproductPrice;
+  //  double totalAllPrice = product.fold(0, (sum, item) => sum + item.totalproductPrice);
+
+    // product.totalproductPrice=double.parse(product.price)*product.count;
 
     // product.cartItems.forEach((element) {
     //   name=element.name;
@@ -47,12 +50,21 @@ var name ;
                   children: [
                     Row(
                       children: [
-                        Text(""+product.name
-                            +" X ", style: TextStyle(fontSize: 14)),
+                        Text(""+product.name+" X"+" "+product.count.toString(), style: TextStyle(fontSize: 14)),
                         Spacer(),
                         Text("Tk "+product.totalproductPrice.toString(), style: TextStyle(fontSize: 14)),
                       ],
                     ),
+                    // Divider(
+                    //   color: Colors.black,
+                    // ),
+                    // Row(
+                    //   children: [
+                    //     Text(""+product.name+" X"+" "+product.count.toString(), style: TextStyle(fontSize: 14)),
+                    //     Spacer(),
+                    //     Text("Txt "+totalPrice.toString(), style: TextStyle(fontSize: 14)),
+                    //   ],
+                    // ),
                     // Container(
                     //   height: 200, //MediaQuery.of(context).size.height,
                     //   child: Container(

@@ -4,14 +4,15 @@
 
 import 'dart:convert';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 List<Product> productFromJson(String str) =>
     List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
 
 String productToJson(List<Product> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-class Product {
+@HiveType(typeId: 2)
+class Product{
   Product({
     this.id,
     this.brand,
@@ -34,29 +35,51 @@ class Product {
     this.productColors,
     this.count
   });
-
+  @HiveField(0)
   int id;
+  @HiveField(1)
   Brand brand;
+  @HiveField(2)
   String name;
+  @HiveField(3)
   String price;
+  @HiveField(4)
   dynamic priceSign;
+  @HiveField(5)
   dynamic currency;
+  @HiveField(6)
   String imageLink;
+  @HiveField(7)
   String productLink;
+  @HiveField(8)
   String websiteLink;
+  @HiveField(9)
   String description;
+  @HiveField(10)
   double rating;
+  @HiveField(11)
   String category;
+  @HiveField(12)
   String productType;
+  @HiveField(13)
   List<dynamic> tagList;
+  @HiveField(14)
   DateTime createdAt;
+  @HiveField(15)
   DateTime updatedAt;
+  @HiveField(16)
   String productApiUrl;
+  @HiveField(17)
   String apiFeaturedImage;
+  @HiveField(18)
   List<ProductColor> productColors;
+  @HiveField(19)
   String suger="";
-int count=0;
-double totalproductPrice=0.0;
+  @HiveField(20)
+  int count=0;
+  @HiveField(21)
+  double totalproductPrice=0.0;
+  @HiveField(22)
   var isFavorite = false.obs;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(

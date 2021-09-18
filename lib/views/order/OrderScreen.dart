@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/Home%20Page.dart';
+import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
+import 'package:sq_cafe_user_app/controllers/product_controller.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/views/checkout/CheckoutBottomBar.dart';
 import 'OrderBody.dart';
@@ -34,7 +36,15 @@ AppBar buildAppBar(BuildContext context) {
               color: Colors.white,
             ),
             onPressed: () {
+              final cartController = Get.put(CartController());
+
               Get.offAll(HomePage());
+             // cartController.dispose();
+             // cartController.cartItems.clear();
+          //    cartController.reset();
+
+
+
             }),
       ],
       //<Widget>[]

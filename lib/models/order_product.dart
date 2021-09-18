@@ -1,19 +1,21 @@
 // To parse this JSON data, do
 //
 //     final product = productFromJson(jsonString);
-
-import 'dart:convert';
-import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
-class OrderProduct {
+@HiveType(typeId: 1)
+class OrderProduct extends HiveObject{
+  @HiveField(0)
   String deliveryInstruction;
+  @HiveField(1)
   String dateTime;
+  @HiveField(2)
   String orderId;
-  //var cartItems = List<Product>().obs;
+  @HiveField(3)
   List<Product> cartItems=[];
 
-  OrderProduct({
-      this.deliveryInstruction, this.dateTime, this.orderId, this.cartItems});
+  OrderProduct(
+      this.deliveryInstruction, this.dateTime, this.orderId, this.cartItems);
 }
 
 

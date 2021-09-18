@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:group_radio_button/group_radio_button.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/cart/AddToCartPage.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
 import 'OrderList.dart';
 
@@ -14,11 +15,11 @@ class CheckOutBody extends StatefulWidget {
 }
 
 class _CheckOutBodyState extends State<CheckOutBody> {
-  final cartController = Get.put(CartController());
+ var cartController = Get.put(CartController());
 
   int _stackIndex = 0;
 
-  String _singleValue = "Personal";
+ // static String _singleValue = "Personal";
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _CheckOutBodyState extends State<CheckOutBody> {
           Container(
             margin: EdgeInsets.all(16),
             child: TextFormField(
+              controller: cartController.deliveryInstruction,
               minLines: 3,
               maxLines: 5,
               keyboardType: TextInputType.multiline,
@@ -59,18 +61,19 @@ class _CheckOutBodyState extends State<CheckOutBody> {
                     RadioButton(
                       description: "Personal",
                       value: "Personal",
-                      groupValue: _singleValue,
+                      groupValue: Constant.singleValue,
                       onChanged: (value) => setState(
-                        () => _singleValue = value,
+                        () => Constant.singleValue = value
                       ),
                       activeColor: Colors.red,
+
                     ),
                     RadioButton(
                       description: "Official",
                       value: "Official",
-                      groupValue: _singleValue,
+                      groupValue: Constant.singleValue,
                       onChanged: (value) => setState(
-                        () => _singleValue = value,
+                        () => Constant.singleValue = value,
                       ),
                       //textPosition: RadioButtonTextPosition.left,
                       activeColor: Colors.red,
