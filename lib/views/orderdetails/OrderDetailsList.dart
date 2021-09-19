@@ -55,12 +55,22 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(' Your order number:'),
+                          Text(' Order number:'),
                           Text(' #s4z-nj5d'),
                         ],
                       ),
                     ),
-
+                    Padding(
+                      padding:EdgeInsets.only(bottom: 8),
+                      child: Row(
+                        children: [
+                          Text(" Order Date:",
+                              style: TextStyle(fontSize: 14)),
+                          Spacer(),
+                          Text(""+product.dateTime, style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
+                    ),
                     Padding(
                       padding:EdgeInsets.only(bottom: 8),
                       child: Row(
@@ -72,21 +82,17 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         ],
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text(" Order Date:",
-                            style: TextStyle(fontSize: 14)),
-                        Spacer(),
-                        Text(""+product.dateTime, style: TextStyle(fontSize: 14)),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(" Payment Type:",
-                            style: TextStyle(fontSize: 14)),
-                        Spacer(),
-                        Text(""+product.orderId, style: TextStyle(fontSize: 14)),
-                      ],
+
+                    Padding(
+                      padding:EdgeInsets.only(bottom: 8),
+                      child: Row(
+                        children: [
+                          Text(" Payment Type:",
+                              style: TextStyle(fontSize: 14)),
+                          Spacer(),
+                          Text(""+product.orderId, style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                    // Container(
                     //  height://300,
@@ -129,7 +135,6 @@ class _OrderListPageState extends State<OrderDetailsList> {
                     ),
 
                     Divider(
-
                       color: Colors.grey.shade400,  )
                   ],
                 ),

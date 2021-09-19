@@ -37,7 +37,7 @@ var name ;
   Widget build(BuildContext context) {
     //final ordercontroller = Get.put(OrderController());
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.only(left: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -50,7 +50,7 @@ var name ;
                   children: [
                     Row(
                       children: [
-                        Text(""+product.name+" X"+" "+product.count.toString(), style: TextStyle(fontSize: 14)),
+                        Text(" "+product.name+" X"+" "+product.count.toString(), style: TextStyle(fontSize: 14)),
                         Spacer(),
                         Text("Tk "+product.totalproductPrice.toString(), style: TextStyle(fontSize: 14)),
                       ],

@@ -402,7 +402,7 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                       isExist = false;
                       total = double.parse(product.price) * itemcount;
                       product.totalproductPrice=total;
-                      showToast("Cart Updated" + total.toString(),
+                      showToast("Cart Updated",
                           context: context);
                     } else {
                       var itemcount = product.count = countItem.toInt();
@@ -416,7 +416,7 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                         product.totalproductPrice=total;
 
                       });
-                      showToast("Cart Added" + total.toString(),
+                      showToast("Added to cart",
                           context: context);
                     }
                   },

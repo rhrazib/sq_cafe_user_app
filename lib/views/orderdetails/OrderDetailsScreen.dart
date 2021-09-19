@@ -25,7 +25,7 @@ class _OrderScreenState extends State<OrderDetailsScreen> {
 AppBar buildAppBar(BuildContext context) {
   return
     AppBar(
-      title: Text("Your Order"),
+      title: Text("Order History"),
       actions: <Widget>[
         IconButton(
             icon: Icon(

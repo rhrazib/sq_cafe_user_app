@@ -143,7 +143,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
           // Used for removing back buttoon.
          // toolbarHeight: 85,
 
-          title: Text("Item Details"),
+          title: Text("All Items"),
           backgroundColor: swiggyOrange,
           elevation: 50.0,
           leading: IconButton(

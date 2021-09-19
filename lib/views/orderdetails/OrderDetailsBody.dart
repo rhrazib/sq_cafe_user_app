@@ -45,7 +45,7 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
             children: [
               Padding(
                   padding:EdgeInsets.only(top: 16),
-                  child: Text("All of your order",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)),
+                  child: Text("All of your order",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
 
             ],
           ),
@@ -60,9 +60,9 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                       //  Icon(Icons.reorder),
-                        Padding(
-                            padding:EdgeInsets.only(bottom: 16),
-                            child: Text(' Order Details',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                      //   Padding(
+                      //       padding:EdgeInsets.only(bottom: 16),
+                      //       child: Text(' Order Details',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
                       ],
                     ),
                     // Padding(
