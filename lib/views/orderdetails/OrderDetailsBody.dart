@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:sq_cafe_user_app/common/custom_voucher_column.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/order_controller.dart';
 import 'package:sq_cafe_user_app/models/dbtest/todo_adapter.dart';
@@ -43,7 +44,8 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
                     Container(
                       height: //300,
                       MediaQuery.of(context).size.height,
-                      child: Container(
+                      child:
+                      Container(
                         //height:200,  //MediaQuery.of(context).size.height,
                         margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                         child: ValueListenableBuilder(
@@ -60,7 +62,9 @@ class _CheckOutBodyState extends State<OrderDetailsBody> {
                                 itemCount: box.length,
                                 itemBuilder: (context, index) {
                                   Todo todo = box.getAt(index);
-                                  return OrderDetailsList(todo,);
+                                  return
+                                    CustomVoucherColumn(todo);
+                                    //OrderDetailsList(todo,);
 
                                 });
                           },

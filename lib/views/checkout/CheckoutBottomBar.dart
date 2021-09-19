@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
@@ -25,9 +27,14 @@ class CheckoutBottomBar extends StatefulWidget {
 
 class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
  Box<Todo> todoBox;
-  @override
+ //int randomNumber;
+ final cartController = Get.put(CartController());
+ @override
   void initState() {
  todoBox = Hive.box<Todo>('todos');
+
+ var rng = new Random();
+ cartController.orderId="#SQ188"+(rng.nextInt(100)).toString();
     super.initState();
   }
   // @override
@@ -102,7 +109,7 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
 
                // Box<Todo> todoBox = Hive.box<Todo>('todos');
                // todoBox.add(Todo(title: ""+cartItems.toString(), description: "description"));
-                todoBox.add(Todo(deliveryInstruction: cartController.deliveryInstruction.text,dateTime: formatted,orderId: Constant.singleValue,cartItems: cartItems,allPrice:cartController.totalAllPrice.toString() ));
+                todoBox.add(Todo(deliveryInstruction: cartController.deliveryInstruction.text,dateTime: formatted,orderId: Constant.singleValue,cartItems: cartItems,allPrice:cartController.totalAllPrice.toString(),odrid: cartController.orderId ));
                 //todoBox.close();
                 //  Navigator.of(context).pop();
                //   }

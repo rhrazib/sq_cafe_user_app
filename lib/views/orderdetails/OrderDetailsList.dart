@@ -50,29 +50,29 @@ class _OrderListPageState extends State<OrderDetailsList> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding:EdgeInsets.only(bottom: 8,top: 16),
+                      padding: EdgeInsets.only(bottom: 8, top: 16),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Order number:'),
-                          Text(' #s4z-nj5d'),
+                          Text(product.odrid),
                         ],
                       ),
                     ),
                     Padding(
-                      padding:EdgeInsets.only(bottom: 8),
+                      padding: EdgeInsets.only(bottom: 8),
                       child: Row(
                         children: [
-                          Text(" Order Date:",
-                              style: TextStyle(fontSize: 14)),
+                          Text(" Order Date:", style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text(""+product.dateTime, style: TextStyle(fontSize: 14)),
+                          Text("" + product.dateTime,
+                              style: TextStyle(fontSize: 14)),
                         ],
                       ),
                     ),
                     Padding(
-                      padding:EdgeInsets.only(bottom: 8),
+                      padding: EdgeInsets.only(bottom: 8),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,58 +84,60 @@ class _OrderListPageState extends State<OrderDetailsList> {
                     ),
 
                     Padding(
-                      padding:EdgeInsets.only(bottom: 8),
+                      padding: EdgeInsets.only(bottom: 8),
                       child: Row(
                         children: [
                           Text(" Payment Type:",
                               style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text(""+product.orderId, style: TextStyle(fontSize: 14)),
+                          Text("" + product.orderId,
+                              style: TextStyle(fontSize: 14)),
                         ],
                       ),
                     ),
-                   // Container(
+                    // Container(
                     //  height://300,
                     // MediaQuery.of(context).size.height,
-                      //child:
-                      SingleChildScrollView(
-                        child: Container(
-                       //   padding: EdgeInsets.only(bottom: 0),
-                          height://500,
-   MediaQuery.of(context).size.height*.20,
+                    //child:
+                    SingleChildScrollView(
+                      child: Container(
+                        //   padding: EdgeInsets.only(bottom: 0),
+                        height: //500,
+                            MediaQuery.of(context).size.height * .20,
 //MediaQuery.of(context).size.height/4,
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                          child: ListView.builder(
-                            physics: ClampingScrollPhysics(),
-                            //shrinkWrap: true,
-                            itemCount: product.cartItems.length,
-                            itemBuilder: (context, index) {
-                              // orderController.orderItems[index].cartItems.forEach((element) {
-                              //   element.name;
-                              // });
-                              // var name;
-                              // product.cartItems.forEach((element) {
-                              //   name =element.name;
-                              //   return Text("A"+name);
-                              // });
-                              //return Text(""+product.cartItems[index]);//+product.cartItems[index].name);//OrderDetailsList(orderController.orderItems[index]);
-                              return OrderDetailsList2(product.cartItems[index]);
-                            },
-                          ),
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                        child: ListView.builder(
+                          physics: ClampingScrollPhysics(),
+                          //shrinkWrap: true,
+                          itemCount: product.cartItems.length,
+                          itemBuilder: (context, index) {
+                            // orderController.orderItems[index].cartItems.forEach((element) {
+                            //   element.name;
+                            // });
+                            // var name;
+                            // product.cartItems.forEach((element) {
+                            //   name =element.name;
+                            //   return Text("A"+name);
+                            // });
+                            //return Text(""+product.cartItems[index]);//+product.cartItems[index].name);//OrderDetailsList(orderController.orderItems[index]);
+                            return OrderDetailsList2(product.cartItems[index]);
+                          },
                         ),
                       ),
-                  //  ),
+                    ),
+                    //  ),
                     Row(
                       children: [
-                        Text(" Total Price:",
-                            style: TextStyle(fontSize: 14)),
+                        Text(" Total Price:", style: TextStyle(fontSize: 14)),
                         Spacer(),
-                        Text(""+product.allPrice, style: TextStyle(fontSize: 14)),
+                        Text("" + product.allPrice,
+                            style: TextStyle(fontSize: 14)),
                       ],
                     ),
 
                     Divider(
-                      color: Colors.grey.shade400,  )
+                      color: Colors.grey.shade400,
+                    )
                   ],
                 ),
               ),

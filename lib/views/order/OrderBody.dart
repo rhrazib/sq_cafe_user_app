@@ -59,7 +59,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Your order number:'),
-                          Text(' #s4z-nj5d'),
+                          Text(cartController.orderId),
                         ],
                       ),
                     ),

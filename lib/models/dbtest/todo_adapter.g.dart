@@ -21,7 +21,8 @@ class TodoAdapter extends TypeAdapter<Todo> {
       dateTime: fields[1] as String,
       orderId: fields[2] as String,
       cartItems: fields[3] as List<Product>,
-        allPrice: fields[4] as String
+        allPrice: fields[4] as String,
+      odrid: fields[5] as String,
 
     );
   }
@@ -29,7 +30,7 @@ class TodoAdapter extends TypeAdapter<Todo> {
   @override
   void write(BinaryWriter writer, Todo obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.deliveryInstruction)
       ..writeByte(1)
@@ -39,7 +40,9 @@ class TodoAdapter extends TypeAdapter<Todo> {
       ..writeByte(3)
       ..write(obj.cartItems)
       ..writeByte(4)
-      ..write(obj.allPrice);
+      ..write(obj.allPrice)
+      ..writeByte(5)
+      ..write(obj.odrid);
   }
 
   @override
