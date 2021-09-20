@@ -29,19 +29,19 @@ class _State extends State<CustomGridView> {
       pModel.add(new ProductModel(
           1,
           "Computer",
-          "A computer is a machine that can store and process information. Most computers rely on a binary system that uses two variables, 0 and 1, to complete tasks such as storing data, calculating algorithms, and displaying information.",
-          "5100",
+          "Order From: Mr Rokibul",
+          "Delivery Location: Room No 5",
           4,
           "144",
           "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"));
-      pModel.add(new ProductModel(
-          1,
-          "Android",
-          "Laptops combine all the input/output components and capabilities of a desktop computer, including the display screen, small speakers, a keyboard, data storage device, sometimes an optical disc drive, pointing devices (such as a touchpad or pointing stick), with an operating system, a processor and memory into a single.",
-          "5003",
-          5,
-          "144",
-          "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"));
+      // pModel.add(new ProductModel(
+      //     1,
+      //     "Android",
+      //     "Laptops combine all the input/output components and capabilities of a desktop computer, including the display screen, small speakers, a keyboard, data storage device, sometimes an optical disc drive, pointing devices (such as a touchpad or pointing stick), with an operating system, a processor and memory into a single.",
+      //     "5003",
+      //     5,
+      //     "144",
+      //     "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"));
     }
   }
 
@@ -60,23 +60,20 @@ class _State extends State<CustomGridView> {
                       margin: const EdgeInsets.all(8),
                       // child: IntrinsicHeight(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                       // mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          //  Container(
-                          //   child:
-                          // Image.network(notiModel.elementAt(index).notiChildImgPath,height: 100,width: 100,)
-                          Image.network(
-                            "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
-                            height: 70,
-                            width: double.infinity,
-                          ),
+                          // Image.network(
+                          //   "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+                          //   height: 70,
+                          //   width: double.infinity,
+                          // ),
                           Container(
                               //  child: Align(
                               //  alignment: Alignment.centerLeft,
                               padding: EdgeInsets.all(8),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                //crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     pModel.elementAt(index).pDetails,
@@ -85,31 +82,15 @@ class _State extends State<CustomGridView> {
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 11),
                                   ),
-                                  Text(r"$" ""+pModel.elementAt(index).pRice,
+                                  Text(pModel.elementAt(index).pRice,
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.red.shade900)),
                                   Row(
                                     children: [
-                                      RatingBar.builder(
-                                        itemSize: 9,
-                                        initialRating: pModel.elementAt(index).rating,
-                                        minRating: 1,
-                                        direction: Axis.horizontal,
-                                        allowHalfRating: true,
-                                        itemCount: 5,
-                                        itemPadding: EdgeInsets.symmetric(
-                                            horizontal: 4.0),
-                                        itemBuilder: (context, _) => Icon(
-                                          Icons.star,
-                                          color: Colors.amber,
-                                        ),
-                                        onRatingUpdate: (rating) {
-                                       //   print(rating);
-                                        },
-                                      ),
-                                      Text("("+pModel.elementAt(index).ratingCount+")",
+
+                                      Text("1 Green Tea",
                                           style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,

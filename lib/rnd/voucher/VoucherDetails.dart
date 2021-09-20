@@ -22,7 +22,7 @@ class VoucherDetails extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-              Text(' My Voucher',style: TextStyle(
+              Text(' Home',style: TextStyle(
                   fontSize: 16,color: Colors.black
               ),
               )

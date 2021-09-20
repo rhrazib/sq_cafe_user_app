@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
-        android:label="sq_cafe_user_app"
+        android:label="sq_cafe_attendent_app"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:largeHeap="true">
