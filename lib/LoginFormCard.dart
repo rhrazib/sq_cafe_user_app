@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Home Page.dart';
 import 'OrderGridView.dart';
+import 'rnd/new rnd/app_colors.dart';
 
 class FormCard extends StatefulWidget {
 
@@ -15,7 +16,7 @@ class FormCard extends StatefulWidget {
 class _FormCardState extends State<FormCard> {
   @override
   void initState() {
-    gotoHomeScreen(context);
+   // gotoHomeScreen(context);
     super.initState();
   }
 
@@ -78,7 +79,7 @@ class _FormCardState extends State<FormCard> {
                       width: double.infinity,
                       height: 48,
                       decoration: BoxDecoration(
-                          color: Colors.red.shade800,
+                          color: swiggyOrange,
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(0.0),
                               bottomRight: Radius.circular(5.0),
@@ -101,17 +102,25 @@ class _FormCardState extends State<FormCard> {
   } else if(passwordController.text==""){
     showToast("password is empty",context: context);
   }else if(emailController.text=="razib" && passwordController.text=="1234"){
-    Navigator.of(context).push(MaterialPageRoute<void>(
-        builder: (BuildContext context) {
-          return Scaffold(
-            body: Container(
-              alignment: Alignment.topLeft,
-              child: HomePage(
-                title: 'Home',
-              ),
-            ),
-          );
-        }));  }
+
+    gotoHomeScreen(context);
+
+    // Navigator.of(context).push(MaterialPageRoute<void>(
+    //     builder: (BuildContext context) {
+    //       return Scaffold(
+    //         body: Container(
+    //           alignment: Alignment.topLeft,
+    //           child: HomePage(
+    //             title: 'Home',
+    //           ),
+    //         ),
+    //       );
+    //     })
+
+
+   // );
+
+  }
   else{
     showToast("email or password not match",context: context);
   }
