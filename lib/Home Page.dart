@@ -5,6 +5,7 @@ import 'package:sq_cafe_user_app/views/drawer/NavigationDrawer.dart';
 
 import 'HomeCard.dart';
 import 'HomeSnacksCard.dart';
+import 'Login Page.dart';
 import 'OrderGridView.dart';
 import 'rnd/Search.dart';
 import 'rnd/SearchTest.dart';
@@ -33,38 +34,76 @@ class _MyHomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         //resizeToAvoidBottomPadding: true,
         body: Scaffold(
-          appBar: AppBar(
+          appBar:
+          AppBar(
+            backgroundColor: swiggyOrange,
             title: Text("Home"),
-            actions: <Widget>[
-              // IconButton(
-              //   icon: Icon(Icons.comment),
-              //   tooltip: 'Comment Icon',
-              //   onPressed: () {},
-              // ), //IconButton
-              IconButton(
-                icon: Icon(Icons.settings),
-                tooltip: 'Setting Icon',
-                onPressed: () {
-                  Navigator.push(
+            actions: [
+              PopupMenuButton(
+                  itemBuilder: (context) => [
+                    PopupMenuItem(
+                      child: InkWell(
+    onTap: () {
+      Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => OrderDetailsScreen(),
                     ),
                   );
-                },
-              ), //IconButton
+
+
+    },
+                          child: Text("History")
+
+                      ),
+                      value: 1,
+                    ),
+                    PopupMenuItem(
+                      child: InkWell(
+                          onTap: (){
+                            Get.offAll(LoginPage());
+
+                          },
+                          child: Text("Logout")),
+                      value: 2,
+                    )
+                  ]
+              )
             ],
-            //<Widget>[]
-            backgroundColor: swiggyOrange,
-            //Colors.red.shade700,
-            elevation: 50.0,
-            leading: IconButton(
-                icon: Icon(Icons.menu),
-                tooltip: 'Menu Icon',
-                onPressed: () => Scaffold.of(context).openEndDrawer()),
-            //IconButton
-            brightness: Brightness.dark,
           ),
+
+          // AppBar(
+          //   title: Text("Home"),
+          //   actions: <Widget>[
+          //     // IconButton(
+          //     //   icon: Icon(Icons.comment),
+          //     //   tooltip: 'Comment Icon',
+          //     //   onPressed: () {},
+          //     // ), //IconButton
+          //     IconButton(
+          //       icon: Icon(Icons.settings),
+          //       tooltip: 'Setting Icon',
+          //       onPressed: () {
+          //         Navigator.push(
+          //           context,
+          //           MaterialPageRoute(
+          //             builder: (context) => OrderDetailsScreen(),
+          //           ),
+          //         );
+          //       },
+          //     ), //IconButton
+          //   ],
+          //   //<Widget>[]
+          //   backgroundColor: swiggyOrange,
+          //   //Colors.red.shade700,
+          //   elevation: 50.0,
+          //   leading: IconButton(
+          //       icon: Icon(Icons.menu),
+          //       tooltip: 'Menu Icon',
+          //       onPressed: () => Scaffold.of(context).openEndDrawer()),
+          //   //IconButton
+          //   brightness: Brightness.dark,
+          // ),
           drawer: NavigationDrawer(), //DrawerMenu(),
           body: SingleChildScrollView(
             child: Container(

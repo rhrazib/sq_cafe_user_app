@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import '../product.dart';
@@ -13,7 +14,7 @@ class Todo {
   @HiveField(2)
   String orderId;
   @HiveField(3)
-  List<Product> cartItems;
+  List<Product> cartItems=[];
   @HiveField(4)
   String allPrice;
   @HiveField(5)

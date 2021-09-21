@@ -113,16 +113,16 @@ class _CheckOutBodyState extends State<CheckOutBody> {
                         Text(' Payment methods'),
                       ],
                     ),
-                    // RadioButton(
-                    //   description: "Personal",
-                    //   value: "Personal",
-                    //   groupValue: Constant.singleValue,
-                    //   onChanged: (value) => setState(
-                    //           () => Constant.singleValue = value
-                    //   ),
-                    //   activeColor: Colors.red,
-                    //
-                    // ),
+                    RadioButton(
+                      description: "Personal",
+                      value: "Personal",
+                      groupValue: Constant.singleValue,
+                      onChanged: (value) => setState(
+                              () => Constant.singleValue = value
+                      ),
+                      activeColor: Colors.red,
+
+                    ),
                     RadioButton(
                       description: "Official",
                       value: "Official",

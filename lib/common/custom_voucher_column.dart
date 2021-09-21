@@ -107,7 +107,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                           //textAlign: TextAlign.right,
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 10),
+                                              fontSize: 14),
                                         ),
                                       ],
                                     ),

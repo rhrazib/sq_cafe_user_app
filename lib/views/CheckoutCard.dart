@@ -79,7 +79,7 @@ class CheckoutCard extends StatelessWidget {
     var user= pref.getString('user');
     if(user=="razib"){
       Constant.isFirstScreen=true;
-      Constant.singleValue="Official";
+      Constant.singleValue="Personal";
     }
     else if(user=="rokibul"){
       Constant.isFirstScreen=false;

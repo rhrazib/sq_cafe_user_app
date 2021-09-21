@@ -21,17 +21,33 @@ import 'models/product_adapter.g.dart';
 import 'rnd/voucher/Voucher.dart';
 
 void main() async{
+ // Hive.deleteFromDisk();
+
   WidgetsFlutterBinding.ensureInitialized();
   // await Hive.initFlutter();
   // await Hive.openBox<Todo>('todos');
   // Hive.registerAdapter(ProductAdapter());
   // Hive.registerAdapter(TodoAdapter());
   //WidgetsFlutterBinding.ensureInitialized();
+
   Directory appDocumentsDirectory = await getApplicationDocumentsDirectory();
+
+
+ // var hiveDb = Directory('${appDocumentsDirectory.path}/chosenPath');
+
+// Delete the Hive directory and all its files
+  ///hiveDb.delete(recursive: true);
+
   Hive.init(appDocumentsDirectory.path);
   Hive.registerAdapter(ProductAdapter());
   Hive.registerAdapter(TodoAdapter());
-await Hive.openBox<Todo>('todos');
+  var db = await Hive.openBox<Todo>('todos');
+  var box = Hive.box<Todo>('todos');//.deleteFromDisk();
+
+  box.clear();
+  //await Hive.openBox<Todo>('todos');
+ // Hive.box('todos').clear();
+
 //  Future _openBoxes() async {
  //   // await Hive.initFlutter();
  //    await Hive.openBox<Todo>('todos');

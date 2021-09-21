@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../Login Page.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override
@@ -74,11 +77,11 @@ class NavigationDrawer extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 26.0)),
-                    Text('Dont miss any important dots',
-                        softWrap: true,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20.0)),
+                    // Text('Dont miss any important dots',
+                    //     softWrap: true,
+                    //     style: TextStyle(
+                    //         color: Colors.black,
+                    //         fontSize: 20.0)),
                   ],
                 )
             ),),
@@ -161,6 +164,8 @@ class NavigationDrawer extends StatelessWidget {
               //       builder: (context) => DashBoardPage(
               //       )),
               // );
+              Get.offAll(LoginPage());
+
             },
             child: Text(
               'Log Out',

@@ -26,9 +26,7 @@ class TodoAdapter extends TypeAdapter<Todo> {
       odrid: fields[5] as String,
 
     );}
-    catch(e){
-
-    }
+    catch(e){}
   }
 
   @override

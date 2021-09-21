@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/product_controller.dart';
@@ -73,10 +74,14 @@ class _FoodGroceriesAvailabilityViewState extends State<FoodGroceriesAvailabilit
             ),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute<void>(
-                builder: (BuildContext context) {
-                  return SearchHomePage();//AdvancedSearch(inputController.text);
-                },));
+
+              showToast("Not Implemented",context: context);
+              // Navigator.of(context).push(MaterialPageRoute<void>(
+              //   builder: (BuildContext context) {
+              //     return SearchHomePage();//AdvancedSearch(inputController.text);
+              //   },));
+
+
               // Navigator.of(context).push(SearchModal());
             },
             child: new Container(// //todo searchbar
