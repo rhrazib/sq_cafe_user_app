@@ -12,6 +12,7 @@ class TodoAdapter extends TypeAdapter<Todo> {
 
   @override
   Todo read(BinaryReader reader) {
+    try{
     final numOfFields = reader.readByte();
     final fields = <int, Product>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
@@ -24,7 +25,10 @@ class TodoAdapter extends TypeAdapter<Todo> {
         allPrice: fields[4] as String,
       odrid: fields[5] as String,
 
-    );
+    );}
+    catch(e){
+
+    }
   }
 
   @override

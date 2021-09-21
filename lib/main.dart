@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -18,18 +20,18 @@ import 'models/order_product.dart';
 import 'models/product_adapter.g.dart';
 import 'rnd/voucher/Voucher.dart';
 
-Future<void>main() async{
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   // await Hive.initFlutter();
   // await Hive.openBox<Todo>('todos');
   // Hive.registerAdapter(ProductAdapter());
   // Hive.registerAdapter(TodoAdapter());
   //WidgetsFlutterBinding.ensureInitialized();
-  final appDocumentsDirectory = await getApplicationDocumentsDirectory();
+  Directory appDocumentsDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentsDirectory.path);
   Hive.registerAdapter(ProductAdapter());
   Hive.registerAdapter(TodoAdapter());
-Hive.openBox<Todo>('todos');
+await Hive.openBox<Todo>('todos');
 //  Future _openBoxes() async {
  //   // await Hive.initFlutter();
  //    await Hive.openBox<Todo>('todos');

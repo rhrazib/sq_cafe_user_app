@@ -34,7 +34,7 @@ class CartController extends GetxController {
   }
   final deliveryInstruction = TextEditingController();
   String singleValue = "Personal";
-String orderId;
+String orderId="";
 // cartController.cartItems.forEach((element) {
 //   if (element.name == product.name) {
 //     isExist=true;

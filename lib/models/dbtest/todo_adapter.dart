@@ -13,10 +13,10 @@ class Todo {
   @HiveField(2)
   String orderId;
   @HiveField(3)
-  List<Product> cartItems=[];
+  List<Product> cartItems;
   @HiveField(4)
   String allPrice;
   @HiveField(5)
-  String odrid;
+  String odrid="";
   Todo({this.deliveryInstruction, this.dateTime,this.orderId,this.cartItems,this.allPrice,this.odrid});
 }

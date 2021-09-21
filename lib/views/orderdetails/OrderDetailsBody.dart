@@ -21,6 +21,14 @@ class OrderDetailsBody extends StatefulWidget {
 
 class _CheckOutBodyState extends State<OrderDetailsBody> {
   final orderController = Get.put(OrderController());
+    Box<Todo> box;
+  @override
+  void initState() {
+   box=  Hive.box<Todo>('todos');
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
 

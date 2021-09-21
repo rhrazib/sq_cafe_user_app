@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:group_radio_button/group_radio_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/cart/AddToCartPage.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
@@ -20,7 +21,26 @@ class _CheckOutBodyState extends State<CheckOutBody> {
   int _stackIndex = 0;
 
  // static String _singleValue = "Personal";
-
+// bool isFirstScreen=false;
+ // void setUser(context) async {
+ //   ///SHare String , int , bool, double
+ //   SharedPreferences pref = await SharedPreferences.getInstance();
+ //  var user= pref.getString('user');
+ //  if(user=="razib"){
+ //    isFirstScreen=true;
+ //    Constant.singleValue="Official";
+ //  }
+ // else if(user=="rokibul"){
+ //     isFirstScreen=false;
+ //     Constant.singleValue="Personal";
+ //   }
+ //
+ // }
+@override
+  void initState() {
+ // setUser(context);
+  super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -46,7 +66,7 @@ class _CheckOutBodyState extends State<CheckOutBody> {
               margin: EdgeInsets.all(16),
 
               //padding: EdgeInsets.all(10),
-              child: Card(
+              child: !Constant.isFirstScreen ?  Card(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
@@ -63,24 +83,64 @@ class _CheckOutBodyState extends State<CheckOutBody> {
                       value: "Personal",
                       groupValue: Constant.singleValue,
                       onChanged: (value) => setState(
-                        () => Constant.singleValue = value
+                              () => Constant.singleValue = value
                       ),
                       activeColor: Colors.red,
 
                     ),
+                    // RadioButton(
+                    //   description: "Official",
+                    //   value: "Official",
+                    //
+                    //   groupValue: Constant.singleValue,
+                    //   onChanged: (value) => setState(
+                    //         () => Constant.singleValue = value,
+                    //   ),
+                    //   //textPosition: RadioButtonTextPosition.left,
+                    //   activeColor: Colors.red,
+                    // ),
+                  ],
+                ),
+              ) : Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.payments_outlined),
+                        Text(' Payment methods'),
+                      ],
+                    ),
+                    // RadioButton(
+                    //   description: "Personal",
+                    //   value: "Personal",
+                    //   groupValue: Constant.singleValue,
+                    //   onChanged: (value) => setState(
+                    //           () => Constant.singleValue = value
+                    //   ),
+                    //   activeColor: Colors.red,
+                    //
+                    // ),
                     RadioButton(
                       description: "Official",
                       value: "Official",
+
                       groupValue: Constant.singleValue,
                       onChanged: (value) => setState(
-                        () => Constant.singleValue = value,
+                            () => Constant.singleValue = value,
                       ),
                       //textPosition: RadioButtonTextPosition.left,
                       activeColor: Colors.red,
                     ),
                   ],
                 ),
-              )),
+              ) ,
+
+
+
+          ),
           Container(
               margin: EdgeInsets.all(16),
 //height: 300,

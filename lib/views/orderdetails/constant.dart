@@ -6,6 +6,6 @@ class Constant {
  static Box<OrderProduct> noteBox = Hive.box('notes');
  static List<OrderProduct> orderItems=[];
  static String singleValue = "Personal";
-
+ static bool isFirstScreen=false;
 //  Constant(this.noteBox);
 }

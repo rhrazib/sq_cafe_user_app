@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Home Page.dart';
 import 'OrderGridView.dart';
+import 'models/dbtest/todo_adapter.dart';
 import 'rnd/new rnd/app_colors.dart';
 
 class FormCard extends StatefulWidget {
@@ -102,23 +104,44 @@ class _FormCardState extends State<FormCard> {
   } else if(passwordController.text==""){
     showToast("password is empty",context: context);
   }else if(emailController.text=="razib" && passwordController.text=="1234"){
+    var user ="razib";
+    // gotoHomeScreen(context);
+    setUser(context, user);
 
-    gotoHomeScreen(context);
-
-    // Navigator.of(context).push(MaterialPageRoute<void>(
-    //     builder: (BuildContext context) {
-    //       return Scaffold(
-    //         body: Container(
-    //           alignment: Alignment.topLeft,
-    //           child: HomePage(
-    //             title: 'Home',
-    //           ),
-    //         ),
-    //       );
-    //     })
+    Navigator.of(context).push(MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return Scaffold(
+            body: Container(
+              alignment: Alignment.topLeft,
+              child: HomePage(
+                title: 'Home',
+              ),
+            ),
+          );
+        })
 
 
-   // );
+   );
+
+  }
+  else if(emailController.text=="rokibul" && passwordController.text=="1234"){
+var user ="rokibul";
+    // gotoHomeScreen(context);
+setUser(context, user);
+    Navigator.of(context).push(MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return Scaffold(
+            body: Container(
+              alignment: Alignment.topLeft,
+              child: HomePage(
+                title: 'Home',
+              ),
+            ),
+          );
+        })
+
+
+    );
 
   }
   else{
@@ -146,6 +169,19 @@ class _FormCardState extends State<FormCard> {
         builder: (context) => HomePage(),
       ),
     );
+  }
+  void setUser(context,var user) async {
+    ///SHare String , int , bool, double
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('user', user);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      ),
+    );
+
+   var box = Hive.box<Todo>('todos');//.deleteFromDisk();
+//box.deleteFromDisk();
   }
 }
 

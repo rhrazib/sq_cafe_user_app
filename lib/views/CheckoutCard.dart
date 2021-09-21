@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 
 import 'checkout/CheckoutScreen.dart';
+import 'orderdetails/constant.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
@@ -61,6 +63,7 @@ class CheckoutCard extends StatelessWidget {
             DefaultButton(
               text: "Review payment & location",
               press: () {
+                setUser(context);
                 Get.to(CheckoutScreen());
               },
             ),
@@ -69,6 +72,20 @@ class CheckoutCard extends StatelessWidget {
         ),
       ),
     );
+  }
+  void setUser(context) async {
+    ///SHare String , int , bool, double
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var user= pref.getString('user');
+    if(user=="razib"){
+      Constant.isFirstScreen=true;
+      Constant.singleValue="Official";
+    }
+    else if(user=="rokibul"){
+      Constant.isFirstScreen=false;
+      Constant.singleValue="Personal";
+    }
+
   }
 }
 // import 'package:flutter/material.dart';
