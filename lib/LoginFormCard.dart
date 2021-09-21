@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
 import 'Home Page.dart';
 import 'OrderGridView.dart';
 import 'models/dbtest/todo_adapter.dart';
 import 'rnd/new rnd/app_colors.dart';
+import 'views/orderdetails/constant.dart';
 
 class FormCard extends StatefulWidget {
 
@@ -106,6 +108,7 @@ class _FormCardState extends State<FormCard> {
   }else if(emailController.text=="razib" && passwordController.text=="1234"){
     var user ="razib";
     // gotoHomeScreen(context);
+    Constant.name="Razib";
     setUser(context, user);
 
     Navigator.of(context).push(MaterialPageRoute<void>(
@@ -127,6 +130,8 @@ class _FormCardState extends State<FormCard> {
   else if(emailController.text=="rokibul" && passwordController.text=="1234"){
 var user ="rokibul";
     // gotoHomeScreen(context);
+Constant.name="Rokibul";
+
 setUser(context, user);
     Navigator.of(context).push(MaterialPageRoute<void>(
         builder: (BuildContext context) {
