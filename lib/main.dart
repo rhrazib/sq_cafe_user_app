@@ -12,6 +12,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'Home Page.dart';
 import 'Login Page.dart';
+import 'attendent_app/CustomVoucherColumn.dart';
 import 'common/custom_voucher_details.dart';
 import 'models/dbtest/todo_adapter.dart';
 import 'models/order_adapter.dart';
@@ -51,7 +52,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: VoucherDetails()//CustomVoucherDetails()  //!isFirstScreen ? LoginPage() : CustomVoucherDetails(),
+      home: //CustomVoucherColumn()
+      VoucherDetails()//CustomVoucherDetails()  //!isFirstScreen ? LoginPage() : CustomVoucherDetails(),
 // LoginPage(title: 'Flutter Demo Home Page'),
     );
   }

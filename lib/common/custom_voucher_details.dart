@@ -12,6 +12,7 @@ class CustomVoucherDetails extends StatelessWidget {
     return Column(
       children: [
         Expanded(child: CustomGridView())
+
       ],
     );
   }
