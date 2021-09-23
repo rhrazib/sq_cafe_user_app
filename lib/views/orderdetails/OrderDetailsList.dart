@@ -7,6 +7,7 @@ import 'package:sq_cafe_user_app/models/order_product.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 
 import 'OrderDetailsList2.dart';
+import 'constant.dart';
 
 class OrderDetailsList extends StatefulWidget {
   final Todo product;
@@ -71,7 +72,8 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         ],
                       ),
                     ),
-                    Padding(
+                    !Constant.isFirstScreen ?Container()
+                    :Padding(
                       padding: EdgeInsets.only(bottom: 8),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,36 +1,80 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderDetailsScreen.dart';
 
 import '../../Login Page.dart';
+import '../CartScreen.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 30,
-          ),
-          /*  DrawerHeader(
-            child:
+      child: Container(
+        color: Colors.grey,
+
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 30,
+            ),
+            /*  DrawerHeader(
+              child:
+              Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width,
+                  child:
+                  Align(
+                    alignment: Alignment.centerRight,
+                child:         IconTheme(
+                    data: IconThemeData(color: Colors.black), child: CloseButton()),  )
+
+
+              ),
+
+              *//*Container(
+                  height: 142,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text('Sidebar Menu',
+                            softWrap: true,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 26.0)),
+                        Text('Dont miss any important dots',
+                            softWrap: true,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20.0)),
+                      ],
+                    )
+                  ),),*//*
+            *//*  decoration: BoxDecoration(
+                color: Colors.transparent,
+              ),*//*
+            ),*/
+            SizedBox(
+              height: 20,
+            ),
             Container(
                 height: 40,
                 width: MediaQuery.of(context).size.width,
                 child:
                 Align(
                   alignment: Alignment.centerRight,
-              child:         IconTheme(
-                  data: IconThemeData(color: Colors.black), child: CloseButton()),  )
+                  child:         IconTheme(
+                      data: IconThemeData(color: Colors.black), child: CloseButton()),  )
 
 
             ),
-
-            *//*Container(
-                height: 142,
-                width: MediaQuery.of(context).size.width,
-                child: Center(
+            Container(
+              height: 142,
+              width: MediaQuery.of(context).size.width,
+              child: Center(
                   child: Column(
                     children: [
                       Text('Sidebar Menu',
@@ -39,149 +83,112 @@ class NavigationDrawer extends StatelessWidget {
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 26.0)),
-                      Text('Dont miss any important dots',
-                          softWrap: true,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0)),
+                      // Text('Dont miss any important dots',
+                      //     softWrap: true,
+                      //     style: TextStyle(
+                      //         color: Colors.black,
+                      //         fontSize: 20.0)),
                     ],
                   )
-                ),),*//*
-          *//*  decoration: BoxDecoration(
-              color: Colors.transparent,
-            ),*//*
-          ),*/
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width,
-              child:
-              Align(
-                alignment: Alignment.centerRight,
-                child:         IconTheme(
-                    data: IconThemeData(color: Colors.black), child: CloseButton()),  )
-
-
-          ),
-          Container(
-            height: 142,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-                child: Column(
-                  children: [
-                    Text('Sidebar Menu',
-                        softWrap: true,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 26.0)),
-                    // Text('Dont miss any important dots',
-                    //     softWrap: true,
-                    //     style: TextStyle(
-                    //         color: Colors.black,
-                    //         fontSize: 20.0)),
-                  ],
-                )
-            ),),
+              ),),
 
 
 
 
 
-          GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => DashBoardPage(
-              //       )),
-              // );
-            },
-            child: Text(
-              'Home',
-              style: TextStyle(
-                fontFamily: 'Avenir',
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => DashBoardPage(
+                //       )),
+                // );
+              },
+              child: Text(
+                'Home',
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(
-            height: 45,
-          ),
-          GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => DashBoardPage(
-              //       )),
-              // );
-            },
-            child: Text(
-              'Profile',
-              style: TextStyle(
-                fontFamily: 'Avenir',
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
+            SizedBox(
+              height: 45,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute<void>(
+                  builder: (BuildContext context) {
+                    return CartScreen();
+                  },
+                ));
+              },
+              child: Text(
+                'Cart',
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(
-            height: 45,
-          ),
-          GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => DashBoardPage(
-              //       )),
-              // );
-            },
-            child: Text(
-              'Settings',
-              style: TextStyle(
-                fontFamily: 'Avenir',
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
+            SizedBox(
+              height: 45,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OrderDetailsScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'History',
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(
-            height: 45,
-          ),
-          GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => DashBoardPage(
-              //       )),
-              // );
-              Get.offAll(LoginPage());
+            SizedBox(
+              height: 45,
+            ),
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => DashBoardPage(
+                //       )),
+                // );
+                Get.offAll(LoginPage());
+                final cartController = Get.put(CartController());
+cartController.cartItems.value=[];//.value.clear();
+              },
+              child: Text(
+                'Log Out',
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 45,
+            ),
 
-            },
-            child: Text(
-              'Log Out',
-              style: TextStyle(
-                fontFamily: 'Avenir',
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 45,
-          ),
-
-        ],
+          ],
+        ),
       ),
     );/*Drawer(
       elevation: 10.0,

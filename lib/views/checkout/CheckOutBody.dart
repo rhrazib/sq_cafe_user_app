@@ -46,7 +46,9 @@ class _CheckOutBodyState extends State<CheckOutBody> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
+
+          !Constant.isFirstScreen ?Container()
+          :Container(
             margin: EdgeInsets.all(16),
             child: TextFormField(
               controller: cartController.deliveryInstruction,
@@ -67,40 +69,40 @@ class _CheckOutBodyState extends State<CheckOutBody> {
 
               //padding: EdgeInsets.all(10),
               child: !Constant.isFirstScreen ?  Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.payments_outlined),
-                        Text(' Payment methods'),
-                      ],
-                    ),
-                    RadioButton(
-                      description: "Personal",
-                      value: "Personal",
-                      groupValue: Constant.singleValue,
-                      onChanged: (value) => setState(
-                              () => Constant.singleValue = value
-                      ),
-                      activeColor: Colors.red,
-
-                    ),
-                    // RadioButton(
-                    //   description: "Official",
-                    //   value: "Official",
-                    //
-                    //   groupValue: Constant.singleValue,
-                    //   onChanged: (value) => setState(
-                    //         () => Constant.singleValue = value,
-                    //   ),
-                    //   //textPosition: RadioButtonTextPosition.left,
-                    //   activeColor: Colors.red,
-                    // ),
-                  ],
-                ),
+                // child: Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: <Widget>[
+                //     Row(
+                //       crossAxisAlignment: CrossAxisAlignment.center,
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: [
+                //         Icon(Icons.payments_outlined),
+                //         Text(' Payment methods'),
+                //       ],
+                //     ),
+                //     RadioButton(
+                //       description: "Personal",
+                //       value: "Personal",
+                //       groupValue: Constant.singleValue,
+                //       onChanged: (value) => setState(
+                //               () => Constant.singleValue = value
+                //       ),
+                //       activeColor: Colors.red,
+                //
+                //     ),
+                //     // RadioButton(
+                //     //   description: "Official",
+                //     //   value: "Official",
+                //     //
+                //     //   groupValue: Constant.singleValue,
+                //     //   onChanged: (value) => setState(
+                //     //         () => Constant.singleValue = value,
+                //     //   ),
+                //     //   //textPosition: RadioButtonTextPosition.left,
+                //     //   activeColor: Colors.red,
+                //     // ),
+                //   ],
+                // ),
               ) : Card(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,

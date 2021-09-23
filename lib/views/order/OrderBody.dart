@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/order_controller.dart';
 import 'package:sq_cafe_user_app/views/checkout/OrderList.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 class OrderBody extends StatefulWidget {
   const OrderBody({Key key}) : super(key: key);
 
@@ -32,7 +33,9 @@ class _CheckOutBodyState extends State<OrderBody> {
                 },
                 color: Colors.red,
               ),
-              Text("Got your order, Mr Rokibul! Confirming with SQ cafe"),
+              !Constant.isFirstScreen ?
+              Text("Got your order, Mr Rokibul! Confirming with SQ cafe")
+              :Text("Got your order, Mr Razib! Confirming with SQ cafe"),
 
             ],
           ),

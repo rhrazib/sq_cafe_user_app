@@ -66,7 +66,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    product.allPrice+" Tk",
+                                    product.allPrice+" tk",
                                     style: TextStyle(
                                         fontSize: 32,
                                         fontWeight: FontWeight.bold,

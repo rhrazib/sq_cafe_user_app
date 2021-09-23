@@ -7,6 +7,7 @@ import 'HomeCard.dart';
 import 'HomeSnacksCard.dart';
 import 'Login Page.dart';
 import 'OrderGridView.dart';
+import 'controllers/cart_controller.dart';
 import 'rnd/Search.dart';
 import 'rnd/SearchTest.dart';
 import 'rnd/new rnd/FoodGroceriesAvailabilityView.dart';
@@ -62,7 +63,8 @@ class _MyHomePageState extends State<HomePage> {
                       child: InkWell(
                           onTap: (){
                             Get.offAll(LoginPage());
-
+                            final cartController = Get.put(CartController());
+                            cartController.cartItems.value=[];//.value.clear();
                           },
                           child: Text("Logout")),
                       value: 2,

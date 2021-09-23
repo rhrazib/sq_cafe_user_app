@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
@@ -55,7 +56,7 @@ class CheckoutCard extends StatelessWidget {
                 //   child: Text("Total (incl VAT)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                 // ),
                 Spacer(),
-                Text("Tk "+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text("tk "+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
               ],
             ),
@@ -64,7 +65,11 @@ class CheckoutCard extends StatelessWidget {
               text: "Review payment & location",
               press: () {
                 setUser(context);
-                Get.to(CheckoutScreen());
+                if(cartController.cartItems.value.isEmpty){
+                  showToast("your cart is empty",context: context);
+                }else{
+                  Get.to(CheckoutScreen());
+                }
               },
             ),
 
