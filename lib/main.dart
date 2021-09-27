@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -45,6 +45,10 @@ void main() async{
   var box = Hive.box<Todo>('todos');//.deleteFromDisk();
 
   box.clear();
+
+
+  String deviceId = await _getId();
+
   //await Hive.openBox<Todo>('todos');
  // Hive.box('todos').clear();
 
@@ -106,6 +110,26 @@ void main() async{
   runApp(MyApp());
 }
 
+// Future<String> _getId() async {
+//   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+//   if (Theme.of(context).platform == TargetPlatform.iOS) {
+//     IosDeviceInfo iosDeviceInfo = await deviceInfo.iosInfo;
+//     return iosDeviceInfo.identifierForVendor; // unique ID on iOS
+//   } else {
+//     AndroidDeviceInfo androidDeviceInfo = await deviceInfo.androidInfo;
+//     return androidDeviceInfo.androidId; // unique ID on Android
+//   }
+// }
+Future<String> _getId() async {
+  var deviceInfo = DeviceInfoPlugin();
+  if (Platform.isIOS) { // import 'dart:io'
+    var iosDeviceInfo = await deviceInfo.iosInfo;
+    return iosDeviceInfo.identifierForVendor; // unique ID on iOS
+  } else {
+    var androidDeviceInfo = await deviceInfo.androidInfo;
+    return androidDeviceInfo.androidId; // unique ID on Android
+  }
+}
 class MyApp extends StatefulWidget {
 
   @override
@@ -113,6 +137,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   bool isFirstScreen = false;
   @override
   void initState() {
@@ -145,6 +170,9 @@ class _MyAppState extends State<MyApp> {
       });
     }
   }
+
+
+
 }
 
 
