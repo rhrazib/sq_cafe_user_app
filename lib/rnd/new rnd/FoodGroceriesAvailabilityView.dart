@@ -94,23 +94,24 @@ class _FoodGroceriesAvailabilityViewState extends State<FoodGroceriesAvailabilit
                   Radius.circular(5),
                 ),
               ),
-              child: Expanded(
+           //   child: Expanded(
                 child: Row(
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(right: 12, left: 0),
                       child: Icon(Icons.search, color:  Colors.grey),
                     ),
-                    Expanded(
-                        child:Text(
+                  //  Expanded(
+                       // child:
+                        Text(
                           "Search in Q Cafe",style: TextStyle(
                             color: Colors.grey
                         ),
                         )
-                    ),
+                   // ),
                   ],
                 ),
-              ),
+             // ),
             ),
           ),
           // SearchBarWidget(),
