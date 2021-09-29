@@ -49,8 +49,9 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
         controller: _tabController,
 
         tabs: [
-          Expanded(
-            child: Padding(
+          //Expanded(
+          //  child:
+            Padding(
               padding: EdgeInsets.only(bottom: 16, top: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +63,10 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          ),
-          Expanded(
-            child: Padding(
+         // ),
+         // Expanded(
+         //   child:
+            Padding(
               padding: EdgeInsets.only(bottom: 16, top: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -76,9 +78,10 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          ),
-          Expanded(
-            child: Padding(
+         // ),
+         // Expanded(
+          //  child:
+            Padding(
               padding: EdgeInsets.only(bottom: 16, top: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +93,7 @@ class _VoucherState extends State<Voucher> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          ),
+          //),
         ],
       );
 
