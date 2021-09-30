@@ -88,12 +88,14 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                      // Body();
                      // Get.to(CartScreen());
                      // Get.reset();
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CartScreen(),
-                        ),
-                      );
+                     // AddtoCartPage(product);
+
+                      //  Navigator.pushReplacement(
+                     //    context,
+                     //    MaterialPageRoute(
+                     //      builder: (context) => CartScreen(),
+                     //    ),
+                     //  );
                     });
                   },
                   color: Colors.red,
@@ -107,12 +109,12 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                               decrement();
                           //total = double.parse(product.price) * product.count;
                           product.totalproductPrice= double.parse(product.price) * product.count;
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CartScreen(),
-                                ),
-                              );
+                              // Navigator.pushReplacement(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => CartScreen(),
+                              //   ),
+                              // );
                         });
                       },
                       iconSize: 15,
@@ -124,12 +126,12 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                         setState(() {
                           increment();
                           product.totalproductPrice= double.parse(product.price) * product.count;
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CartScreen(),
-                            ),
-                          );
+                          // Navigator.pushReplacement(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => CartScreen(),
+                          //   ),
+                          // );
                         });
                       },
                       iconSize: 15,

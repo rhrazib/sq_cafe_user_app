@@ -19,7 +19,7 @@ class _BodyState extends State<Body> {
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
-      child: ListView.builder(
+      child:Obx(() =>  ListView.builder(
         //  crossAxisCount: 1,
         itemCount: cartController.cartItems.length,
         //  crossAxisSpacing: 16,
@@ -32,6 +32,7 @@ class _BodyState extends State<Body> {
               cartController.cartItems[index]);
         },
         //  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+      )
       )
     );
   }
