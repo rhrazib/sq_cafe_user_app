@@ -18,6 +18,13 @@ class  CheckoutCard extends StatefulWidget {
 
 class _State extends State<CheckoutCard> {
   final cartController = Get.put(CartController());
+   TextEditingController _controller;
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = TextEditingController(text: cartController.totalAllPrice.toString());
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,7 +71,7 @@ class _State extends State<CheckoutCard> {
                 //   init: CartController(),
                 //   builder: (_c) => Text('GetX: ${_c.tAllPric.value.toString()}'),
                 // ),
-                Text("tk "+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text("tk "+_controller.text,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
               ],
             ),
