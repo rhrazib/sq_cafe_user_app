@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sq_cafe_user_app/controllers/LoginController.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
 import 'Home Page.dart';
@@ -18,6 +20,8 @@ class FormCard extends StatefulWidget {
 }
 
 class _FormCardState extends State<FormCard> {
+
+  final loginController = Get.put(LoginController());
   @override
   void initState() {
    // gotoHomeScreen(context);
@@ -99,56 +103,88 @@ class _FormCardState extends State<FormCard> {
                             color: Colors.white),
                       ),
                     ),
-                    onTap: () {
+                    onTap: () async{
 //setState(() {
   if(emailController.text==""){
     showToast("email is empty",context: context);
   } else if(passwordController.text==""){
     showToast("password is empty",context: context);
-  }else if(emailController.text=="razib" && passwordController.text=="1234"){
-    var user ="razib";
-    // gotoHomeScreen(context);
-    Constant.name="Razib";
-    setUser(context, user);
+  }
+  else if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
 
-    Navigator.of(context).push(MaterialPageRoute<void>(
-        builder: (BuildContext context) {
-          return Scaffold(
-            body: Container(
-              alignment: Alignment.topLeft,
-              child: HomePage(
-                title: 'Home',
-              ),
-            ),
-          );
-        })
+      String error = await loginController.login(
+          email: emailController.text,
+          password: passwordController.text);
+      if (error != "") {
+        Get.defaultDialog(
+            title: "Oop!", middleText: error);
+      } else {
+       // Get.to(HomePage());
+        Navigator.of(context).push(MaterialPageRoute<void>(
+            builder: (BuildContext context) {
+              return Scaffold(
+                body: Container(
+                  alignment: Alignment.topLeft,
+                  child: HomePage(
+                    title: 'Home',
+                  ),
+                ),
+              );
+            })
 
 
-   );
+        );
+      }
+
+
 
   }
-  else if(emailController.text=="rokibul" && passwordController.text=="1234"){
-var user ="rokibul";
-    // gotoHomeScreen(context);
-Constant.name="Rokibul";
-
-setUser(context, user);
-    Navigator.of(context).push(MaterialPageRoute<void>(
-        builder: (BuildContext context) {
-          return Scaffold(
-            body: Container(
-              alignment: Alignment.topLeft,
-              child: HomePage(
-                title: 'Home',
-              ),
-            ),
-          );
-        })
 
 
-    );
-
-  }
+  // else if(emailController.text=="razib" && passwordController.text=="1234"){
+  //   var user ="razib";
+  //   // gotoHomeScreen(context);
+  //   Constant.name="Razib";
+  //   setUser(context, user);
+  //
+  //   Navigator.of(context).push(MaterialPageRoute<void>(
+  //       builder: (BuildContext context) {
+  //         return Scaffold(
+  //           body: Container(
+  //             alignment: Alignment.topLeft,
+  //             child: HomePage(
+  //               title: 'Home',
+  //             ),
+  //           ),
+  //         );
+  //       })
+  //
+  //
+  //  );
+  //
+  // }
+//   else if(emailController.text=="rokibul" && passwordController.text=="1234"){
+// var user ="rokibul";
+//     // gotoHomeScreen(context);
+// Constant.name="Rokibul";
+//
+// setUser(context, user);
+//     Navigator.of(context).push(MaterialPageRoute<void>(
+//         builder: (BuildContext context) {
+//           return Scaffold(
+//             body: Container(
+//               alignment: Alignment.topLeft,
+//               child: HomePage(
+//                 title: 'Home',
+//               ),
+//             ),
+//           );
+//         })
+//
+//
+//     );
+//
+//   }
   else{
     showToast("email or password not match",context: context);
   }
