@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/LoginController.dart';
+import 'package:sq_cafe_user_app/views/login/Model/LoginRequest.dart';
+import 'package:sq_cafe_user_app/views/login/Services/cqapi.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
 import 'Home Page.dart';
@@ -14,22 +16,22 @@ import 'rnd/new rnd/app_colors.dart';
 import 'views/orderdetails/constant.dart';
 
 class FormCard extends StatefulWidget {
-
   @override
   _FormCardState createState() => _FormCardState();
 }
 
 class _FormCardState extends State<FormCard> {
-
   final loginController = Get.put(LoginController());
+
   @override
   void initState() {
-   // gotoHomeScreen(context);
+    // gotoHomeScreen(context);
     super.initState();
   }
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -54,10 +56,11 @@ class _FormCardState extends State<FormCard> {
           Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0,bottom: 32),
+                padding: EdgeInsets.only(
+                    left: 16.0, right: 16.0, top: 16.0, bottom: 32),
                 child: Text("LOGIN TO YOUR ACCOUNT",
                     style:
-                    TextStyle(fontFamily: "Poppins-Bold", fontSize: 30.w)),
+                        TextStyle(fontFamily: "Poppins-Bold", fontSize: 30.w)),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
@@ -103,66 +106,47 @@ class _FormCardState extends State<FormCard> {
                             color: Colors.white),
                       ),
                     ),
-                    onTap: () async{
+                    onTap: () async {
 //setState(() {
-  if(emailController.text==""){
-    showToast("email is empty",context: context);
-  } else if(passwordController.text==""){
-    showToast("password is empty",context: context);
-  }
-  else if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
+                      if (emailController.text == "") {
+                        showToast("email is empty", context: context);
+                      } else if (passwordController.text == "") {
+                        showToast("password is empty", context: context);
+                      } else if (emailController.text.isNotEmpty &&
+                          passwordController.text.isNotEmpty) {
+                        String error = await loginController.login(
+                            email: emailController.text,
+                            password: passwordController.text,
+                            deviceId: "1234",
+                            context: context);
 
-      String error = await loginController.login(
-          email: emailController.text,
-          password: passwordController.text);
-      if (error != "") {
-        Get.defaultDialog(
-            title: "Oop!", middleText: error);
-      } else {
-       // Get.to(HomePage());
-        Navigator.of(context).push(MaterialPageRoute<void>(
-            builder: (BuildContext context) {
-              return Scaffold(
-                body: Container(
-                  alignment: Alignment.topLeft,
-                  child: HomePage(
-                    title: 'Home',
-                  ),
-                ),
-              );
-            })
+                        if (error != "") {
+                          Get.defaultDialog(title: "Oop!", middleText: error);
+                        }
+                      }
 
-
-        );
-      }
-
-
-
-  }
-
-
-  // else if(emailController.text=="razib" && passwordController.text=="1234"){
-  //   var user ="razib";
-  //   // gotoHomeScreen(context);
-  //   Constant.name="Razib";
-  //   setUser(context, user);
-  //
-  //   Navigator.of(context).push(MaterialPageRoute<void>(
-  //       builder: (BuildContext context) {
-  //         return Scaffold(
-  //           body: Container(
-  //             alignment: Alignment.topLeft,
-  //             child: HomePage(
-  //               title: 'Home',
-  //             ),
-  //           ),
-  //         );
-  //       })
-  //
-  //
-  //  );
-  //
-  // }
+                      // else if(emailController.text=="razib" && passwordController.text=="1234"){
+                      //   var user ="razib";
+                      //   // gotoHomeScreen(context);
+                      //   Constant.name="Razib";
+                      //   setUser(context, user);
+                      //
+                      //   Navigator.of(context).push(MaterialPageRoute<void>(
+                      //       builder: (BuildContext context) {
+                      //         return Scaffold(
+                      //           body: Container(
+                      //             alignment: Alignment.topLeft,
+                      //             child: HomePage(
+                      //               title: 'Home',
+                      //             ),
+                      //           ),
+                      //         );
+                      //       })
+                      //
+                      //
+                      //  );
+                      //
+                      // }
 //   else if(emailController.text=="rokibul" && passwordController.text=="1234"){
 // var user ="rokibul";
 //     // gotoHomeScreen(context);
@@ -185,14 +169,14 @@ class _FormCardState extends State<FormCard> {
 //     );
 //
 //   }
-  else{
-    showToast("email or password not match",context: context);
-  }
+//                       else {
+//                         showToast("email or password not match",
+//                             context: context);
+//                       }
 //}
 
 //);
                       // Navigator.push(context,);
-
                     },
                   )),
             ],
@@ -201,6 +185,7 @@ class _FormCardState extends State<FormCard> {
       ),
     );
   }
+
   void gotoHomeScreen(context) async {
     ///SHare String , int , bool, double
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -211,7 +196,8 @@ class _FormCardState extends State<FormCard> {
       ),
     );
   }
-  void setUser(context,var user) async {
+
+  void setUser(context, var user) async {
     ///SHare String , int , bool, double
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.setString('user', user);
@@ -221,13 +207,10 @@ class _FormCardState extends State<FormCard> {
       ),
     );
 
-   var box = Hive.box<Todo>('todos');//.deleteFromDisk();
+    var box = Hive.box<Todo>('todos'); //.deleteFromDisk();
 //box.deleteFromDisk();
   }
 }
-
-
-
 
 // class FormCard extends StatelessWidget {
 //   var emailController = TextEditingController();

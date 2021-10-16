@@ -88,7 +88,7 @@ class _ProductTilePageState extends State<BevarageProductTile> {
                                           textAlign: TextAlign.justify,
                                         ),
                                         Text(
-                                          "from Tk " + product.price,
+                                          "from Tk " + product.price.toString(),
                                           style: TextStyle(
                                               fontSize: 14.0,
                                               color: Colors.black87,

@@ -37,7 +37,7 @@ class CartTile extends StatelessWidget {
                         "product.description"),
                   ],
                 ),
-                Text(product.price,
+                Text(product.price.toString(),
                     style: TextStyle(fontSize: 24)),
               ],
             ),

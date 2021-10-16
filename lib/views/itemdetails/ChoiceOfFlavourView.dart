@@ -78,7 +78,7 @@ class _ChoiceOfFlavourViewState extends State<ChoiceOfFlavourView> {
                   return InkWell(
                     onTap: () {
                       setState(() {
-                        showToast(product.productColors[index].colourName,
+                        showToast(product.productColors[index].name,
                             context: context);
                         // if (_isSelected) {
                         //   _selectedIndexs.remove(index);
@@ -89,13 +89,13 @@ class _ChoiceOfFlavourViewState extends State<ChoiceOfFlavourView> {
                         _selected=index;
 
                       });
-                      product.productColors[index].colourName;
+                      product.productColors[index].product_add_ons_1_Id;
                       cartController.cartItems.forEach((element) {
                         if (element.id == product.id) {
                           // isExist = true;
                           // product.productColors[index].colourName = countItem.toInt();
                           product.suger =
-                              product.productColors[index].colourName;
+                              product.productColors[index].product_add_ons_1_Id.toString();
                         }
                       });
                     },
@@ -133,7 +133,7 @@ class _ChoiceOfFlavourViewState extends State<ChoiceOfFlavourView> {
                                   ),
                                   UIHelper.verticalSpaceSmall(),
                                   Text(
-                                    product.productColors[index].colourName,
+                                    product.productColors[index].name,
                                     maxLines: 2,
                                     textAlign: TextAlign.center,
                                   )

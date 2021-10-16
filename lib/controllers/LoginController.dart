@@ -1,50 +1,59 @@
+
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sq_cafe_user_app/views/login/Services/cqapi.dart';
+import 'package:sq_cafe_user_app/services/remote_services.dart';
+import 'package:sq_cafe_user_app/views/login/Model/LoginResp.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
+
+import '../Home Page.dart';
 
 class LoginController extends GetxController {
   var loginProcess = false.obs;
   var error = "";
+  var loginRes = LoginResp();
 
-  Future<String> login({String email, String password}) async {
+
+  @override
+  void onInit() {
+    // fetchProducts();
+  //  ReadJsonData();
+    super.onInit();
+  }
+
+  Future<String> login({String email, String password,String deviceId, BuildContext context}) async {
     error = "";
     try {
       loginProcess(true);
-      List loginResp = await CQAPI.login(email: email, password: password);
-      if (loginResp[0] != "") {
-        //success
-        final prefs = await SharedPreferences.getInstance();
-        prefs.setString("token", loginResp[0]);
+      var loginResp = await RemoteServices.login(email: email, password: password,deviceId: "1234");
+      if (LoginResp !=null) {
+        loginRes=loginResp;
+        if(loginRes.isSuccess){
+          Constant.name=loginRes.name;
+          final prefs = await SharedPreferences.getInstance();
+          prefs.setString("user_type", loginResp.user_type);
+          Navigator.of(context).push(MaterialPageRoute<void>(
+              builder: (BuildContext context) {
+                return Scaffold(
+                  body: Container(
+                    alignment: Alignment.topLeft,
+                    child: HomePage(
+                      title: 'Home',
+                    ),
+                  ),
+                );
+              }));
+        }else{
+          showToast("Invalid email or password, try again",context: context);
+        }
       } else {
-        error = loginResp[1];
+        showToast("Some error occured, try again",context: context);
       }
     } finally {
       loginProcess(false);
     }
     return error;
   }
-
-  // Future<bool> refresh() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   String token = prefs.getString("token");
-  //
-  //   if (token == null) {
-  //     return false;
-  //   }
-  //
-  //   bool success = false;
-  //   try {
-  //     loginProcess(true);
-  //     List loginResp = await CQAPI.refreshToken(token: token);
-  //     if (loginResp[0] != "") {
-  //       //success
-  //       final prefs = await SharedPreferences.getInstance();
-  //       prefs.setString("token", loginResp[0]);
-  //       success = true;
-  //     }
-  //   } finally {
-  //     loginProcess(false);
-  //   }
-  //   return success;
-  // }
 }

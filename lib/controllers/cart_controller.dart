@@ -7,7 +7,9 @@ class CartController extends GetxController {
   var checkOutCartItems = List<Product>().obs;
 
   int get count => cartItems.length;
-  double get totalPrice => cartItems.fold(0, (sum, item) => sum + double.parse(item.price));
+  double get totalPrice => cartItems.fold(0, (sum, item) => sum + item.price//double.parse(item.price)//todo changge api
+
+  );
 
 
 

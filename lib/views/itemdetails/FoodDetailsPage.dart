@@ -259,7 +259,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
 
 class FoodTitleWidget extends StatelessWidget {
   String productName;
-  String productPrice;
+  double productPrice;
   String productHost;
 
   FoodTitleWidget({
@@ -284,7 +284,7 @@ class FoodTitleWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             Text(
-              productPrice,
+              productPrice.toString(),
               style: TextStyle(
                   fontSize: 20,
                   color: Color(0xFF3a3a3b),
@@ -400,7 +400,9 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                       var itemcount = product.count = countItem.toInt();
                       product.count = countItem.toInt();
                       isExist = false;
-                      total = double.parse(product.price) * itemcount;
+                      //total = double.parse(product.price) * itemcount;
+                      total = product.price * itemcount;
+
                       product.totalproductPrice=total;
                       showToast("Cart Updated",
                           context: context);
@@ -411,7 +413,7 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                           context: context);
                       setState(() {
                         double l = itemcount.toDouble();
-                        var i = double.parse(product.price);
+                        var i = product.price;//double.parse(product.price);
                         total = i * l;
                         product.totalproductPrice=total;
 

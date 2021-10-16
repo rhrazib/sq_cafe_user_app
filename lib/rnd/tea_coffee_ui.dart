@@ -67,7 +67,7 @@ class TeaCoffee extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            product.price,
+                                            product.price.toString(),
                                             style: TextStyle(
                                                 fontSize: 32,
                                                 fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class TeaCoffee extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                          product.price
+                                          product.price.toString()
                                            ,
                                             style: TextStyle(
                                                 color: Colors.black,

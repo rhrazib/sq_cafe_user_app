@@ -87,7 +87,7 @@ class _ProductTilePageState extends State<ProductTile> {
                                           textAlign: TextAlign.justify,
                                         ),
                                         Text(
-                                          "from Tk " + product.price,
+                                          "from Tk " + product.price.toString(),
                                           style: TextStyle(
                                               fontSize: 14.0,
                                               color: Colors.black87,
@@ -119,7 +119,7 @@ class _ProductTilePageState extends State<ProductTile> {
                       //     ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
-                        child: Image.asset(
+                        child: Image.network(
                           product.imageLink,
                           fit: BoxFit.cover, ),
 

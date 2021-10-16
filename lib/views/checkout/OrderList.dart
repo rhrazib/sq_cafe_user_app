@@ -22,7 +22,12 @@ class _OrderListPageState extends State<OrderList> {
   @override
   void initState() {
     super.initState();
-    product.totalproductPrice=double.parse(product.price)*product.count;
+   // product.totalproductPrice=double.parse(product.price)*product.count;
+
+    product.totalproductPrice=product.price*product.count;
+
+
+
     //totalPrice=double.parse(product.price)*product.count;
   }
 

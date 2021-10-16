@@ -11,38 +11,39 @@ List<Product> productFromJson(String str) =>
 
 String productToJson(List<Product> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 @HiveType(typeId: 2)
-class Product{
-  Product({
-    this.id,
-    this.brand,
-    this.name,
-    this.price,
-    this.priceSign,
-    this.currency,
-    this.imageLink,
-    this.productLink,
-    this.websiteLink,
-    this.description,
-    this.rating,
-    this.category,
-    this.productType,
-    this.tagList,
-    this.createdAt,
-    this.updatedAt,
-    this.productApiUrl,
-    this.apiFeaturedImage,
-    this.productColors,
-    this.count
-  });
+class Product {
+  Product(
+      {this.id,
+      this.brand,
+      this.name,
+      this.price,
+      this.priceSign,
+      this.currency,
+      this.imageLink,
+      this.productLink,
+      this.websiteLink,
+      this.description,
+      this.rating,
+      this.category,
+      this.productType,
+      this.tagList,
+      this.createdAt,
+      this.updatedAt,
+      this.productApiUrl,
+      this.apiFeaturedImage,
+      this.productColors,
+      this.count});
+
   @HiveField(0)
   int id;
   @HiveField(1)
-  Brand brand;
+  String brand;
   @HiveField(2)
   String name;
   @HiveField(3)
-  String price;
+  double price;
   @HiveField(4)
   dynamic priceSign;
   @HiveField(5)
@@ -74,58 +75,44 @@ class Product{
   @HiveField(18)
   List<ProductColor> productColors;
   @HiveField(19)
-  String suger="";
+  String suger = "";
   @HiveField(20)
-  int count=0;
+  int count = 0;
   @HiveField(21)
-  double totalproductPrice=0.0;
+  double totalproductPrice = 0.0;
   @HiveField(22)
   var isFavorite = false.obs;
 
+  List<ProductColor> productaddOns2;
+
+
   factory Product.fromJson(Map<String, dynamic> json) => Product(
-        id: json["id"],
-        brand: brandValues.map[json["brand"]],
+        id: json["productId"],
+        brand: json["brand"],
         name: json["name"],
-        price: json["price"],
-        priceSign: json["price_sign"],
-        currency: json["currency"],
-        imageLink: json["image_link"],
-        productLink: json["product_link"],
-        websiteLink: json["website_link"],
+        price: json["price"]==null ? null : json["price"],
+        imageLink: json["image"]==null ? null : json["image"],
         description: json["description"],
-        rating: json["rating"] == null ? null : json["rating"].toDouble(),
-        category: json["category"] == null ? null : json["category"],
-        productType: json["product_type"],
-        tagList: List<dynamic>.from(json["tag_list"].map((x) => x)),
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
-        productApiUrl: json["product_api_url"],
-        apiFeaturedImage: json["api_featured_image"],
+       // category: json["category"] == null ? null : json["category"],
+        productType: json["productType"],
         productColors: List<ProductColor>.from(
-            json["product_colors"].map((x) => ProductColor.fromJson(x))),
+            json["productAddons1"].map((x) => ProductColor.fromJson(x))),
+      // productaddOns2:List<ProductColor>.from(
+      //     json["productAddons1"].map((x) => ProductColor.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "brand": brandValues.reverse[brand],
+        "productId": id,
+        "brand": brand,
         "name": name,
         "price": price,
-        "price_sign": priceSign,
-        "currency": currency,
-        "image_link": imageLink,
-        "product_link": productLink,
-        "website_link": websiteLink,
+        "image": imageLink,
         "description": description,
-        "rating": rating == null ? null : rating,
-        "category": category == null ? null : category,
-        "product_type": productType,
-        "tag_list": List<dynamic>.from(tagList.map((x) => x)),
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
-        "product_api_url": productApiUrl,
-        "api_featured_image": apiFeaturedImage,
-        "product_colors":
+        "productType": productType,
+        "productAddons1":
             List<dynamic>.from(productColors.map((x) => x.toJson())),
+    // "productAddons2":
+    // List<dynamic>.from(productaddOns2.map((x) => x.toJson())),
       };
 }
 
@@ -135,21 +122,21 @@ final brandValues = EnumValues({"maybelline": Brand.MAYBELLINE});
 
 class ProductColor {
   ProductColor({
-    this.hexValue,
-    this.colourName,
+    this.product_add_ons_1_Id,
+    this.name,
   });
 
-  String hexValue;
-  String colourName;
+  int product_add_ons_1_Id;
+  String name;
 
   factory ProductColor.fromJson(Map<String, dynamic> json) => ProductColor(
-        hexValue: json["hex_value"],
-        colourName: json["colour_name"] == null ? null : json["colour_name"],
+        product_add_ons_1_Id: json["product_add_ons_1_Id"],
+        name: json["name"] == null ? null : json["name"],
       );
 
   Map<String, dynamic> toJson() => {
-        "hex_value": hexValue,
-        "colour_name": colourName == null ? null : colourName,
+        "product_add_ons_1_Id": product_add_ons_1_Id,
+        "name": name == null ? null : name,
       };
 }
 

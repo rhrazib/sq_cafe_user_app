@@ -66,7 +66,7 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                                 style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
                               ),
 
-                              Text("Tk "+product.price, style: TextStyle(fontSize: 14)),
+                              Text("Tk "+product.price.toString(), style: TextStyle(fontSize: 14)),
                               // Text("Tk "+cartController.totalPrice.toString(),
                               //   style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                             ],
@@ -108,8 +108,11 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                         setState(() {
                               decrement();
                           //total = double.parse(product.price) * product.count;
-                          product.totalproductPrice= double.parse(product.price) * product.count;
-                              // Navigator.pushReplacement(
+                        //  product.totalproductPrice= double.parse(product.price) * product.count;
+
+                              product.totalproductPrice= product.price * product.count;
+
+                          // Navigator.pushReplacement(
                               //   context,
                               //   MaterialPageRoute(
                               //     builder: (context) => CartScreen(),
@@ -125,7 +128,9 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                       onPressed: () {
                         setState(() {
                           increment();
-                          product.totalproductPrice= double.parse(product.price) * product.count;
+                          //product.totalproductPrice= double.parse(product.price) * product.count;
+                          product.totalproductPrice= product.price* product.count;
+
                           // Navigator.pushReplacement(
                           //   context,
                           //   MaterialPageRoute(

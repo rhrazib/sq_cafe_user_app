@@ -10,23 +10,30 @@ String loginRespToJson(LoginResp data) => json.encode(data.toJson());
 
 class LoginResp {
   LoginResp({
-    this.accessToken,
-    this.tokenType,
-    this.expiresIn,
+    this.name,
+    this.designation,
+    this.user_type,
+    this.isSuccess
   });
 
-  String accessToken;
-  String tokenType;
-  int expiresIn;
+  String name;
+  String designation;
+  String user_type;
+ bool isSuccess;
 
   factory LoginResp.fromJson(Map<String, dynamic> json) => LoginResp(
-      accessToken: json["access_token"],
-      tokenType: json["token_type"],
-      expiresIn: json["expires_in"]);
+      name: json["name"],
+      designation: json["designation"],
+      user_type: json["user_type"],
+      isSuccess: json["isSuccess"]
+
+
+  );
 
   Map<String, dynamic> toJson() => {
-        "access_token": accessToken,
-        "token_type": tokenType,
-        "expires_in": expiresIn
-      };
+        "name": name,
+        "designation": designation,
+        "user_type": user_type,
+        "isSuccess": isSuccess
+  };
 }

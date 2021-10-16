@@ -7,6 +7,6 @@ class Constant {
  static List<OrderProduct> orderItems=[];
  static String singleValue = "Personal";
  static bool isFirstScreen=false;
- static String name = "Rokibul";
+ static String name = "";
 //  Constant(this.noteBox);
 }

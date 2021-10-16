@@ -19,8 +19,8 @@ class ProductController extends GetxController {
 
   @override
   void onInit() {
-   // fetchProducts();
-    ReadJsonData();
+    fetchProducts();
+    //ReadJsonData();
 
 
     super.onInit();
@@ -33,6 +33,25 @@ class ProductController extends GetxController {
       if (products != null) {
         productList.value = products;
       }
+      for(int i=0; i < productList.value.length; i++) {
+        if(productList.value.elementAt(i).productType.toString()=="bevarage"){
+          bevarageList.add(productList.elementAt(i));
+        }
+        if(productList.value.elementAt(i).productType.toString()=="teacoffee"){
+          teacoffeeList.add(productList.elementAt(i));
+          var b = teacoffeeList.value;
+        }
+        if(productList.value.elementAt(i).productType.toString()=="snacks"){
+          snacksList.add(productList.elementAt(i));
+        }
+
+      }
+
+    //  final list = json.decode(products) as List<dynamic>;
+    // /return list.map((e) => Product.fromJson(e)).toList();
+
+
+
     } finally {
       isLoading(false);
     }

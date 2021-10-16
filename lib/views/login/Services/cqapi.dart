@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:sq_cafe_user_app/views/login/Model/ErrorResp.dart';
+import 'package:sq_cafe_user_app/views/login/Model/LoginRequest.dart';
 import 'package:sq_cafe_user_app/views/login/Model/LoginResp.dart';
 import 'package:http/http.dart' as http;
 
 class CQAPI {
   static var client = http.Client();
-  static var _baseURL = "http://119.148.12.173:8021/api";
+  static var _baseURL = "http://10.12.13.164:8032/api";
 
   // static Future<List> refreshToken({String token}) async {
   //   var response =
@@ -38,21 +39,25 @@ class CQAPI {
   //   }
   // }
 
-  static Future<List> login({String email, String password}) async {
+  static Future<List> login({String email, String password,String deviceId}) async {
       // var response = await client.post('$_baseURL/auth/login',
-
-    var response = await client.post(Uri.parse('$_baseURL/Login'),
+    var params =  {
+      "email":"general@sqgc.com",
+      "password":"3",
+      "device_id":""
+    };
+    var response = await client.post(Uri.parse('$_baseURL/Account/Login'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body:
-            jsonEncode(<String, String>{"UserName": email, "UserPassword": password}));
+        body: json.encode(params));
+       // jsonEncode(<String, String>{"email": email, "password": password,"device_id":deviceId}));
 
     if (response.statusCode == 200) {
       var json = response.body;
       var loginRes = loginRespFromJson(json);
       // if (loginRes != null) {
-      //   return [loginRes.accessToken, ""];
+      //   return [loginRes., ""];
       // } else {
       //   return ["", "Unknown Error"];
       // }
