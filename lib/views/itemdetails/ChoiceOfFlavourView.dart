@@ -34,7 +34,7 @@ class _ChoiceOfFlavourViewState extends State<ChoiceOfFlavourView> {
     }
     super.initState();
   }
-  int _selected = null;
+  int _selected;
   // bool _isSelected = false;
   // set isSelected(bool value) {
   //   _isSelected = value;
@@ -87,15 +87,16 @@ class _ChoiceOfFlavourViewState extends State<ChoiceOfFlavourView> {
                         //   _selectedIndexs.add(index);
                         // }
                         _selected=index;
-
+                        product.suger =
+                            product.productColors[index].product_add_ons_1_Id;
                       });
                       product.productColors[index].product_add_ons_1_Id;
                       cartController.cartItems.forEach((element) {
                         if (element.id == product.id) {
                           // isExist = true;
                           // product.productColors[index].colourName = countItem.toInt();
-                          product.suger =
-                              product.productColors[index].product_add_ons_1_Id.toString();
+                         // product.suger =
+                            //  product.productColors[index].product_add_ons_1_Id;
                         }
                       });
                     },

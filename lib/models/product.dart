@@ -34,7 +34,10 @@ class Product {
       this.productApiUrl,
       this.apiFeaturedImage,
       this.productColors,
-      this.count});
+      this.count,
+      this.totalproductPrice,
+      this.instruction,
+      this.suger});
 
   @HiveField(0)
   int id;
@@ -75,7 +78,7 @@ class Product {
   @HiveField(18)
   List<ProductColor> productColors;
   @HiveField(19)
-  String suger = "";
+  int suger;
   @HiveField(20)
   int count = 0;
   @HiveField(21)
@@ -84,19 +87,23 @@ class Product {
   var isFavorite = false.obs;
 
   List<ProductColor> productaddOns2;
-
+  String instruction;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
-        id: json["productId"],
-        brand: json["brand"],
-        name: json["name"],
-        price: json["price"]==null ? null : json["price"],
-        imageLink: json["image"]==null ? null : json["image"],
-        description: json["description"],
-       // category: json["category"] == null ? null : json["category"],
-        productType: json["productType"],
-        productColors: List<ProductColor>.from(
-            json["productAddons1"].map((x) => ProductColor.fromJson(x))),
+      id: json["productId"],
+      brand: json["brand"],
+      name: json["name"],
+      price: json["price"] == null ? null : json["price"],
+      imageLink: json["image"] == null ? null : json["image"],
+      description: json["description"],
+      // category: json["category"] == null ? null : json["category"],
+      productType: json["productType"],
+      productColors: List<ProductColor>.from(
+          json["productAddons1"].map((x) => ProductColor.fromJson(x))),
+      count: json["quantity"],
+      totalproductPrice: json["totalPrice"],
+      instruction: json["sepcialInstruction"],
+      suger: json["product_add_ons_1_Id"]
       // productaddOns2:List<ProductColor>.from(
       //     json["productAddons1"].map((x) => ProductColor.fromJson(x))),
       );
@@ -111,8 +118,12 @@ class Product {
         "productType": productType,
         "productAddons1":
             List<dynamic>.from(productColors.map((x) => x.toJson())),
-    // "productAddons2":
-    // List<dynamic>.from(productaddOns2.map((x) => x.toJson())),
+        "quantity": count,
+        "totalPrice": totalproductPrice,
+        "sepcialInstruction": instruction,
+        "product_add_ons_1_Id": suger
+        // "productAddons2":
+        // List<dynamic>.from(productaddOns2.map((x) => x.toJson())),
       };
 }
 

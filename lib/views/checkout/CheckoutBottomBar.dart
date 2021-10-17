@@ -13,30 +13,29 @@ import 'package:sq_cafe_user_app/views/order/OrderScreen.dart';
 import 'package:intl/intl.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
-
-
 class CheckoutBottomBar extends StatefulWidget {
- //const CheckoutBottomBar({Key key}) : super(key: key);
+  //const CheckoutBottomBar({Key key}) : super(key: key);
   final formkey = GlobalKey<FormState>();
 
   @override
   _CheckoutBottomBarState createState() => _CheckoutBottomBarState();
-
-
 }
 
 class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
- Box<Todo> todoBox;
- //int randomNumber;
- final cartController = Get.put(CartController());
- @override
-  void initState() {
- todoBox = Hive.box<Todo>('todos');
+  Box<Todo> todoBox;
 
- var rng = new Random();
- cartController.orderId="#SQ188"+(rng.nextInt(100)).toString();
+  //int randomNumber;
+  final cartController = Get.put(CartController());
+
+  @override
+  void initState() {
+    todoBox = Hive.box<Todo>('todos');
+
+    var rng = new Random();
+    cartController.orderId = "#SQ188" + (rng.nextInt(100)).toString();
     super.initState();
   }
+
   // @override
   // void dispose() {
   //  // Hive.box('todos').compact();
@@ -77,16 +76,21 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
           children: [
             Row(
               children: [
-                Text("Total",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Text(
+                  "Total",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
                 Spacer(),
-                Text("Tk "+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-
+                Text(
+                  "Tk " + cartController.totalAllPrice.toString(),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
               ],
             ),
             SizedBox(height: 20),
             DefaultButton(
               text: "Place Order",
-              press: () {
+              press: () async {
                 final DateTime now = DateTime.now();
                 final DateFormat format = DateFormat('yyyy-MM-dd');
                 final String formatted = format.format(now);
@@ -94,32 +98,38 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
                 //OrderController.orderItems.add(new OrderProduct(dateTime:formatted,cartItems: cartController.cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
                 var cartItems = List<Product>().obs;
 
-                cartItems.addAll(cartController.cartItems.value);//=cartController.cartItems.value;
+                cartItems.addAll(cartController
+                    .cartItems.value);
+
+
+
+                //=cartController.cartItems.value;
                 //   orderController.addOrderHistory(new OrderProduct(dateTime:formatted,cartItems: cartItems,deliveryInstruction: cartController.totalAllPrice.toString()));
 
+                // Box<OrderProduct> todoBox = Hive.box<OrderProduct>('todos');
+                // todoBox.add(OrderProduct(cartController.totalAllPrice.toString(),formatted,"5555",cartController.cartItems));
+
+                // Box<Todo> todoBox = Hive.box<Todo>('todos');
+                // todoBox.add(Todo(title: ""+cartItems.toString(), description: "description"));
 
 
+                todoBox.add(Todo(
+                    deliveryInstruction:
+                        cartController.deliveryInstruction.text,
+                    dateTime: formatted,
+                    orderId: Constant.singleValue,
+                    cartItems: cartItems,
+                    allPrice: cartController.totalAllPrice.toString(),
+                    odrid: cartController.orderId));
 
-
-                   // Box<OrderProduct> todoBox = Hive.box<OrderProduct>('todos');
-                   // todoBox.add(OrderProduct(cartController.totalAllPrice.toString(),formatted,"5555",cartController.cartItems));
-
-
-
-
-               // Box<Todo> todoBox = Hive.box<Todo>('todos');
-               // todoBox.add(Todo(title: ""+cartItems.toString(), description: "description"));
-                todoBox.add(Todo(deliveryInstruction: cartController.deliveryInstruction.text,dateTime: formatted,orderId: Constant.singleValue,cartItems: cartItems,allPrice:cartController.totalAllPrice.toString(),odrid: cartController.orderId ));
-                //todoBox.close();
-                //  Navigator.of(context).pop();
-               //   }
-
-
-
-
-               // Constant.orderItems.add(OrderProduct("deliveryInstruction", formatted, "orderId", cartItems));
-                //   Navigator.of(context).pop();
-
+                String error = await orderController.orderProduct(
+                    userId: "2",
+                    deliveryInstruction:
+                        cartController.deliveryInstruction.text,
+                    totalPrice: cartController.totalAllPrice.toString(),
+                    paymentMethod: Constant.singleValue,
+                    cartItems:cartItems,
+                    context: context);
 
                 Get.to(OrderScreen());
               },
@@ -129,9 +139,7 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
       ),
     );
   }
-  }
-
-
+}
 
 // class CheckoutBottomBar extends StatelessWidget {
 //   const CheckoutBottomBar({

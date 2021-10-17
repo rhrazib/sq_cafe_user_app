@@ -34,8 +34,8 @@ class _CheckOutBodyState extends State<OrderBody> {
                 color: Colors.red,
               ),
               !Constant.isFirstScreen ?
-              Text("Got your order, Mr Rokibul! Confirming with SQ cafe")
-              :Text("Got your order, Mr Razib! Confirming with SQ cafe"),
+              Text("Got your order, Mr ${Constant.name}! Confirming with SQ cafe")
+              :Text("Got your order, Mr ${Constant.name}! Confirming with SQ cafe"),
 
             ],
           ),

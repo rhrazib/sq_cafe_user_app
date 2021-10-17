@@ -11,9 +11,10 @@ import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 import '../Home Page.dart';
 
 class LoginController extends GetxController {
-  var loginProcess = false.obs;
+ // var loginProcess = false.obs;
   var error = "";
   var loginRes = LoginResp();
+  var isLoading = true.obs;
 
 
   @override
@@ -26,7 +27,8 @@ class LoginController extends GetxController {
   Future<String> login({String email, String password,String deviceId, BuildContext context}) async {
     error = "";
     try {
-      loginProcess(true);
+      isLoading(true);
+     // loginProcess(true);
       var loginResp = await RemoteServices.login(email: email, password: password,deviceId: "1234");
       if (LoginResp !=null) {
         loginRes=loginResp;
@@ -52,7 +54,9 @@ class LoginController extends GetxController {
         showToast("Some error occured, try again",context: context);
       }
     } finally {
-      loginProcess(false);
+     // loginProcess(false);
+      isLoading(false);
+
     }
     return error;
   }

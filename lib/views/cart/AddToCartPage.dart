@@ -3,6 +3,7 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/services/remote_services.dart';
 import 'package:sq_cafe_user_app/views/CartScreen.dart';
 
 import '../Body.dart';
@@ -49,8 +50,8 @@ class _AddtoCartPageState extends State<AddtoCartPage> {
                     children: [
                       Row(
                         children: [
-                          Image.asset(
-                            product.imageLink,
+                          Image.network(
+                            RemoteServices.imageURL+product.imageLink,
                             height: 80,
                             width: 80,),
                           // Image.network(

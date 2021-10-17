@@ -12,7 +12,6 @@ class CartController extends GetxController {
   );
 
 
-
    //todo total price
   double get totalAllPrice => cartItems.fold(0, (sum, item) => sum + item.totalproductPrice);
 
@@ -35,6 +34,8 @@ class CartController extends GetxController {
     super.onClose();
   }
   final deliveryInstruction = TextEditingController();
+  final specialController = TextEditingController();
+
   String singleValue = "Personal";
 String orderId="";
 // cartController.cartItems.forEach((element) {

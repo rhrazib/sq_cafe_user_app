@@ -6,6 +6,7 @@ import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/PopularCategoriesView.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
+import 'package:sq_cafe_user_app/services/remote_services.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 import 'package:sq_cafe_user_app/views/counter/constants.dart';
 import 'package:sq_cafe_user_app/views/itemdetails/ChoiceOfFlavourView.dart';
@@ -25,6 +26,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   _FoodDetailsPageState(this.product);
 
   final Product product;
+  final cartController = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +82,10 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 Card(
                   semanticContainer: true,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: Image.asset(
-                    product.imageLink,
-                    fit: BoxFit.cover, ),
+                  child: Image.network(
+                    RemoteServices.imageURL+product.imageLink,
+                    fit: BoxFit.cover,
+                  ),
                   // Image.asset(
                   //   'assets/' + 'ic_best_food_8' + ".jpeg",
                   // ),
@@ -127,8 +130,6 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       //   ],
                       // ),
 
-
-
                       // RadioButton(
                       //   description: "1/2",
                       //   value: "1/2",
@@ -151,7 +152,6 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       // Container(
                       //     height: MediaQuery.of(context).size.height,
                       //     child: CheckBoxInListView()),
-
 
                       ChoiceOfFlavourView(product)
                     ],
@@ -227,6 +227,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                             minLines: 3,
                             maxLines: 5,
                             keyboardType: TextInputType.multiline,
+                            controller: cartController.specialController,
                             decoration: InputDecoration(
                               hintText: ' instructions',
                               hintStyle: TextStyle(color: Colors.grey),
@@ -402,10 +403,9 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                       isExist = false;
                       //total = double.parse(product.price) * itemcount;
                       total = product.price * itemcount;
-
-                      product.totalproductPrice=total;
-                      showToast("Cart Updated",
-                          context: context);
+                      product.instruction = cartController.specialController.text.toString();
+                      product.totalproductPrice = total;
+                      showToast("Cart Updated", context: context);
                     } else {
                       var itemcount = product.count = countItem.toInt();
                       cartController.addToCart(product);
@@ -413,13 +413,12 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
                           context: context);
                       setState(() {
                         double l = itemcount.toDouble();
-                        var i = product.price;//double.parse(product.price);
+                        var i = product.price; //double.parse(product.price);
                         total = i * l;
-                        product.totalproductPrice=total;
-
+                        product.totalproductPrice = total;
                       });
-                      showToast("Added to cart",
-                          context: context);
+                      product.instruction = cartController.specialController.text.toString();
+                      showToast("Added to cart", context: context);
                     }
                   },
                   text: 'Add To Cart',
@@ -442,7 +441,9 @@ class _AddToCartMenuState extends State<AddToCartMenu> {
 
 class DetailContentMenu extends StatelessWidget {
   const DetailContentMenu(this.product);
+
   final Product product;
+
   @override
   Widget build(BuildContext context) {
     return Container(

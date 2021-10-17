@@ -3,6 +3,7 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/services/remote_services.dart';
 
 import 'itemdetails/FoodDetailsPage.dart';
 
@@ -120,7 +121,7 @@ class _ProductTilePageState extends State<ProductTile> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.network(
-                          product.imageLink,
+                          RemoteServices.imageURL+product.imageLink,
                           fit: BoxFit.cover, ),
 
                         // Image.network(
