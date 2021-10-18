@@ -131,7 +131,7 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
                     cartItems:cartItems,
                     context: context);
 
-                Get.to(OrderScreen());
+               // Get.to(OrderScreen());
               },
             ),
           ],

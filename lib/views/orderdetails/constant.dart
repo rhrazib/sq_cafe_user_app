@@ -8,5 +8,9 @@ class Constant {
  static String singleValue = "Personal";
  static bool isFirstScreen=false;
  static String name = "";
+
+ static String orderID = "";
+ static String deliveryLoc = "";
+ static String totalPrice = "";
 //  Constant(this.noteBox);
 }

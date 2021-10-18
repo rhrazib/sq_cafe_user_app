@@ -62,7 +62,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Your order number:'),
-                          Text(cartController.orderId),
+                          Text('#SQ'+Constant.orderID),
                         ],
                       ),
                     ),
@@ -73,7 +73,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Delivery location:'),
-                          Text(' Room No 12'),
+                          Text(Constant.deliveryLoc),
                         ],
                       ),
                     ),
@@ -103,7 +103,7 @@ class _CheckOutBodyState extends State<OrderBody> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Paid with:'),
-                          Text(' Personal'),
+                          Text(Constant.singleValue),
                         ],
                       ),
                     ),
@@ -112,8 +112,8 @@ class _CheckOutBodyState extends State<OrderBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(' Total:',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                        Text(' Tk '+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                       // Text(' Tk '+orderController.orderItems.length.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                       // Text(' Tk '+cartController.totalAllPrice.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        Text(' Tk '+Constant.totalPrice,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ],

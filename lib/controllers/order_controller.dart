@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:hive/hive.dart';
 import 'package:sq_cafe_user_app/models/order_product.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/services/remote_services.dart';
 import 'package:sq_cafe_user_app/views/order/OrderResp.dart';
+import 'package:sq_cafe_user_app/views/order/OrderScreen.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
 
 class OrderController extends GetxController {
   //var orderItems = List<OrderProduct>().obs;
@@ -40,21 +43,11 @@ deleteOrderHistory(String id){
         orderRes=orderResp;
         if(orderRes.orderId>0){
           showToast("Order Submitted Successfully",context: context);
-          //Constant.name=loginRes.name;
-         // final prefs = await SharedPreferences.getInstance();
-        //  prefs.setString("user_type", loginResp.user_type);
-          // Navigator.of(context).push(MaterialPageRoute<void>(
-          //     builder: (BuildContext context) {
-          //       return Scaffold(
-          //         body: Container(
-          //           alignment: Alignment.topLeft,
-          //           child: HomePage(
-          //             title: 'Home',
-          //           ),
-          //         ),
-          //       );
-          //     })
-         // );
+          Constant.singleValue=orderRes.paymentMethod.toString();
+          Constant.orderID=orderRes.orderId.toString();
+          Constant.deliveryLoc=orderRes.deliveryInstruction.toString();
+          Constant.totalPrice=orderRes.totalPrice.toString();
+          Get.to(OrderScreen());
         }else{
           showToast("Invalid email or password, try again",context: context);
         }
