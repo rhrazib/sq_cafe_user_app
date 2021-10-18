@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sq_cafe_user_app/Home%20Page.dart';
-import 'package:sq_cafe_user_app/models/dbtest/todo_adapter.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderHistoryResp.dart';
 
 import '../OrderDetailsList.dart';
 
 class OrderHistoryDetails extends StatefulWidget {
-  final Todo product;
+  final OrderHistoryResp product;
   const OrderHistoryDetails(this.product);
 
   @override
@@ -15,7 +15,7 @@ class OrderHistoryDetails extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderHistoryDetails> {
-  final Todo product;
+  final OrderHistoryResp product;
 
   _OrderScreenState(this.product);
 

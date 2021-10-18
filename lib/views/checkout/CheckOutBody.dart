@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:group_radio_button/group_radio_button.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/cart/AddToCartPage.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
@@ -47,7 +46,7 @@ class _CheckOutBodyState extends State<CheckOutBody> {
       child: Column(
         children: [
 
-          !Constant.isFirstScreen ?Container()
+          Constant.userType=="General" ?Container()
           :Container(
             margin: EdgeInsets.all(16),
             child: TextFormField(
@@ -68,7 +67,7 @@ class _CheckOutBodyState extends State<CheckOutBody> {
               margin: EdgeInsets.all(16),
 
               //padding: EdgeInsets.all(10),
-              child: !Constant.isFirstScreen ?  Card(
+              child: Constant.userType=="General"?  Card(
                 // child: Column(
                 //   mainAxisAlignment: MainAxisAlignment.end,
                 //   children: <Widget>[

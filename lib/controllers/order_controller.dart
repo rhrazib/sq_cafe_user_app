@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
-import 'package:hive/hive.dart';
 import 'package:sq_cafe_user_app/models/order_product.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/services/remote_services.dart';
@@ -34,7 +33,7 @@ deleteOrderHistory(String id){
 
 
 
-  Future<String> orderProduct({String userId, String deliveryInstruction,String totalPrice,    String paymentMethod, BuildContext context, List<Product> cartItems}) async {
+  Future<String> orderProduct({int userId, String deliveryInstruction,String totalPrice,    String paymentMethod, BuildContext context, List<Product> cartItems}) async {
     try {
       isLoading(true);
       // loginProcess(true);

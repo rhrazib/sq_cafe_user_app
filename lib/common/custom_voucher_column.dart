@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sq_cafe_user_app/models/dbtest/todo_adapter.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/rnd/voucher/VoucherDetails.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/OrderDetailsList.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/OrderDetailsList2.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderHistoryResp.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/orderhistorydetails/OrderHistoryDetails.dart';
 import 'dart:math';
 
 class CustomVoucherColumn extends StatefulWidget {
-  final Todo product;
+  final OrderHistoryResp product;
 
   const CustomVoucherColumn(this.product);
 
@@ -18,7 +18,7 @@ class CustomVoucherColumn extends StatefulWidget {
 }
 
 class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
-  final Todo product;
+  final OrderHistoryResp product;
 
   _CustomVoucherColumnState(this.product);
 //   int randomNumber;
@@ -49,7 +49,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                   Container(
                       margin: EdgeInsets.only(top: 16, left: 8),
                       child: Text(
-                        "Order No: "+product.odrid,//"SQ188"+randomNumber.toString(),//+product.orderId,
+                        "Order No: #SQ"+product.orderId.toString(),//"SQ188"+randomNumber.toString(),//+product.orderId,
                         style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold),
                       )),
@@ -66,7 +66,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    product.allPrice+" tk",
+                                    product.totalPrice.toString()+" tk",
                                     style: TextStyle(
                                         fontSize: 32,
                                         fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                           shape: const StadiumBorder(),
                                         ),
                                         Text(
-                                          product.dateTime,
+                                          product.createDate,
                                           //textAlign: TextAlign.right,
                                           style: TextStyle(
                                               color: Colors.black,

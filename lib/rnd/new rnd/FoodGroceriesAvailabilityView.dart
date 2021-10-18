@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/product_controller.dart';
 import 'package:sq_cafe_user_app/rnd/voucher/Voucher.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';

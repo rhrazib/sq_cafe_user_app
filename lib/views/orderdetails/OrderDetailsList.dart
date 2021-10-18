@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
-import 'package:sq_cafe_user_app/controllers/order_controller.dart';
-import 'package:sq_cafe_user_app/models/dbtest/todo_adapter.dart';
-import 'package:sq_cafe_user_app/models/order_product.dart';
-import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderHistoryResp.dart';
 
 import 'OrderDetailsList2.dart';
 import 'constant.dart';
 
 class OrderDetailsList extends StatefulWidget {
-  final Todo product;
+  final OrderHistoryResp product;
 
   const OrderDetailsList(this.product);
 
@@ -19,7 +14,7 @@ class OrderDetailsList extends StatefulWidget {
 }
 
 class _OrderListPageState extends State<OrderDetailsList> {
-  final Todo product;
+  final OrderHistoryResp product;
   double totalPrice;
 
   _OrderListPageState(this.product);
@@ -57,7 +52,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(' Order number:'),
-                          Text(product.odrid),
+                          Text('#SQ'+product.orderId.toString()),
                         ],
                       ),
                     ),
@@ -67,7 +62,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         children: [
                           Text(" Order Date:", style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text("" + product.dateTime,
+                          Text("" + product.createDate,
                               style: TextStyle(fontSize: 14)),
                         ],
                       ),
@@ -92,7 +87,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                           Text(" Payment Type:",
                               style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text("" + product.orderId,
+                          Text("" + product.paymentMethod,
                               style: TextStyle(fontSize: 14)),
                         ],
                       ),
@@ -111,7 +106,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(),
                           //shrinkWrap: true,
-                          itemCount: product.cartItems.length,
+                          itemCount: product.productOrders.length,
                           itemBuilder: (context, index) {
                             // orderController.orderItems[index].cartItems.forEach((element) {
                             //   element.name;
@@ -122,7 +117,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                             //   return Text("A"+name);
                             // });
                             //return Text(""+product.cartItems[index]);//+product.cartItems[index].name);//OrderDetailsList(orderController.orderItems[index]);
-                            return OrderDetailsList2(product.cartItems[index]);
+                            return OrderDetailsList2(product.productOrders[index]);
                           },
                         ),
                       ),
@@ -132,7 +127,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                       children: [
                         Text(" Total Price:", style: TextStyle(fontSize: 14)),
                         Spacer(),
-                        Text("" + product.allPrice,
+                        Text("" + product.totalPrice.toString(),
                             style: TextStyle(fontSize: 14)),
                       ],
                     ),

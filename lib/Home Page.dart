@@ -8,6 +8,7 @@ import 'HomeSnacksCard.dart';
 import 'Login Page.dart';
 import 'OrderGridView.dart';
 import 'controllers/cart_controller.dart';
+import 'controllers/order_history_controller.dart';
 import 'rnd/Search.dart';
 import 'rnd/SearchTest.dart';
 import 'rnd/new rnd/FoodGroceriesAvailabilityView.dart';
@@ -29,48 +30,41 @@ class HomePage extends StatefulWidget {
 class _MyHomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final orderhistoryController = Get.put(OrderHistoryController());
     TextEditingController inputController = new TextEditingController();
     return new Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         //resizeToAvoidBottomPadding: true,
         body: Scaffold(
-          appBar:
-          AppBar(
+          appBar: AppBar(
             backgroundColor: swiggyOrange,
             title: Text("Home"),
             actions: [
               PopupMenuButton(
                   itemBuilder: (context) => [
-                    PopupMenuItem(
-                      child: InkWell(
-    onTap: () {
-      Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => OrderDetailsScreen(),
-                    ),
-                  );
-
-
-    },
-                          child: Text("History")
-
-                      ),
-                      value: 1,
-                    ),
-                    PopupMenuItem(
-                      child: InkWell(
-                          onTap: (){
-                            Get.offAll(LoginPage());
-                            final cartController = Get.put(CartController());
-                            cartController.cartItems.value=[];//.value.clear();
-                          },
-                          child: Text("Logout")),
-                      value: 2,
-                    )
-                  ]
-              )
+                        PopupMenuItem(
+                          child: InkWell(
+                              onTap: () async {
+                                var error = await orderhistoryController
+                                    .orderHistory(context: context);
+                              },
+                              child: Text("History")),
+                          value: 1,
+                        ),
+                        PopupMenuItem(
+                          child: InkWell(
+                              onTap: () {
+                                Get.offAll(LoginPage());
+                                final cartController =
+                                    Get.put(CartController());
+                                cartController.cartItems.value =
+                                    []; //.value.clear();
+                              },
+                              child: Text("Logout")),
+                          value: 2,
+                        )
+                      ])
             ],
           ),
 

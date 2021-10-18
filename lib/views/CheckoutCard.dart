@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
 
@@ -79,7 +78,7 @@ class _State extends State<CheckoutCard> {
             DefaultButton(
               text: "Review payment & location",
               press: () {
-                setUser(context);
+                //setUser(context);//todo user
                 if(cartController.cartItems.value.isEmpty){
                   showToast("your cart is empty",context: context);
                 }else{
@@ -93,20 +92,20 @@ class _State extends State<CheckoutCard> {
       ),
     );
   }
-  void setUser(context) async {
-    ///SHare String , int , bool, double
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    var user= pref.getString('user');
-    if(user=="razib"){
-      Constant.isFirstScreen=true;
-      Constant.singleValue="Personal";
-    }
-    else if(user=="rokibul"){
-      Constant.isFirstScreen=false;
-      Constant.singleValue="Personal";
-    }
-
-  }
+  // void setUser(context) async {
+  //   ///SHare String , int , bool, double
+  //  // SharedPreferences pref = await SharedPreferences.getInstance();
+  //   var user= pref.getString('user');
+  //   if(user=="razib"){
+  //     Constant.isFirstScreen=true;
+  //     Constant.singleValue="Personal";
+  //   }
+  //   else if(user=="rokibul"){
+  //     Constant.isFirstScreen=false;
+  //     Constant.singleValue="Personal";
+  //   }
+  //
+  // }
 }
 
 

@@ -2,18 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/controllers/LoginController.dart';
-import 'package:sq_cafe_user_app/views/login/Model/LoginRequest.dart';
-import 'package:sq_cafe_user_app/views/login/Services/cqapi.dart';
-import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
-
 import 'Home Page.dart';
-import 'OrderGridView.dart';
-import 'models/dbtest/todo_adapter.dart';
 import 'rnd/new rnd/app_colors.dart';
-import 'views/orderdetails/constant.dart';
 
 class FormCard extends StatefulWidget {
   @override
@@ -186,30 +177,28 @@ class _FormCardState extends State<FormCard> {
     );
   }
 
-  void gotoHomeScreen(context) async {
-    ///SHare String , int , bool, double
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setBool('seen', true);
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => HomePage(),
-      ),
-    );
-  }
+  // void gotoHomeScreen(context) async {
+  //   ///SHare String , int , bool, double
+  //   //SharedPreferences pref = await SharedPreferences.getInstance();
+  //   //await pref.setBool('seen', true);
+  //   Navigator.of(context).push(
+  //     MaterialPageRoute(
+  //       builder: (context) => HomePage(),
+  //     ),
+  //   );
+  // }
 
-  void setUser(context, var user) async {
-    ///SHare String , int , bool, double
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setString('user', user);
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => HomePage(),
-      ),
-    );
-
-    var box = Hive.box<Todo>('todos'); //.deleteFromDisk();
-//box.deleteFromDisk();
-  }
+  // void setUser(context, var user) async {
+  //   ///SHare String , int , bool, double
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   await pref.setString('user', user);
+  //   Navigator.of(context).push(
+  //     MaterialPageRoute(
+  //       builder: (context) => HomePage(),
+  //     ),
+  //   );
+  //
+  // }
 }
 
 // class FormCard extends StatelessWidget {

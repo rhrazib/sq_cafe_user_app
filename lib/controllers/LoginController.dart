@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sq_cafe_user_app/services/remote_services.dart';
 import 'package:sq_cafe_user_app/views/login/Model/LoginResp.dart';
 import 'package:sq_cafe_user_app/views/orderdetails/constant.dart';
@@ -34,8 +33,11 @@ class LoginController extends GetxController {
         loginRes=loginResp;
         if(loginRes.isSuccess){
           Constant.name=loginRes.name;
-          final prefs = await SharedPreferences.getInstance();
-          prefs.setString("user_type", loginResp.user_type);
+          Constant.userID=loginRes.userId;
+          Constant.userType=loginRes.user_type;
+
+          //final prefs = await SharedPreferences.getInstance();
+         // prefs.setString("user_type", loginResp.user_type);
           Navigator.of(context).push(MaterialPageRoute<void>(
               builder: (BuildContext context) {
                 return Scaffold(

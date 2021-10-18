@@ -3,33 +3,12 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
-import 'package:sq_cafe_user_app/controllers/order_controller.dart';
-import 'package:sq_cafe_user_app/controllers/product_controller.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'Home Page.dart';
 import 'Login Page.dart';
-import 'models/dbtest/todo_adapter.dart';
-import 'models/order_adapter.dart';
-import 'models/order_product.dart';
-import 'models/product_adapter.g.dart';
-import 'rnd/voucher/Voucher.dart';
-
 void main() async{
- // Hive.deleteFromDisk();
-
   WidgetsFlutterBinding.ensureInitialized();
-  // await Hive.initFlutter();
-  // await Hive.openBox<Todo>('todos');
-  // Hive.registerAdapter(ProductAdapter());
-  // Hive.registerAdapter(TodoAdapter());
-  //WidgetsFlutterBinding.ensureInitialized();
-
   Directory appDocumentsDirectory = await getApplicationDocumentsDirectory();
 
 
@@ -38,13 +17,13 @@ void main() async{
 // Delete the Hive directory and all its files
   ///hiveDb.delete(recursive: true);
 
-  Hive.init(appDocumentsDirectory.path);
-  Hive.registerAdapter(ProductAdapter());
-  Hive.registerAdapter(TodoAdapter());
-  var db = await Hive.openBox<Todo>('todos');
-  var box = Hive.box<Todo>('todos');//.deleteFromDisk();
-
-  box.clear();
+  // Hive.init(appDocumentsDirectory.path);
+  // Hive.registerAdapter(ProductAdapter());
+  // Hive.registerAdapter(TodoAdapter());
+  // var db = await Hive.openBox<Todo>('todos');
+  // var box = Hive.box<Todo>('todos');//.deleteFromDisk();
+  //
+  // box.clear();
 
 
   String deviceId = await _getId();
@@ -142,7 +121,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    checkFirstScreen();
+   // checkFirstScreen();
   }
   @override
   Widget build(BuildContext context) {
@@ -156,20 +135,20 @@ class _MyAppState extends State<MyApp> {
 // LoginPage(title: 'Flutter Demo Home Page'),
     );
   }
-  Future<void> checkFirstScreen() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    //if First statement is Null Or NO Value is returning then it will give us Second Value
-    bool seen = (pref.getBool('seen') ?? false);
-    if (seen) {
-      setState(() {
-        isFirstScreen = true;
-      });
-    } else {
-      setState(() {
-        isFirstScreen = false;
-      });
-    }
-  }
+  // Future<void> checkFirstScreen() async {
+  // //  SharedPreferences pref = await SharedPreferences.getInstance();
+  //   //if First statement is Null Or NO Value is returning then it will give us Second Value
+  //   bool seen = (pref.getBool('seen') ?? false);
+  //   if (seen) {
+  //     setState(() {
+  //       isFirstScreen = true;
+  //     });
+  //   } else {
+  //     setState(() {
+  //       isFirstScreen = false;
+  //     });
+  //   }
+  // }
 
 
 

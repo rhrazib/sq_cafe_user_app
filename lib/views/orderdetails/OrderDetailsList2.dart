@@ -4,9 +4,10 @@ import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/order_controller.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderHistoryResp.dart';
 
 class OrderDetailsList2 extends StatefulWidget {
-  final Product product;
+  final ProductOrders product;
 
   const OrderDetailsList2(this.product);
 
@@ -15,7 +16,7 @@ class OrderDetailsList2 extends StatefulWidget {
 }
 
 class _OrderListPageState extends State<OrderDetailsList2> {
-  final Product product;
+  final ProductOrders product;
   double totalPrice;
 
   _OrderListPageState(this.product);
@@ -50,9 +51,9 @@ var name ;
                   children: [
                     Row(
                       children: [
-                        Text(" "+product.name+" X"+" "+product.count.toString(), style: TextStyle(fontSize: 14)),
+                        Text(" "+product.name+" X"+" "+product.quantity.toString(), style: TextStyle(fontSize: 14)),
                         Spacer(),
-                        Text("Tk "+product.totalproductPrice.toString(), style: TextStyle(fontSize: 14)),
+                        Text("Tk "+product.totalPrice.toString(), style: TextStyle(fontSize: 14)),
                       ],
                     ),
                     // Divider(

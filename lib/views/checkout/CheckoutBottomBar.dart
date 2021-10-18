@@ -2,10 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:sq_cafe_user_app/controllers/cart_controller.dart';
 import 'package:sq_cafe_user_app/controllers/order_controller.dart';
-import 'package:sq_cafe_user_app/models/dbtest/todo_adapter.dart';
 import 'package:sq_cafe_user_app/models/order_product.dart';
 import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/views/component/DefaultButton.dart';
@@ -22,14 +20,11 @@ class CheckoutBottomBar extends StatefulWidget {
 }
 
 class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
-  Box<Todo> todoBox;
-
   //int randomNumber;
   final cartController = Get.put(CartController());
 
   @override
   void initState() {
-    todoBox = Hive.box<Todo>('todos');
 
     var rng = new Random();
     cartController.orderId = "#SQ188" + (rng.nextInt(100)).toString();
@@ -112,18 +107,8 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
                 // Box<Todo> todoBox = Hive.box<Todo>('todos');
                 // todoBox.add(Todo(title: ""+cartItems.toString(), description: "description"));
 
-
-                todoBox.add(Todo(
-                    deliveryInstruction:
-                        cartController.deliveryInstruction.text,
-                    dateTime: formatted,
-                    orderId: Constant.singleValue,
-                    cartItems: cartItems,
-                    allPrice: cartController.totalAllPrice.toString(),
-                    odrid: cartController.orderId));
-
                 String error = await orderController.orderProduct(
-                    userId: "2",
+                    userId: Constant.userID,
                     deliveryInstruction:
                         cartController.deliveryInstruction.text,
                     totalPrice: cartController.totalAllPrice.toString(),

@@ -5,6 +5,7 @@ import 'package:sq_cafe_user_app/models/product.dart';
 import 'package:sq_cafe_user_app/views/login/Model/ErrorResp.dart';
 import 'package:sq_cafe_user_app/views/login/Model/LoginResp.dart';
 import 'package:sq_cafe_user_app/views/order/OrderResp.dart';
+import 'package:sq_cafe_user_app/views/orderdetails/OrderHistoryResp.dart';
 
 class RemoteServices {
   static var client = http.Client();
@@ -49,20 +50,11 @@ class RemoteServices {
 
   //order
   static Future<OrderResp> productOrder({
-    String userId,
+    int userId,
     String deliveryInstruction,
     String totalPrice,
     String paymentMethod, List<Product> cartItems,
   }) async {
-    // var Orders =   {
-    //   "productId": 3,
-    //   "totalPrice": 30.20,
-    //   "addOns1Id": 2,
-    //   "addOns2Id": 0,
-    //   "quantity": 2,
-    //   "sepcialInstruction": "dfd"
-    // };
-
     var params = {
       "userId": userId,
       "deliveryInstruction": deliveryInstruction,
@@ -86,6 +78,28 @@ class RemoteServices {
       // } else {
       //   return orderRespFromJson(json);
       // }
+    }
+  }
+
+  //order history
+  static Future<List<OrderHistoryResp>> orderHistory({
+    int userId,
+  }) async {
+    var params = {
+      "userId": userId,
+    };
+
+    var response = await client.post(Uri.parse('$_baseURL/Order/OrderHistory'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: json.encode(params));
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      return orderHistoryFromJson(jsonString);// orderHistoryFromJson(jsonString);
+    } else {
+      //show error message
+      return null;
     }
   }
 }
