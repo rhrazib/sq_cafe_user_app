@@ -18,6 +18,8 @@ class OrderHistoryResp {
       this.totalPrice,
       this.paymentMethod,
       this.createDate,
+      this.createTime,
+      this.orderStatus,
       this.productOrders});
 
   int orderId;
@@ -29,6 +31,7 @@ class OrderHistoryResp {
   int UserId;
   String createDate;
   String orderStatus;
+  String createTime;
   List<ProductOrders> productOrders;
 
   factory OrderHistoryResp.fromJson(Map<String, dynamic> json) =>
@@ -37,26 +40,33 @@ class OrderHistoryResp {
           deliveryInstruction: json["deliveryInstruction"],
           totalPrice: json["totalPrice"],
           paymentMethod: json["paymentMethod"],
-          productOrders: json["productOrders"]);
+          createDate: json["createDate"],
+          createTime: json["createTime"],
+          orderStatus: json["orderStatus"],
+          productOrders: List<ProductOrders>.from(
+              json["productOrders"].map((x) => ProductOrders.fromJson(x))));
 
   Map<String, dynamic> toJson() => {
         "orderId": orderId,
         "deliveryInstruction": deliveryInstruction,
         "totalPrice": totalPrice,
         "paymentMethod": paymentMethod,
+        "createDate": createDate,
+        "createTime": createTime,
+        "orderStatus": orderStatus,
         "productOrders": productOrders
       };
 }
 
 class ProductOrders {
-  ProductOrders(
-      {this.orderId,
-      this.totalPrice,
-      this.quantity,
-      this.createDate,
-      this.name,
-      this.deliveryInstruction,
-     });
+  ProductOrders({
+    this.orderId,
+    this.totalPrice,
+    this.quantity,
+    this.createDate,
+    this.name,
+    //  this.deliveryInstruction,
+  });
 
   // int productOrderId;
   double totalPrice;
@@ -64,8 +74,8 @@ class ProductOrders {
   int orderId;
   String createDate;
   String name;
-  String deliveryInstruction;
 
+  // String deliveryInstruction;
 
   factory ProductOrders.fromJson(Map<String, dynamic> json) => ProductOrders(
         orderId: json["orderId"],

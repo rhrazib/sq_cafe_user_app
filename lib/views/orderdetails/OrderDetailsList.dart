@@ -62,7 +62,7 @@ class _OrderListPageState extends State<OrderDetailsList> {
                         children: [
                           Text(" Order Date:", style: TextStyle(fontSize: 14)),
                           Spacer(),
-                          Text("" + product.createDate,
+                          Text("" + product.createDate +":"+product.createTime,
                               style: TextStyle(fontSize: 14)),
                         ],
                       ),

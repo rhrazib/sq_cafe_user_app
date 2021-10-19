@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sq_cafe_user_app/rnd/new%20rnd/app_colors.dart';
 import 'package:sq_cafe_user_app/rnd/voucher/VoucherDetails.dart';
@@ -21,6 +22,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
   final OrderHistoryResp product;
 
   _CustomVoucherColumnState(this.product);
+
 //   int randomNumber;
 // @override
 //   void initState() {
@@ -48,11 +50,26 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                 children: [
                   Container(
                       margin: EdgeInsets.only(top: 16, left: 8),
-                      child: Text(
-                        "Order No: #SQ"+product.orderId.toString(),//"SQ188"+randomNumber.toString(),//+product.orderId,
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.bold),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Order No: #SQ" + product.orderId.toString(),
+                            //"SQ188"+randomNumber.toString(),//+product.orderId,
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+
+
                       )),
+                  // Container(
+                  //   margin: EdgeInsets.only(top: 16, left: 8),
+                  //   child: Text(
+                  //     "Status:" + product.orderStatus,
+                  //     //textAlign: TextAlign.right,
+                  //     style: TextStyle(color: Colors.black, fontSize: 14),
+                  //   ),
+                  // ),
                   Row(
                     children: [
                       Expanded(
@@ -66,7 +83,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    product.totalPrice.toString()+" tk",
+                                    product.totalPrice.toString() + " tk",
                                     style: TextStyle(
                                         fontSize: 32,
                                         fontWeight: FontWeight.bold,
@@ -83,7 +100,7 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                           child: Container(
                                             alignment: Alignment.center,
                                             child: Text(
-                                              "Detail",
+                                              "Details",
                                               style: TextStyle(
                                                 color: Colors.white,
                                               ),
@@ -94,11 +111,12 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                       // VoucherDetails()));
-                                                    OrderHistoryDetails(product)));
-                                           // OrderDetailsList(product)));
-                                                  //  product.cartItems.
-                                          //  OrderDetailsList2(product)));
+                                                        // VoucherDetails()));
+                                                        OrderHistoryDetails(
+                                                            product)));
+                                            // OrderDetailsList(product)));
+                                            //  product.cartItems.
+                                            //  OrderDetailsList2(product)));
                                           },
                                           shape: const StadiumBorder(),
                                         ),
@@ -115,15 +133,49 @@ class _CustomVoucherColumnState extends State<CustomVoucherColumn> {
                                 ],
                               ),
                             ),
-                            Divider(
-                              height: 1,
-                              color: Colors.grey.shade400,
-                            ),
+                            // Divider(
+                            //   height: 1,
+                            //   color: Colors.grey.shade400,
+                            // ),
                           ],
                         ),
                       ),
                     ],
                   ),
+                  Divider(
+                    height: 1,
+                    color: Colors.grey.shade400,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 8,
+                      right: 8,
+                      top: 4,bottom: 4,
+                    ),
+                    child: Row(
+                      mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Order Status: "+product.orderStatus,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11),
+                        ),
+                        // InkWell(
+                        //   child: Icon(
+                        //     Icons.info,
+                        //     color: Colors.red.shade900,
+                        //   ),
+                        //   onTap: () {
+                        //     _showDialog(context);
+                        //   },
+                        // )
+                        //   ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
